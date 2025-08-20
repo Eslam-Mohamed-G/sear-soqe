@@ -1,8 +1,9 @@
 {
     "selectCountry": "Select Country",
     "countries": {
+        "uae": "UAE",
         "egypt": "Egypt",
-        "saudi": "Saudi Arabia",
+        "saudi": "KSA",
         "qatar": "Qatar",
         "oman": "Oman",
         "kuwait": "Kuwait",

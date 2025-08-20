@@ -1,6 +1,7 @@
 {
     "selectCountry": "اختر الدولة",
     "countries": {
+        "uae": "الإمارات",
         "egypt": "مصر",
         "saudi": "السعودية",
         "qatar": "قطر",
