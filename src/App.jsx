@@ -1,5 +1,7 @@
 import './App.css'
 import Navbar from './Component/Navbar/Navbar'
+import "./i18n";
+
 
 function App() {
 
