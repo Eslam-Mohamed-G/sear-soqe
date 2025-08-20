@@ -1,0 +1,11 @@
+{
+    "selectCountry": "Select Country",
+    "countries": {
+        "egypt": "Egypt",
+        "saudi": "Saudi Arabia",
+        "qatar": "Qatar",
+        "oman": "Oman",
+        "kuwait": "Kuwait",
+        "bahrain": "Bahrain"
+    }
+}

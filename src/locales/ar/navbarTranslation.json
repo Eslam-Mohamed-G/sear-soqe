@@ -1,0 +1,11 @@
+{
+    "selectCountry": "اختر الدولة",
+    "countries": {
+        "egypt": "مصر",
+        "saudi": "السعودية",
+        "qatar": "قطر",
+        "oman": "عمان",
+        "kuwait": "الكويت",
+        "bahrain": "البحرين"
+    }
+}
