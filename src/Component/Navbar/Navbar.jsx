@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../../assets/logo.png'
 import CountryDrobDown from './CountryDrobDown/CountryDrobDown'
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 
 export default function Navbar() {
     return (
@@ -14,7 +15,7 @@ export default function Navbar() {
                 <div className="hidden xl:flex items-center justify-center gap-4 bg-transparent">
                     <CountryDrobDown/>
                     {/* <button type='button' className='bg-white text-sm hover:outline-none focus:outline-none outline-none'>EN</button> */}
-                    <span className='cursor-pointer'>EN</span>
+                    <LanguageSwitcher/>
                 </div>
             </div>
         </nav>

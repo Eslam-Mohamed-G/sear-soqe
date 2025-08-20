@@ -7,5 +7,9 @@
         "oman": "Oman",
         "kuwait": "Kuwait",
         "bahrain": "Bahrain"
+    },
+    "LanguageSwitcher" : {
+        "arabic": "العربية",
+        "english": "En"
     }
 }

@@ -1,26 +1,17 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useLocale } from "../providers/LanguageProvider";
+import { useLocale } from "../LanguageProvider/LanguageProvider";
 
 export default function LanguageSwitcher() {
-    const { t } = useTranslation();
+    const { t } = useTranslation("navbar");
     const { lang, setLang } = useLocale();
 
+    const toggleLang = () => setLang(lang === "ar" ? "en" : "ar");
+
     return (
-        <div className="flex items-center gap-2">
-            <span className="text-sm opacity-70">{t("language")}:</span>
-            <button
-                className={`px-3 py-1 rounded ${lang === "ar" ? "bg-gray-900 text-white" : "bg-gray-200"}`}
-                onClick={() => setLang("ar")}
-            >
-                {t("arabic")}
-            </button>
-            <button
-                className={`px-3 py-1 rounded ${lang === "en" ? "bg-gray-900 text-white" : "bg-gray-200"}`}
-                onClick={() => setLang("en")}
-            >
-                {t("english")}
-            </button>
-        </div>
+        <button onClick={toggleLang} className="">
+            {lang === "ar" ? t("LanguageSwitcher.english") : t("LanguageSwitcher.arabic")}
+        </button>
     );
 }
+

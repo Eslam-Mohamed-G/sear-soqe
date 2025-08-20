@@ -7,7 +7,7 @@ export const useLocale = () => useContext(LangCtx);
 const getDir = (lng) => (lng === "ar" ? "rtl" : "ltr");
 
 export default function LanguageProvider({ children }) {
-    const [lang, setLang] = useState(i18n.language || "en");
+    const [lang, setLang] = useState(localStorage.getItem("lang") || i18n.language || "en");
 
     useEffect(() => {
         const dir = getDir(lang);
