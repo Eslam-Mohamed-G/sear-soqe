@@ -1,5 +1,8 @@
 {
-    "selectCountry": "Select Country",
+    "logo": {
+        "firstName": "sear",
+        "scondName" : "soqe"
+    },
     "countries": {
         "uae": "UAE",
         "egypt": "Egypt",

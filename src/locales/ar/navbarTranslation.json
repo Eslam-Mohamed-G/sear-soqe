@@ -1,5 +1,8 @@
 {
-    "selectCountry": "اختر الدولة",
+    "logo": {
+        "firstName": "سعر",
+        "scondName" : "السوق"
+    },
     "countries": {
         "uae": "الإمارات",
         "egypt": "مصر",
