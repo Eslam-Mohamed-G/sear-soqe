@@ -14,7 +14,6 @@ export default function Navbar() {
 
                 <div className="hidden xl:flex items-center justify-center gap-4 bg-transparent">
                     <CountryDrobDown/>
-                    {/* <button type='button' className='bg-white text-sm hover:outline-none focus:outline-none outline-none'>EN</button> */}
                     <LanguageSwitcher/>
                 </div>
             </div>

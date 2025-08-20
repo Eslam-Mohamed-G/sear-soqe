@@ -9,9 +9,9 @@ export default function LanguageSwitcher() {
     const toggleLang = () => setLang(lang === "ar" ? "en" : "ar");
 
     return (
-        <button onClick={toggleLang} className="">
+        <div onClick={toggleLang} className="cursor-pointer text-sm font-bold">
             {lang === "ar" ? t("LanguageSwitcher.english") : t("LanguageSwitcher.arabic")}
-        </button>
+        </div>
     );
 }
 
