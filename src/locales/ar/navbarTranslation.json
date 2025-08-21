@@ -15,5 +15,14 @@
     "LanguageSwitcher": {
         "arabic": "العربية",
         "english": "EN"
+    },
+    "links": {
+        "offers": "العروض",
+        "new": "جديد",
+        "used": "مستعمل",
+        "electric": "كهربائية",
+        "chinese": "صينية",
+        "blog": "مدونة",
+        "services": "خدمات"
     }
 }

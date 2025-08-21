@@ -1,7 +1,7 @@
 {
     "logo": {
         "firstName": "sear",
-        "scondName" : "soqe"
+        "scondName": "soqe"
     },
     "countries": {
         "uae": "UAE",
@@ -12,8 +12,17 @@
         "kuwait": "Kuwait",
         "bahrain": "Bahrain"
     },
-    "LanguageSwitcher" : {
+    "LanguageSwitcher": {
         "arabic": "العربية",
         "english": "EN"
+    },
+    "links": {
+        "offers": "Offers",
+        "new": "New",
+        "used": "Used",
+        "electric": "Electric",
+        "chinese": "Chinese",
+        "blog": "Blog",
+        "services": "Services"
     }
 }
