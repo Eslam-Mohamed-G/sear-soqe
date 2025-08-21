@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@theme {  
+    --breakpoint-3xl: 1400px;
+}
 body {
     font-family: "Lato", "Noto Kufi Arabic", sans-serif;
 }

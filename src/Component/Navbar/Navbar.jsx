@@ -10,7 +10,7 @@ export default function Navbar() {
     const { t } = useTranslation("navbar");
     return (
         <nav className='bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b h-[74px] content-center border-gray-200 dark:border-gray-600'>
-            <div className='flex flex-row flex-wrap items-center justify-between xl:px-24 font-bold'>
+            <div className='flex flex-row flex-wrap items-center justify-between px-8 3xl:px-10 2xl:px-24 font-bold'>
                 {/* avatar && logo */}
                 <div className="flex items-center gap-10">
                     <Link to="#" className='flex justify-center items-center'>
