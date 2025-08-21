@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function CountryDropDown() {
     const { t } = useTranslation("navbar");
@@ -25,12 +26,12 @@ export default function CountryDropDown() {
     }, [countryKey]);
 
     return (
-        <div className="relative flex cursor-pointer group h-full text-black">
-            <a href="#" className="px-2 py-1 text-black">
+        <div className="relative flex cursor-pointer group text-black h-[72px]">
+            <Link to="#" className="h-full content-center">
                 {countryKey === "default" ? "Country" : t(`countries.${countryKey}`)}
-            </a>
+            </Link>
 
-            <div className="absolute left-1/2 -translate-x-1/2 top-full flex flex-col justify-center h-0 overflow-hidden group-hover:h-[265px] bg-white font-normal shadow-lg rounded-2xl transition-all ease-in-out duration-500">
+            <div className="absolute left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 overflow-hidden group-hover:h-[265px] bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500">
                 {countries
                     .filter((c) => c.key !== countryKey)
                     .map((c) => (

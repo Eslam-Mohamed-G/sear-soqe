@@ -9,17 +9,19 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
     const { t } = useTranslation("navbar");
     return (
-        <nav className='bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600'>
-            <div className='flex flex-row flex-wrap items-center justify-between p-4 xl:px-24 font-bold'>
+        <nav className='bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b h-[74px] content-center border-gray-200 dark:border-gray-600'>
+            <div className='flex flex-row flex-wrap items-center justify-between xl:px-24 font-bold'>
                 {/* avatar && logo */}
-                <div className="flex gap-4 items-center">
-                    <Link to="#" className='flex justify-center items-center gap-1 text-[#4044C9]'>
-                        <img src={Logo} alt='logo' />
-                        <p className='font-extrabold text-2xl'><span className='text-[#20BB74]'>{t("logo.firstName")} </span><span className='text-[#4044C9]'>{t("logo.scondName")}</span></p>
-                        {/* <img src={avatar} alt="avatar-logo-sear-soqe" className='w-28 h-28' /> */}
+                <div className="flex items-center gap-10">
+                    <Link to="#" className='flex justify-center items-center'>
+                        {/* <img src={Logo} alt='logo' /> */}
+                        {/* <p className='font-extrabold text-2xl'><span className='text-[#20BB74]'>{t("logo.firstName")} </span><span className='text-[#4044C9]'>{t("logo.scondName")}</span></p> */}
+                        <div className="w-16 h-14">
+                            <img src={avatar} alt="avatar-logo-sear-soqe" className='w-full h-full object-center' />
+                        </div>
                     </Link>
 
-                    <div className="hidden xl:flex items-center justify-center gap-4 bg-transparent">
+                    <div className="hidden xl:flex items-center justify-center gap-10">
                         <CountryDrobDown />
                         <LanguageSwitcher />
                     </div>
@@ -34,7 +36,7 @@ export default function Navbar() {
                                 <div className="relative">
                                     <span className='block text-white font-bold text-[10px] px-1'>جديد</span>
                                     {/* add the style in app.css file for animation */}
-                                    <div className="newshinytag"/>
+                                    <div className="newshinytag" />
                                 </div>
                             </div>
                         </li>
@@ -53,7 +55,7 @@ export default function Navbar() {
                                 <div className="relative">
                                     <span className='block text-white font-bold text-[10px] px-1'>جديد</span>
                                     {/* add the style in app.css file for animation */}
-                                    <div className="newshinytag"/>
+                                    <div className="newshinytag" />
                                 </div>
                             </div>
                         </li>
