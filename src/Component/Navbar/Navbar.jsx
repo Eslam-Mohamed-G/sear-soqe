@@ -34,7 +34,7 @@ export default function Navbar() {
                             <Link to="#">{t("links.offers")}</Link>
                             <div className='absolute bottom-5 -right-5 bg-red-500 rounded flex items-center justify-center h-[15px]'>
                                 <div className="relative">
-                                    <span className='block text-white font-bold text-[10px] px-1'>جديد</span>
+                                    <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
                                     {/* add the style in app.css file for animation */}
                                     <div className="newshinytag" />
                                 </div>
@@ -53,7 +53,7 @@ export default function Navbar() {
                             <Link to="#">{t("links.chinese")}</Link>
                             <div className='absolute bottom-5 -right-5 bg-red-500 rounded flex items-center justify-center h-[15px]'>
                                 <div className="relative">
-                                    <span className='block text-white font-bold text-[10px] px-1'>جديد</span>
+                                    <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
                                     {/* add the style in app.css file for animation */}
                                     <div className="newshinytag" />
                                 </div>
