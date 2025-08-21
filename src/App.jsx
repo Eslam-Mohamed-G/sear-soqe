@@ -1,14 +1,18 @@
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css'
-import Navbar from './Component/Navbar/Navbar'
 import "./i18n";
+import Layout from './Layout/Layout';
 
+const routes = createBrowserRouter([
+  {path:"", element: <Layout/>, children:[]}
+])
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-    </>
+    <RouterProvider router={routes}>
+      <Outlet />
+    </RouterProvider>
   )
 }
 
