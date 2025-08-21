@@ -1,7 +1,7 @@
 {
     "logo": {
         "firstName": "سعر",
-        "scondName" : "السوق"
+        "scondName": "السوق"
     },
     "countries": {
         "uae": "الإمارات",
@@ -22,8 +22,24 @@
         "used": "مستعمل",
         "electric": "كهربائية",
         "chinese": "صينية",
-        "blog": "مدونة",
-        "services": "خدمات",
+        "blog": {
+            "name": "مدونة",
+            "links": {
+                "new_cars": "أخبار سيارات",
+                "new_videos": "فيديوهات السيارات",
+                "expert_ratings": "تقييمات الخبراء للسيارات"
+            }
+        },
+        "services": {
+            "name": "خدمات",
+            "links": {
+                "car_report": "تقرير السيارة",
+                "car_review": "تقييم السيارة",
+                "car_export": "تصدير السيارات",
+                "car_insurance": "تأمين شورى",
+                "car_checkup": "فحص شامل للسيارة"
+            }
+        },
         "shinytag": "جديد"
     }
 }

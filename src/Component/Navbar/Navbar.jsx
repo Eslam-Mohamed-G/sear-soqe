@@ -28,42 +28,80 @@ export default function Navbar() {
                 </div>
 
                 {/* links */}
-                <div className="hidden lg:flex text-black">
-                    <ul className='flex flex-wrap flex-row gap-10'>
-                        <li className='relative'>
-                            <Link to="#">{t("links.offers")}</Link>
-                            <div className='absolute bottom-5 -right-5 bg-red-500 rounded flex items-center justify-center h-[15px]'>
+                <div className="hidden lg:flex text-black h-[72px] content-center">
+                    <ul className='flex flex-wrap flex-row content-center'>
+                        {/* link with shinytag */}
+                        <li className='relative h-full text-center content-center px-5 group'>
+                            <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.offers")}</Link>
+                            <div className='absolute top-3 right-0 bg-red-500 rounded flex items-center justify-center h-[15px]'>
                                 <div className="relative">
                                     <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
                                     {/* add the style in app.css file for animation */}
                                     <div className="newshinytag" />
                                 </div>
                             </div>
+                            {/* blue line */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
-                        <li>
+
+                        <li className='relative h-full text-center content-center px-5 group'>
                             <Link to="#">{t("links.new")}</Link>
+                            {/* blue line */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
-                        <li>
+
+                        <li className='relative group h-full text-center content-center px-5'>
                             <Link to="#">{t("links.used")}</Link>
+                            {/* blue line */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
-                        <li>
+                        <li className='relative group h-full text-center content-center px-5'>
                             <Link to="#">{t("links.electric")}</Link>
+                            {/* blue line */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
-                        <li className='relative'>
+
+                        {/* link with shinytag */}
+                        <li className='relative h-full text-center content-center px-5 group'>
                             <Link to="#">{t("links.chinese")}</Link>
-                            <div className='absolute bottom-5 -right-5 bg-red-500 rounded flex items-center justify-center h-[15px]'>
+                            <div className='absolute top-3 right-0 bg-red-500 rounded flex items-center justify-center h-[15px]'>
                                 <div className="relative">
                                     <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
                                     {/* add the style in app.css file for animation */}
                                     <div className="newshinytag" />
                                 </div>
                             </div>
+                            {/* blue line  */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
-                        <li>
-                            <Link to="#">{t("links.blog")}</Link>
+
+                        {/* link with drobdown */}
+                        <li className='relative group h-full text-center content-center px-5'>
+                            <Link to="#">{t("links.blog.name")}</Link>
+                            <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-52 overflow-hidden group-hover:h-36 group-hover:z-20 bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500">
+                                <ul className='flex flex-col items-start'>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.blog.links.new_cars")}</li>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.blog.links.new_videos")}</li>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.blog.links.expert_ratings")}</li>
+                                </ul>
+                            </div>
+                            {/* blue line */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
-                        <li>
-                            <Link to="#">{t("links.services")}</Link>
+                        {/* link with drobdown */}
+                        <li className='relative group h-full text-center content-center px-5'>
+                            <Link to="#">{t("links.services.name")}</Link>
+                            <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-44 overflow-hidden group-hover:h-56 group-hover:z-20 bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500">
+                                <ul className='flex flex-col items-start'>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_report")}</li>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_review")}</li>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_export")}</li>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_insurance")}</li>
+                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_checkup")}</li>
+                                </ul>
+                            </div>
+                            {/* blue line  */}
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
                         </li>
                     </ul>
                 </div>

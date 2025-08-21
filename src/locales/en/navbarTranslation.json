@@ -22,8 +22,24 @@
         "used": "Used",
         "electric": "Electric",
         "chinese": "Chinese",
-        "blog": "Blog",
-        "services": "Services",
+        "blog": {
+            "name": "Blog",
+            "links": {
+                "new_cars": "cars news",
+                "new_videos": "cars videos",
+                "expert_ratings": "Expert Car Ratings"
+            }
+        },
+        "services": {
+            "name": "Services",
+            "links": {
+                "car_report": "Car Report",
+                "car_review": "Car Review",
+                "car_export": "Car Export",
+                "car_insurance": "Shory Insurance",
+                "car_checkup": "Full Car Inspection"
+            }
+        },
         "shinytag": "new"
     }
 }
