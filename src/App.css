@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @theme {  
     --breakpoint-3xl: 1400px;
+    --color-primaryColor : #4044C9;
+    --color-greenColor : #20BB74;
 }
 body {
     font-family: "Lato", "Noto Kufi Arabic", sans-serif;

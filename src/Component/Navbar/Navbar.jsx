@@ -41,24 +41,24 @@ export default function Navbar() {
                                 </div>
                             </div>
                             {/* blue line */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
 
                         <li className='relative h-full text-center content-center px-5 group'>
                             <Link to="#">{t("links.new")}</Link>
                             {/* blue line */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
 
                         <li className='relative group h-full text-center content-center px-5'>
                             <Link to="#">{t("links.used")}</Link>
                             {/* blue line */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
                         <li className='relative group h-full text-center content-center px-5'>
                             <Link to="#">{t("links.electric")}</Link>
                             {/* blue line */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
 
                         {/* link with shinytag */}
@@ -72,7 +72,7 @@ export default function Navbar() {
                                 </div>
                             </div>
                             {/* blue line  */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
 
                         {/* link with drobdown */}
@@ -86,7 +86,7 @@ export default function Navbar() {
                                 </ul>
                             </div>
                             {/* blue line */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
                         {/* link with drobdown */}
                         <li className='relative group h-full text-center content-center px-5'>
@@ -101,7 +101,7 @@ export default function Navbar() {
                                 </ul>
                             </div>
                             {/* blue line  */}
-                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-blue-500 rounded-t-2xl hidden group-hover:block"/>
+                            <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block"/>
                         </li>
                     </ul>
                 </div>
