@@ -30,7 +30,13 @@ export default function Navbar() {
                     <ul className='flex flex-wrap flex-row gap-10'>
                         <li className='relative'>
                             <Link to="#">{t("links.offers")}</Link>
-                            <div className='absolute bottom-5 -right-6 bg-red-500 rounded flex items-center justify-center h-[15px]'><span className='block text-white font-bold text-[12px] px-1'>جديد</span></div>
+                            <div className='absolute bottom-5 -right-6 bg-red-500 rounded flex items-center justify-center h-[15px]'>
+                                <div className="relative">
+                                    <span className='block text-white font-bold text-[10px] px-1'>جديد</span>
+                                    {/* add the style in app.css file for animation */}
+                                    <div className="newshinytag"/>
+                                </div>
+                            </div>
                         </li>
                         <li>
                             <Link to="#">{t("links.new")}</Link>
