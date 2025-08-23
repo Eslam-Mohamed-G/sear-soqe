@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '../../assets/logo.png'
 import avatar from '../../assets/avatar.png'
 import CountryDrobDown from './CountryDrobDown/CountryDrobDown'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
@@ -15,8 +14,6 @@ export default function Navbar() {
                 {/* avatar && logo */}
                 <div className="flex items-center gap-10">
                     <Link to="#" className='flex justify-center items-center'>
-                        {/* <img src={Logo} alt='logo' /> */}
-                        {/* <p className='font-extrabold text-2xl'><span className='text-[#20BB74]'>{t("logo.firstName")} </span><span className='text-[#4044C9]'>{t("logo.scondName")}</span></p> */}
                         <div className="w-16 h-14">
                             <img src={avatar} alt="avatar-logo-sear-soqe" className='w-full h-full object-center' />
                         </div>
@@ -33,34 +30,43 @@ export default function Navbar() {
                     <div className="hidden lg:flex text-black h-[72px] content-center">
                         <ul className='flex flex-wrap flex-row content-center'>
                             {/* link with shinytag */}
-                            <li className='relative h-full text-center content-center px-5 group'>
+                            <li className='relative h-full text-center content-center px-5 group flex flex-row items-center gap-2'>
+                                <div className="w-8 h-8">
+                                    <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
+                                </div>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.buyCar")}</Link>
-                                <div className='absolute top-3 right-0 backgroundLinearAnimation rounded flex items-center justify-center h-[15px]'>
-                                    <div className="relative">
-                                        <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
-                                        {/* add the style in app.css file for animation */}
-                                        {/* <div className="newshinytag" /> */}
-                                    </div>
+                                {/* add the style in app.css file for animation */}
+                                <div className='absolute top-3 end-2 backgroundLinearAnimation rounded flex items-center justify-center h-[15px]'>
+                                    <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
                                 </div>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
 
-                            <li className='relative h-full text-center content-center px-5 group'>
+                            <li className='relative h-full text-center content-center px-5 group flex flex-row items-center gap-2'>
+                                <div className="w-8 h-8">
+                                    <img src="./navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
+                                </div>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.seal")}</Link>
                                 <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w- overflow-hidden group-hover:h-[480px] group-hover:z-20 bg-white font-normal customShadow rounded-xl transition-all ease-in-out duration-500">
-                                    <NewLinkDrobDown/>
+                                    <NewLinkDrobDown />
                                 </div>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
 
-                            <li className='relative group h-full text-center content-center px-5'>
+                            <li className='relative group h-full text-center content-center px-5 flex flex-row items-center gap-2'>
+                                <div className="w-7 h-6">
+                                    <img src="./navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
+                                </div>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.carGuide")}</Link>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
-                            <li className='relative group h-full text-center content-center px-5'>
+                            <li className='relative group h-full text-center content-center px-5 flex flex-row items-center gap-2'>
+                                <div className="w-8 h-8">
+                                    <img src="./navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
+                                </div>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.carNews")}</Link>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
