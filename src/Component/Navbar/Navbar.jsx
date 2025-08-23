@@ -111,7 +111,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                     {/* car sale button */}
-                    <div className="bg-primaryColor h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
+                    <div className="bg-mainColor h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
                 </div>
 
             </div>

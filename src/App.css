@@ -1,8 +1,13 @@
 @import "tailwindcss";
-@theme {  
+
+@theme {
     --breakpoint-3xl: 1400px;
-    --color-primaryColor : #032781;
+    --color-primaryColor: #032781;
+    --color-violetDark: rgb(90, 31, 163);
+    --color-violetMid: rgb(125, 46, 196);
+    --color-violetLight: rgb(228, 80, 247);
 }
+
 body {
     font-family: "Lato", "Noto Kufi Arabic", sans-serif;
 }
@@ -26,16 +31,27 @@ body {
         left: 100%;
     }
 }
+
 .customShadow {
-    box-shadow: 0px 3px 12px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16);
 }
+
 .customShadow_3_6 {
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
+
 .customShadow_12 {
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
     transition: box-shadow 0.3s ease;
 }
+
 .customShadow_12:hover {
-    box-shadow: 0px 0px 6px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+.bg-mainColor {
+    background: linear-gradient(to bottom right,
+        var(--color-violetDark),
+        var(--color-violetLight)),
+        var(--color-violetMid);
 }
