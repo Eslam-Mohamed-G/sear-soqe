@@ -43,7 +43,7 @@ export default function Navbar() {
                                     </div>
                                 </div>
                                 {/* blue line */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
 
                             <li className='relative h-full text-center content-center px-5 group'>
@@ -52,18 +52,18 @@ export default function Navbar() {
                                     <NewLinkDrobDown/>
                                 </div>
                                 {/* blue line */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
 
                             <li className='relative group h-full text-center content-center px-5'>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.used")}</Link>
                                 {/* blue line */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
                             <li className='relative group h-full text-center content-center px-5'>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.electric")}</Link>
                                 {/* blue line */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
 
                             {/* link with shinytag */}
@@ -77,7 +77,7 @@ export default function Navbar() {
                                     </div>
                                 </div>
                                 {/* blue line  */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
                             </li>
 
                             {/* link with drobdown */}
@@ -91,7 +91,7 @@ export default function Navbar() {
                                     </ul>
                                 </div>
                                 {/* blue line */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
                             </li>
                             {/* link with drobdown */}
                             <li className='relative group h-full text-center content-center px-5'>
@@ -106,12 +106,12 @@ export default function Navbar() {
                                     </ul>
                                 </div>
                                 {/* blue line  */}
-                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
+                                <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
                             </li>
                         </ul>
                     </div>
                     {/* car sale button */}
-                    <div className="bg-mainColor h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
+                    <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
                 </div>
 
             </div>
