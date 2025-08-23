@@ -35,11 +35,11 @@ export default function Navbar() {
                             {/* link with shinytag */}
                             <li className='relative h-full text-center content-center px-5 group'>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.buyCar")}</Link>
-                                <div className='absolute top-3 right-0 bg-red-500 rounded flex items-center justify-center h-[15px]'>
+                                <div className='absolute top-3 right-0 backgroundLinearAnimation rounded flex items-center justify-center h-[15px]'>
                                     <div className="relative">
                                         <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
                                         {/* add the style in app.css file for animation */}
-                                        <div className="newshinytag" />
+                                        {/* <div className="newshinytag" /> */}
                                     </div>
                                 </div>
                                 {/* blue line */}
