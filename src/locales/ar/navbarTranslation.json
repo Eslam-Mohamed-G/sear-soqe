@@ -17,11 +17,11 @@
         "english": "EN"
     },
     "links": {
+        "seal": "بيع سيارة",
+        "buyCar": "شراء سيارة",
+        "carGuide": "دليل السيارات",
+        "carNews": "أخبار السيارات",
         "offers": "العروض",
-        "new": "جديد",
-        "used": "مستعمل",
-        "electric": "كهربائية",
-        "chinese": "صينية",
         "blog": {
             "name": "مدونة",
             "links": {

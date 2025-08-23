@@ -17,11 +17,11 @@
         "english": "EN"
     },
     "links": {
+        "seal": "Seal Car",
+        "buyCar": "Buy Car",
+        "carGuide": "Car Guide",
+        "carNews": "Car News",
         "offers": "Offers",
-        "new": "New",
-        "used": "Used",
-        "electric": "Electric",
-        "chinese": "Chinese",
         "blog": {
             "name": "Blog",
             "links": {
