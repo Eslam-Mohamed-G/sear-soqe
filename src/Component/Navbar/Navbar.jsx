@@ -5,6 +5,7 @@ import CountryDrobDown from './CountryDrobDown/CountryDrobDown'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
+import NewLinkDrobDown from '../NewLinkDrobDown/NewLinkDrobDown'
 
 export default function Navbar() {
     const { t } = useTranslation("navbar");
@@ -47,6 +48,9 @@ export default function Navbar() {
 
                             <li className='relative h-full text-center content-center px-5 group'>
                                 <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.new")}</Link>
+                                <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w- overflow-hidden group-hover:h-[480px] group-hover:z-20 bg-white font-normal customShadow rounded-xl transition-all ease-in-out duration-500">
+                                    <NewLinkDrobDown/>
+                                </div>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-primaryColor rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
