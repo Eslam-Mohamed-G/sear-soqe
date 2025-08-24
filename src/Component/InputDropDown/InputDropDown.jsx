@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
-export default function DropdownInput({choose}) {
+export default function DropdownInput({ choose }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
+    const dropdownRef = useRef(null); // ref للعنصر
 
     const options = ["هيونداى", "كيا", "نيسان", "تويتا"];
 
@@ -11,15 +12,29 @@ export default function DropdownInput({choose}) {
         setIsOpen(false);
     };
 
+    // قفل الدروب لما تضغط برة
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div className="relative">
+        <div className="relative" ref={dropdownRef}>
             {/* Input */}
             <input
                 type="text"
                 value={selected}
                 placeholder={choose}
-                readOnly
                 onClick={() => setIsOpen(!isOpen)}
+                onChange={(e) => setSelected(e.target.value)} // كتابة يدويًا
                 className="w-full border border-gray-400 rounded-lg p-2 cursor-pointer focus:outline-none focus:ring-1 focus:ring-violetLight"
             />
 
