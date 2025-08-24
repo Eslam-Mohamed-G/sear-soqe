@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function DropdownInput() {
+export default function DropdownInput({choose}) {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
 
-    const options = ["Option 1", "Option 2", "Option 3"];
+    const options = ["هيونداى", "كيا", "نيسان", "تويتا"];
 
     const handleSelect = (option) => {
         setSelected(option);
@@ -12,25 +12,25 @@ export default function DropdownInput() {
     };
 
     return (
-        <div className="relative w-64">
+        <div className="relative">
             {/* Input */}
             <input
                 type="text"
                 value={selected}
-                placeholder="اختر قيمة"
+                placeholder={choose}
                 readOnly
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full border rounded-lg p-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-400 rounded-lg p-2 cursor-pointer focus:outline-none focus:ring-1 focus:ring-violetLight"
             />
 
             {/* Dropdown */}
             {isOpen && (
-                <ul className="absolute w-full mt-1 bg-white border rounded-lg shadow-lg z-10">
+                <ul className="absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-hidden">
                     {options.map((option, idx) => (
                         <li
                             key={idx}
                             onClick={() => handleSelect(option)}
-                            className="p-2 hover:bg-blue-100 cursor-pointer"
+                            className="p-2 hover:bg-gray-100 cursor-pointer"
                         >
                             {option}
                         </li>
