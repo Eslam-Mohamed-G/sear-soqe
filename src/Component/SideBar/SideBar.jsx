@@ -7,7 +7,7 @@ import CountryDrobDown from '../Navbar/CountryDrobDown/CountryDrobDown'
 export default function SideBar() {
     const { t } = useTranslation("navbar");
     const [open, setOpen] = useState(false);
-    const handleStateOfDropDown = ()=>{
+    const handleStateOfDropDown = () => {
         setOpen(!open)
     }
 
@@ -55,9 +55,12 @@ export default function SideBar() {
                 </li>
 
                 {/* link with drobdown */}
-                <li className='relative h-full text-center content-center' onClick={handleStateOfDropDown}>
+                <li className='relative h-full text-center content-center flex gap-4' onClick={handleStateOfDropDown}>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
+                    </span>
                     <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.services.name")}</Link>
-                    <div className={`absolute z-10 end-full top-0 flex flex-col justify-center w-44 overflow-hidden bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500 ${open? "h-56": "h-0"}`}>
+                    <div className={`absolute z-10 end-full top-0 flex flex-col justify-center w-44 overflow-hidden bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500 ${open ? "h-56" : "h-0"}`}>
                         <ul className='flex flex-col items-start'>
                             <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_report")}</li>
                             <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_review")}</li>
