@@ -55,8 +55,8 @@ export default function SideBar() {
                 </li>
 
                 {/* link with drobdown */}
-                <li className='relative h-full text-center content-center flex gap-4' onClick={handleStateOfDropDown}>
-                    <span>
+                <li className='relative h-full text-center content-center flex gap-4 cursor-pointer' onClick={handleStateOfDropDown}>
+                    <span className={open ? "rotate-90 transition-all ease-in-out duration-300": " transition-all ease-in-out duration-300"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                     </span>
                     <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.services.name")}</Link>
@@ -73,7 +73,7 @@ export default function SideBar() {
                     <div className="h-1 absolute -bottom-1 start-1 end-1 bg-backgroundLinear rounded-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                 </li>
             </ul>
-            <div className="flex flex-col items-center justify-center gap-10">
+            <div className="flex flex-col items-center justify-center gap-4 mb-4">
                 <CountryDrobDown />
                 <LanguageSwitcher />
             </div>
