@@ -34,6 +34,7 @@ body {
         var(--color-violetDark),
         var(--color-violetLight)),
         var(--color-violetMid);
+    color: white;
 }
 
 .backgroundLinearAnimation {
