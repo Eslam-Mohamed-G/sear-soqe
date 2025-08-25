@@ -3,6 +3,7 @@ import bgImg from '../../assets/image.png';
 import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 import CarBrands from '../../Component/CarBrands/CarBrands';
 import CarShape from '../../Component/CarShape/CarShape';
+import { Link } from 'react-router-dom';
 
 export default function BuyCar() {
     const [activeTab, setActiveTab] = useState("shape");
@@ -24,7 +25,7 @@ export default function BuyCar() {
                                     <DropdownInput choose={"الفئة"} />
                                     <DropdownInput choose={"السنة"} />
                                 </div>
-                                <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">بحث</button>
+                                <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-720">بحث</button>
                             </form>
                         </div>
                         <div className="w-full md:w-3/4 h-full rounded-xl border border-gray-200 bg-white px-4 py-3">
@@ -195,25 +196,157 @@ export default function BuyCar() {
                 </div>
             </div>
 
-            {/* السيارات الاكثر شهرة */}
-            <div className="bg-[#F4F4F4] w-full flex flex-row items-center justify-around py-8 relative">
-                <div className="flex flex-col justify-center items-center gap-4">
-                    <h1 className='font-extrabold text-2xl'>بيع</h1>
+            {/* مكان للاعلان عن السيارت */}
+            <div className="bg-[#F4F4F4] w-full py-8 relative grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-items-center">
+                {/* بيع */}
+                <div className="flex flex-col justify-center items-center gap-4 order-2 md:order-1">
+                    <h1 className="font-extrabold text-2xl">بيع</h1>
                     <img src="./groupLogo.png" alt="group logo sear el soqe" />
-                    <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">أضف اعلانك هنا</div>
+                    <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
+                        أضف اعلانك هنا
+                    </div>
                 </div>
 
-                <div className="text-center bg-white rounded-2xl px-12 py-8">
-                    <h1 className='font-extrabold text-3xl mb-4'>
-                        أفضل الأسعار
-                    </h1>
+                {/* النص في النص */}
+                <div className="text-center bg-white rounded-2xl px-12 py-8 order-1 md:order-2">
+                    <h1 className="font-extrabold text-3xl mb-4">أفضل الأسعار</h1>
                     <p>أضف إعلانك وابدأ في كسب المال</p>
                 </div>
 
-                <div className="flex flex-col justify-center items-center gap-4">
-                    <h1 className='font-extrabold text-2xl'>اشتري</h1>
+                {/* اشتري */}
+                <div className="flex flex-col justify-center items-center gap-4 order-3 md:order-3">
+                    <h1 className="font-extrabold text-2xl">اشتري</h1>
                     <img src="./groupLogo.png" alt="group logo sear el soqe" />
-                    <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">اشتري الأن</div>
+                    <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
+                        اشتري الأن
+                    </div>
+                </div>
+            </div>
+
+
+            {/* السيارات الاكثر شهرة */}
+            <div className="px-4 sm:px-8 3xl:px-10 2xl:px-24 flex flex-col gap-4">
+                {/* header */}
+                <div className="flex flex-row flex-wrap justify-between">
+                    <div className="">
+                        <h1 className='text-lg md:text-2xl font-bold'>السيارات الاكثر شهرة</h1>
+                        <span className='text-[#8D8D8D] text-sm'>السيارات الاكتر شهرة على تطبيقنا والاكثر طلبآ</span>
+                    </div>
+                    <Link to='#' className='text-[#2670DE] flex flex-row items-center gap-2 font-bold text-sm'>
+                        <span>استعرض الكل</span>
+                        <span className=''>
+                            <svg xmlns="http://www.w3.org/2000/svg" width={20} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-left-icon lucide-arrow-left">
+                                <path d="m12 19-7-7 7-7" /><path d="M19 12H5" />
+                            </svg>
+                        </span>
+                    </Link>
+                </div>
+
+                {/* content */}
+                <div className=" flex flex-row flex-wrap gap-4">
+
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                        {/* img */}
+                        <div className="relative ">
+                            <div className="md:w-72">
+                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center' />
+                            </div>
+                            <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
+                        </div>
+                        {/* img-information */}
+                        <div className="flex flex-col gap-4">
+                            {/* header */}
+                            <div className="flex flex-col gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="">
+                                <ul className='grid grid-cols-2 gap-4'>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                        {/* img */}
+                        <div className="relative ">
+                            <div className="md:w-72">
+                                <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center' />
+                            </div>
+                            <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
+                        </div>
+                        {/* img-information */}
+                        <div className="flex flex-col gap-4">
+                            {/* header */}
+                            <div className="flex flex-col gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="pb-4">
+                                <ul className='grid grid-cols-2 gap-4'>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                        {/* img */}
+                        <div className="relative ">
+                            <div className="md:w-72">
+                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center' />
+                            </div>
+                            <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
+                        </div>
+                        {/* img-information */}
+                        <div className="flex flex-col gap-4">
+                            {/* header */}
+                            <div className="flex flex-col gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="">
+                                <ul className='grid grid-cols-2 gap-4'>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                        {/* img */}
+                        <div className="relative ">
+                            <div className="md:w-72">
+                                <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center' />
+                            </div>
+                            <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
+                        </div>
+                        {/* img-information */}
+                        <div className="flex flex-col gap-4">
+                            {/* header */}
+                            <div className="flex flex-col gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="pb-4">
+                                <ul className='grid grid-cols-2 gap-4'>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
