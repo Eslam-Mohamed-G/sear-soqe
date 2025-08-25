@@ -9,10 +9,10 @@ export default function BuyCar() {
     return (
         <div className='pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24'>
             {/* top section */}
-            <div className="w-full bg-cover bg-center rounded-xl overflow-hidden px-4 py-4" style={{ backgroundImage: `url(${bgImg})` }}>
+            <div className="bg-cover bg-center rounded-xl overflow-hidden px-2 md:px-4 py-4" style={{ backgroundImage: `url(${bgImg})` }}>
                 <p className='text-white mb-2 md:mb-4 text-sm md:text-lg'>ابحث عن السيارات المستعملة عبر فئات منتقاه بعناية</p>
 
-                <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center h-[400px]">
+                <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center md:h-[400px]">
                     <div className="md:w-1/4 rounded-xl border h-full border-gray-200 bg-white px-2 md:px-4 py-3">
                         <p className='mb-2 md:mb-4 font-bold'>سيارات للبيع</p>
                         <form action="" className='flex flex-col gap-2 md:gap-4'>
@@ -28,23 +28,23 @@ export default function BuyCar() {
                     </div>
                     <div className="w-full md:w-3/4 h-full rounded-xl border border-gray-200 bg-white px-4 py-3">
                         {/* header */}
-                        <div className="">
+                        <div className="text-[10px] sm:text-sm font-bold">
                             <ul className='flex flex-row flex-wrap justify-between border-b border-gray-200'>
-                                <li className={`cursor-pointer px-3 py-2 ${activeTab === "shape" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
+                                <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "shape" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                     onClick={() => setActiveTab("shape")}
                                 >
                                     شكل السيارة
                                 </li>
-                                <li className={`cursor-pointer px-3 py-2 ${activeTab === "brand" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
+                                <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "brand" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                     onClick={() => setActiveTab("brand")}
                                 >
                                     الماركة
                                 </li>
-                                <li className={`cursor-pointer px-3 py-2 ${activeTab === "fuel" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
+                                <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "fuel" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                     onClick={() => setActiveTab("fuel")}>الوقود المستخدم</li>
-                                <li className={`cursor-pointer px-3 py-2 ${activeTab === "year" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
+                                <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "year" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                     onClick={() => setActiveTab("year")}>السنة</li>
-                                <li className={`cursor-pointer px-3 py-2 ${activeTab === "city" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
+                                <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "city" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                     onClick={() => setActiveTab("city")}>المدينة</li>
                             </ul>
                         </div>
