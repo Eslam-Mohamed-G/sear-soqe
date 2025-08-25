@@ -27,8 +27,8 @@ export default function Navbar() {
 
                 {/* links */}
                 <div className="flex flex-row items-center gap-5">
-                    <div className="hidden lg:flex text-black h-[72px] content-center">
-                        <ul className='flex flex-wrap flex-row content-center'>
+                    <div className="flex text-black h-[72px] gap-5 items-center">
+                        <ul className='hidden lg:flex flex-row content-center h-full'>
                             {/* link with shinytag */}
                             <li className='relative h-full text-center content-center px-5 group flex flex-row items-center gap-2'>
                                 <div className="w-8 h-8">
@@ -88,11 +88,14 @@ export default function Navbar() {
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
                             </li>
                         </ul>
+                        {/* car sale button */}
+                        <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
                     </div>
-                    {/* car sale button */}
-                    <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
+                    {/* button for handle nav */}
+                    <div className="cursor-pointer block lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-align-left-icon lucide-align-left"><path d="M15 12H3" /><path d="M17 18H3" /><path d="M21 6H3" /></svg>
+                    </div>
                 </div>
-
             </div>
         </nav>
     )
