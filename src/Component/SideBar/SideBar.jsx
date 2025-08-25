@@ -12,7 +12,7 @@ export default function SideBar() {
     }
 
     return (
-        <div className="flex flex-col text-black gap-5 w-fit h-dvh items-center bg-white lg:hidden">
+        <div className="flex flex-col text-black gap-5 w-fit h-dvh pt-4 items-center bg-white lg:hidden">
             <ul className='flex flex-col gap-10 border-b'>
                 {/* link with shinytag */}
                 <li className='relative h-full text-center content-center group flex flex-row items-center gap-2'>
