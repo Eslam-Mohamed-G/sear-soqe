@@ -103,7 +103,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div onClick={handleStateOfSideBar} className={`absolute top-0 h-dvh bg-[#00000050] overflow-hidden ${sideBarIsOpen? "start-0 end-0": "start-full end-0"} lg:hidden transition-all ease-in-out duration-500`}>
-                    <div className="absolute end-0 top-0 px-8 bg-white">
+                    <div className="absolute end-0 top-0 px-8 bg-white" onClick={(e) => e.stopPropagation()}>
                         <span className='cursor-pointer m-8' onClick={handleStateOfSideBar}>
                             <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                         </span>
