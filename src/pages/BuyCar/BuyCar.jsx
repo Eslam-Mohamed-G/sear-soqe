@@ -203,7 +203,7 @@ export default function BuyCar() {
                 <div className="flex flex-col justify-center items-center gap-4 order-2 md:order-1">
                     <h1 className="font-extrabold text-2xl">بيع</h1>
                     <div className="w-44">
-                        <img src={avatar} alt="group logo sear el soqe" className='w-full object-centera' />
+                        <img src={avatar} alt="group logo sear el soqe" className='w-full object-center' />
                     </div>
                     <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
                         أضف اعلانك هنا
@@ -220,7 +220,7 @@ export default function BuyCar() {
                 <div className="flex flex-col justify-center items-center gap-4 order-3 md:order-3">
                     <h1 className="font-extrabold text-2xl">اشتري</h1>
                     <div className="w-44">
-                        <img src={avatar} alt="group logo sear el soqe" className='w-full object-centera' />
+                        <img src={avatar} alt="group logo sear el soqe" className='w-full object-center' />
                     </div>
                     <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
                         اشتري الأن
@@ -230,9 +230,9 @@ export default function BuyCar() {
 
 
             {/* السيارات الاكثر شهرة */}
-            <div className="px-4 sm:px-8 3xl:px-10 2xl:px-24 flex flex-col gap-4">
+            <div className="px-4 sm:px-8 3xl:px-10 2xl:px-20 flex flex-col gap-4">
                 {/* header */}
-                <div className="flex flex-row flex-wrap justify-between">
+                <div className="flex flex-row flex-wrap 2xl:px-4 justify-between">
                     <div className="">
                         <h1 className='text-lg md:text-2xl font-bold'>السيارات الاكثر شهرة</h1>
                         <span className='text-[#8D8D8D] text-sm'>السيارات الاكتر شهرة على تطبيقنا والاكثر طلبآ</span>
@@ -248,13 +248,13 @@ export default function BuyCar() {
                 </div>
 
                 {/* content */}
-                <div className=" flex flex-row flex-wrap justify-center gap-4">
+                <div className="flex flex-row flex-wrap justify-center gap-4 mb-4">
 
-                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
-                        <div className="relative ">
-                            <div className="md:w-72">
-                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center' />
+                        <div className="relative">
+                            <div className="md:w-72 overflow-hidden rounded-xl">
+                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
                         </div>
@@ -276,11 +276,11 @@ export default function BuyCar() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative ">
-                            <div className="md:w-72">
-                                <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center' />
+                            <div className="md:w-72 overflow-hidden rounded-xl">
+                                <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
                         </div>
@@ -301,11 +301,11 @@ export default function BuyCar() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative ">
-                            <div className="md:w-72">
-                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center' />
+                            <div className="md:w-72 overflow-hidden rounded-xl">
+                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
                         </div>
@@ -327,11 +327,11 @@ export default function BuyCar() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
+                    <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative ">
-                            <div className="md:w-72">
-                                <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center' />
+                            <div className="md:w-72 overflow-hidden rounded-xl">
+                                <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
                         </div>
