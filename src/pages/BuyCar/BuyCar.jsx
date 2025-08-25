@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import bgImg from '../../assets/image.png';
+import avatar from '../../assets/avatar.png'
 import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 import CarBrands from '../../Component/CarBrands/CarBrands';
 import CarShape from '../../Component/CarShape/CarShape';
@@ -201,7 +202,9 @@ export default function BuyCar() {
                 {/* بيع */}
                 <div className="flex flex-col justify-center items-center gap-4 order-2 md:order-1">
                     <h1 className="font-extrabold text-2xl">بيع</h1>
-                    <img src="./groupLogo.png" alt="group logo sear el soqe" />
+                    <div className="w-44">
+                        <img src={avatar} alt="group logo sear el soqe" className='w-full object-centera' />
+                    </div>
                     <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
                         أضف اعلانك هنا
                     </div>
@@ -216,7 +219,9 @@ export default function BuyCar() {
                 {/* اشتري */}
                 <div className="flex flex-col justify-center items-center gap-4 order-3 md:order-3">
                     <h1 className="font-extrabold text-2xl">اشتري</h1>
-                    <img src="./groupLogo.png" alt="group logo sear el soqe" />
+                    <div className="w-44">
+                        <img src={avatar} alt="group logo sear el soqe" className='w-full object-centera' />
+                    </div>
                     <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
                         اشتري الأن
                     </div>
@@ -243,7 +248,7 @@ export default function BuyCar() {
                 </div>
 
                 {/* content */}
-                <div className=" flex flex-row flex-wrap gap-4">
+                <div className=" flex flex-row flex-wrap justify-center gap-4">
 
                     <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow">
                         {/* img */}
