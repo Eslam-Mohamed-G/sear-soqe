@@ -11,16 +11,8 @@ export default function SideBar() {
         setOpen(!open)
     }
 
-    const [sideBarIsOpen, setSideBarIsOpen] = useState(false);
-    const handleStateOfSideBar = ()=>{
-        setSideBarIsOpen(!sideBarIsOpen);
-    }
-
     return (
-        <div className="flex flex-col text-black gap-5 w-fit h-dvh items-center bg-white lg:hidden p-8">
-            <span className='border-1 w-full'>
-                <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-            </span>
+        <div className="flex flex-col text-black gap-5 w-fit h-dvh items-center bg-white lg:hidden">
             <ul className='flex flex-col gap-10 border-b'>
                 {/* link with shinytag */}
                 <li className='relative h-full text-center content-center group flex flex-row items-center gap-2'>

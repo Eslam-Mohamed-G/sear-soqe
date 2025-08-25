@@ -9,6 +9,11 @@ import SideBar from '../SideBar/SideBar';
 
 export default function Navbar() {
     const { t } = useTranslation("navbar");
+    
+    const [sideBarIsOpen, setSideBarIsOpen] = useState(false);
+    const handleStateOfSideBar = ()=>{
+        setSideBarIsOpen(!sideBarIsOpen);
+    }
     return (
         <nav className='bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b h-[74px] content-center border-gray-200 dark:border-gray-600'>
             <div className='flex flex-row flex-wrap items-center justify-between px-8 3xl:px-10 2xl:px-24 font-bold relative'>
@@ -93,12 +98,15 @@ export default function Navbar() {
                         <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
                     </div>
                     {/* button for handle nav */}
-                    <div className="cursor-pointer block lg:hidden">
+                    <div className="cursor-pointer block lg:hidden" onClick={handleStateOfSideBar}>
                         <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-align-left-icon lucide-align-left"><path d="M15 12H3" /><path d="M17 18H3" /><path d="M21 6H3" /></svg>
                     </div>
                 </div>
-                <div className="absolute top-0 right-0 left-0 h-dvh bg-[#00000050]">
-                    <div className="absolute end-0 top-0">
+                <div className={`absolute top-0 h-dvh bg-[#00000050] overflow-hidden ${sideBarIsOpen? "start-0 end-0": "start-full end-0"} lg:hidden transition-all ease-in-out duration-500`}>
+                    <div className="absolute end-0 top-0 px-8 bg-white">
+                        <span className='cursor-pointer m-8' onClick={handleStateOfSideBar}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                        </span>
                         <SideBar />
                     </div>
                 </div>
