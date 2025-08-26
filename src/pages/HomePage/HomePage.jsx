@@ -6,7 +6,7 @@ import CarBrands from '../../Component/CarBrands/CarBrands';
 import CarShape from '../../Component/CarShape/CarShape';
 import { Link } from 'react-router-dom';
 
-export default function BuyCar() {
+export default function HomePage() {
     const [activeTab, setActiveTab] = useState("shape");
     return (
         <div className='flex flex-col gap-10 pt-20 '>
