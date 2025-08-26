@@ -8,6 +8,11 @@
     --color-violetLight: rgb(228, 80, 247);
 }
 
+html {
+    scroll-behavior: smooth;
+    word-break: break-word;
+}
+
 body {
     font-family: "Lato", "Noto Kufi Arabic", sans-serif;
 }
@@ -31,8 +36,8 @@ body {
 
 .bg-backgroundLinear {
     background: linear-gradient(to bottom right,
-        var(--color-violetDark),
-        var(--color-violetLight)),
+            var(--color-violetDark),
+            var(--color-violetLight)),
         var(--color-violetMid);
     color: white;
 }
@@ -49,7 +54,8 @@ body {
 .activeClass {
     position: relative;
 }
-.activeClass::after{
+
+.activeClass::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -59,9 +65,9 @@ body {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     background: linear-gradient(to bottom right,
-    var(--color-violetDark),
-    var(--color-violetLight)),
-    var(--color-violetMid);
+        var(--color-violetDark),
+        var(--color-violetLight)),
+        var(--color-violetMid);
 }
 
 @keyframes gradientMove {
@@ -72,4 +78,33 @@ body {
     to {
         background-position: 0% 0%;
     }
+}
+
+/* دعم فايرفوكس */
+* {
+    scrollbar-width: thin;
+    /* رفيع */
+    scrollbar-color: var(--color-violetLight) #e5e7eb;
+    /* thumb (أزرق) , track (رمادي فاتح) */
+}
+
+/* دعم كروم / إيدج / سفاري */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    /* لو عندك scroll أفقي */
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    /* لون الخلفية */
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom right,
+            var(--color-violetDark),
+            var(--color-violetMid),
+            var(--color-violetLight));
+    border-radius: 9999px;
 }

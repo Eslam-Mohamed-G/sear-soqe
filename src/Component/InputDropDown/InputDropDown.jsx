@@ -40,7 +40,7 @@ export default function DropdownInput({ choose, options }) {
 
             {/* Dropdown */}
             {isOpen && (
-                <ul className="absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-x-auto h-48">
+                <ul className="absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-y-auto h-48 custom-scroll">
                     {options.map((option, idx) => (
                         <li
                             key={idx}
