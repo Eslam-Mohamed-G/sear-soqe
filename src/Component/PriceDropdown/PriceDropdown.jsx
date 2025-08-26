@@ -50,7 +50,7 @@ export default function PriceDropdown() {
                     )}
                 </select>
 
-                <span className="flex items-center">إلى</span>
+                <span className="flex items-center justify-center text-center w-7">الي</span>
 
                 {/* To Price */}
                 <select
