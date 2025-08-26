@@ -40,7 +40,7 @@ export default function Navbar() {
                                 <div className="w-8 h-8">
                                     <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
                                 </div>
-                                <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.buyCar")}</Link>
+                                <Link to="buycar" className='flex h-full w-full text-center items-center'>{t("links.buyCar")}</Link>
                                 {/* add the style in app.css file for animation */}
                                 <div className='absolute top-3 end-2 backgroundLinearAnimation rounded flex items-center justify-center h-[15px]'>
                                     <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
