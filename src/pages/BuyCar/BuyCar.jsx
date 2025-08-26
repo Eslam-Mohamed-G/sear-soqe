@@ -8,8 +8,8 @@ export default function BuyCar() {
         <div className='pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24'>
             <div className="">
                 <h1>خيارات البحث</h1>
-                <form action="" className='grid grid-cols-6 border border-gray-300 shadow rounded-2xl px-4 py-2'>
-                    <div className='relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-[1.5px] after:bg-gray-300'>
+                <form action="" className='grid grid-cols-2 grid-rows-2 lg:grid-rows-1 md:grid-cols-3 lg:grid-cols-6 border border-gray-300 shadow rounded-2xl px-4 py-2'>
+                    <div className='relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-0.5 after:bg-gray-300 border-b-2 border-gray-300 lg:border-b-0 py-2'>
                         <label htmlFor="type-car" className="block mb-1 text-sm font-bold text-black dark:text-white">حالة السيارة</label>
                         <select id="type-car" className="bg-gray-50 w-fit border border-gray-300 text-gray-900 text-sm rounded-lg block px-2 h-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
                             <option>جديدة</option>
@@ -18,7 +18,7 @@ export default function BuyCar() {
                         </select>
                     </div>
                     {/* النوع */}
-                    <div className='relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-[1.5px] after:bg-gray-300'>
+                    <div className='relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-0.5 after:bg-gray-300 border-b-2 border-gray-300 lg:border-b-0 py-2'>
                         <label htmlFor="type-car" className="block mb-1 text-sm font-bold text-gray-900 dark:text-white">انواع مشهورة</label>
                         <select id="type-car" className="bg-gray-50 w-fit border border-gray-300 text-gray-900 text-sm rounded-lg block px-2 h-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
                             <option className='text-black'>انواع مشهورة</option>
@@ -34,7 +34,7 @@ export default function BuyCar() {
                         </select>
                     </div>
                     {/* نوع ناقل الحركة */}
-                    <div className='relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-[1.5px] after:bg-gray-300'>
+                    <div className='relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-0.5 after:bg-gray-300 border-b-2 border-gray-300 lg:border-b-0 py-2'>
                         <label htmlFor="type-car" className="block mb-1 text-sm font-bold text-gray-900 dark:text-white">نوع ناقل الحركة</label>
                         <select id="type-car" className="bg-gray-50 w-fit border border-gray-300 text-gray-900 text-sm rounded-lg block px-2 h-8 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
                             <option className='text-black'>نوع ناقل الحركة</option>
@@ -45,12 +45,12 @@ export default function BuyCar() {
                     </div>
 
                     {/* السنة */}
-                    <div className="relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-[1.5px] after:bg-gray-300">
+                    <div className="relative flex flex-col items-center justify-center md:after:absolute after:top-0 after:end-0 after:h-full after:w-0.5 after:bg-gray-300 border-b-2 border-gray-300 md:border-b-0 py-2">
                         <YearDropdown />
                     </div>
 
                     {/* السعر */}
-                    <div className="relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-[1.5px] after:bg-gray-300">
+                    <div className="relative flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-0.5 after:bg-gray-300">
                         <PriceDropdown/>
                     </div>
 

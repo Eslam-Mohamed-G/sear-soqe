@@ -31,7 +31,7 @@ export default function OtherSearchOption() {
             </h1>
 
             <div
-                className={`absolute top-full translate-y-7 end-0 -translate-x-4 w-lg bg-white customShadow_12 ${isFilterOpen ? "h-96" : "h-0"} rounded-lg transition-all duration-500 overflow-hidden`}
+                className={`absolute top-full translate-y-7 end-0 -translate-x-4 w-xs md:w-lg bg-white customShadow_12 ${isFilterOpen ? "h-96" : "h-0"} rounded-lg transition-all duration-500 overflow-hidden`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="grid grid-cols-2 gap-4 p-2">
