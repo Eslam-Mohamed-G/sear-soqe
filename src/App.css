@@ -46,6 +46,24 @@ body {
     animation: gradientMove 3s ease-in-out infinite alternate;
 }
 
+.activeClass {
+    position: relative;
+}
+.activeClass::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    background: linear-gradient(to bottom right,
+    var(--color-violetDark),
+    var(--color-violetLight)),
+    var(--color-violetMid);
+}
+
 @keyframes gradientMove {
     from {
         background-position: 100% 100%;
