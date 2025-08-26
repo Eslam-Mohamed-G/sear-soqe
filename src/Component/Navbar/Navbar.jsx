@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className='flex flex-row flex-wrap items-center justify-between px-4 sm:px-8 3xl:px-10 2xl:px-24 font-bold relative'>
                 {/* avatar && logo */}
                 <div className="flex items-center gap-10">
-                    <Link to="#" className='flex justify-center items-center'>
+                    <Link to="/" className='flex justify-center items-center'>
                         <div className="w-16 h-14">
                             <img src={avatar} alt="avatar-logo-sear-soqe" className='w-full h-full object-center' />
                         </div>
