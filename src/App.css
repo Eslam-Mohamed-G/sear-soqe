@@ -22,7 +22,7 @@ body {
 
 .customShadow_12 {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .customShadow_12:hover {

@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function DropdownInput({ choose }) {
+export default function DropdownInput({ choose, options }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
     const dropdownRef = useRef(null); // ref للعنصر
 
-    const options = ["هيونداى", "كيا", "نيسان", "تويتا"];
+    // const options = ["هيونداى", "كيا", "نيسان", "تويتا"];
 
     const handleSelect = (option) => {
         setSelected(option);
@@ -40,7 +40,7 @@ export default function DropdownInput({ choose }) {
 
             {/* Dropdown */}
             {isOpen && (
-                <ul className="absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-hidden">
+                <ul className="absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-x-auto h-48">
                     {options.map((option, idx) => (
                         <li
                             key={idx}
