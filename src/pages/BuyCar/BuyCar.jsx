@@ -253,7 +253,7 @@ export default function BuyCar() {
                     <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative">
-                            <div className="md:w-72 overflow-hidden rounded-xl">
+                            <div className="w-2xs md:w-72 overflow-hidden rounded-xl">
                                 <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
@@ -279,7 +279,7 @@ export default function BuyCar() {
                     <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative ">
-                            <div className="md:w-72 overflow-hidden rounded-xl">
+                            <div className="w-2xs md:w-72 overflow-hidden rounded-xl">
                                 <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
@@ -304,7 +304,7 @@ export default function BuyCar() {
                     <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative ">
-                            <div className="md:w-72 overflow-hidden rounded-xl">
+                            <div className="w-2xs md:w-72 overflow-hidden rounded-xl">
                                 <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
@@ -330,7 +330,7 @@ export default function BuyCar() {
                     <div className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                         {/* img */}
                         <div className="relative ">
-                            <div className="md:w-72 overflow-hidden rounded-xl">
+                            <div className="w-2xs md:w-72 overflow-hidden rounded-xl">
                                 <img src="./tyota2-car.png" alt="tyota2-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                             </div>
                             <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
