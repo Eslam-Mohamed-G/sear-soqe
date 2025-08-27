@@ -14,5 +14,15 @@
         "mg": "MG",
         "suzuki": "Suzuki",
         "bmw": "BMW"
+    },
+
+    "carShape": {
+        "name": "car shape",
+        "sedan": "Sedan",
+        "hatchback": "Hatchback",
+        "convertible": "Convertible",
+        "suv": "SUV",
+        "coupe": "Coupe",
+        "pickup": "Pickup"
     }
 }
