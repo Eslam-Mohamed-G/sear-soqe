@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function DropdownInput({ choose, options }) {
+export default function DropdownInput({ choose, options, dropdownHeight }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
     const dropdownRef = useRef(null); // ref للعنصر
@@ -35,7 +35,7 @@ export default function DropdownInput({ choose, options }) {
                 placeholder={choose}
                 onClick={() => setIsOpen(!isOpen)}
                 onChange={(e) => setSelected(e.target.value)} // كتابة يدويًا
-                className="w-full border border-gray-400 rounded-lg px-2 py-1 cursor-pointer focus:outline-none"
+                className="w-full border border-gray-400 rounded-lg px-2 py-1 cursor-pointer focus:outline-none placeholder:text-sm"
             />
             <span className={`absolute end-2 top-1/2 -translate-y-1/2 ${isOpen ? "rotate-90 transition-all ease-in-out duration-300" : "rotate-270 transition-all ease-in-out duration-300"}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
@@ -43,7 +43,7 @@ export default function DropdownInput({ choose, options }) {
 
             {/* Dropdown */}
             {isOpen && (
-                <ul className="absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-y-auto h-48 custom-scroll">
+                <ul className={`absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-y-auto h-${dropdownHeight} custom-scroll`}>
                     {options.map((option, idx) => (
                         <li
                             key={idx}

@@ -21,10 +21,10 @@ export default function HomePage() {
                             <form action="" className='flex flex-col gap-2 md:gap-4'>
                                 {/* car model */}
                                 <div className="flex flex-row md:flex-col gap-2 md:gap-4">
-                                    <DropdownInput choose={"النوع"} />
-                                    <DropdownInput choose={"الماركة"} />
-                                    <DropdownInput choose={"الفئة"} />
-                                    <DropdownInput choose={"السنة"} />
+                                    <DropdownInput choose={"النوع"} dropdownHeight={48} options={["تويوتا", "هيونداي", "كيا", "مرسيدس", "بي إم دبليو","أودي", "فولكس فاجن", "فورد", "شيفروليه", "نيسان","رينو", "بيجو", "فيات", "هوندا", "مازدا","ميتسوبيشي", "سوزوكي", "لكزس", "جيلي", "شيري"]}/>
+                                    <DropdownInput choose={"الشكل"} dropdownHeight={48} options={["سيدان", "هاتشباك", "دفع رباعي", "كوبيه", "مكشوفة", "بيك أب", "فان"]}/>
+                                    <DropdownInput choose={"الفئة"} dropdownHeight={48} options={["سيدان", "هاتشباك", "دفع رباعي", "كوبيه", "مكشوفة", "بيك أب", "فان"]}/>
+                                    <DropdownInput choose={"السنة"} dropdownHeight={48} options={[2026, 2025, 2024, 2023, 2022, 2021, 2019, 2018, 2017, 2016, 2015]}/>
                                 </div>
                                 <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-720">بحث</button>
                             </form>
