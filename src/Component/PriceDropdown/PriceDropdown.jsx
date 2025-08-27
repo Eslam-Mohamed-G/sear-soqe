@@ -30,7 +30,7 @@ export default function PriceDropdown() {
             </h1>
 
             <div
-                className={`absolute top-full end-1/2 -translate-x-1/2 translate-y-5 bg-white customShadow_12 ${isPriceOpen ? "h-12" : "h-0"} rounded-lg transition-all duration-500 overflow-hidden`}
+                className={`absolute z-50 top-full end-1/2 -translate-x-1/2 translate-y-5 bg-white customShadow_12 ${isPriceOpen ? "h-12" : "h-0"} rounded-lg transition-all duration-500 overflow-hidden`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex flex-row gap-2 p-2">

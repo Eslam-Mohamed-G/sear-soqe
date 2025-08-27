@@ -30,7 +30,7 @@ export default function YearDropdown() {
             </h1>
 
             <div
-                className={`absolute end-1/2 -translate-x-1/2 top-full translate-y-5 bg-white customShadow_12 ${isYearOpen ? "h-12" : "h-0"} flex justify-center items-center rounded-lg transition-all duration-500 overflow-hidden`}
+                className={`absolute z-50 end-1/2 -translate-x-1/2 top-full translate-y-5 bg-white customShadow_12 ${isYearOpen ? "h-12" : "h-0"} flex justify-center items-center rounded-lg transition-all duration-500 overflow-hidden`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex flex-row gap-2 p-2">
