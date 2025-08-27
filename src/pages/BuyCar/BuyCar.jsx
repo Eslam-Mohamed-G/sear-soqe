@@ -58,40 +58,137 @@ export default function BuyCar() {
 
             {/* content section to show search result */}
             <div className="w-full grid grid-cols-1 md:grid-cols-4">
-                <div className="col-span-3">
-                    <div className="p-2 border border-gray-300 rounded-2xl overflow-hidden">
+                <div className="col-span-3 grid gap-4">
+                    <div className="flex flex-col md:flex-row gap-2 md:gap-4 p-2 border border-gray-300 rounded-2xl hover:bg-gray-100 overflow-hidden transition-colors ease-in-out duration-500">
                         {/* image */}
-                        <div className="w-full md:w-72 overflow-hidden rounded-xl">
-                            <img src="./totyta-car.png" alt="totyta-car" className='w-full object-contain' />
+                        <div className="relative">
+                            <div className="w-full md:w-72 lg:w-96 overflow-hidden rounded-xl">
+                                <img src="./totyta-car.png" alt="totyta-car" className='w-full object-contain' />
+                            </div>
+                            <span className='absolute top-2 end-2 bg-white rounded-full p-1 cursor-pointer'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg>
+                            </span>
                         </div>
 
                         {/* content */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col justify-between gap-4">
                             {/* header */}
                             <div className="flex flex-row flex-wrap justify-between gap-4">
                                 <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
                                 <span className='text-primaryColor'>2,300,00 ر.س</span>
                             </div>
-                            <div className="border-b border-gray-300 pb-4">
-                                <ul className='grid grid-cols-4 gap-4'>
-                                    <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
-                                    <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
-                                    <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
-                                    <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
-                                </ul>
-                            </div>
+                            <div className="flex flex-col gap-4">
+                                <div className="border-b border-gray-300 pb-4">
+                                    <ul className='grid grid-cols-4 gap-4'>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>الرياض</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>0 كلم</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>2024</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>بنزين</span></li>
+                                    </ul>
+                                </div>
 
-                            {/* buttons */}
-                            <div className="grid grid-cols-3 gap-4">
-                                <button className='bg-white border border-primaryColor rounded-lg flex items-center justify-center py-1 cursor-pointer'>
-                                    <span className='text-primaryColor'>رسالة</span>
-                                </button>
-                                <button className='bg-primaryColor text-white rounded-lg flex items-center justify-center py-1 cursor-pointer'>
-                                    <span>اتصل</span>
-                                </button>
-                                <button className='bg-[#25D367] rounded-lg flex items-center justify-center py-1 cursor-pointer'>
-                                    <img src="./ic_round-whatsapp.png" alt="ic_round-whatsapp" />
-                                </button>
+                                {/* buttons */}
+                                <div className="grid grid-cols-3 gap-4">
+                                    <button className='bg-white border border-primaryColor rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <span className='text-primaryColor'>رسالة</span>
+                                    </button>
+                                    <button className='bg-primaryColor text-white rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <span>اتصل</span>
+                                    </button>
+                                    <button className='bg-[#25D367] rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <img src="./ic_round-whatsapp.png" alt="ic_round-whatsapp" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*  */}
+                    <div className="flex flex-col md:flex-row gap-2 md:gap-4 p-2 border border-gray-300 rounded-2xl hover:bg-gray-100 overflow-hidden transition-colors ease-in-out duration-500">
+                        {/* image */}
+                        <div className="relative">
+                            <div className="w-full md:w-72 lg:w-96 overflow-hidden rounded-xl">
+                                <img src="./image.png" alt="totyta-car" className='w-full object-contain' />
+                            </div>
+                            <span className='absolute top-2 end-2 bg-white rounded-full p-1 cursor-pointer'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg>
+                            </span>
+                        </div>
+
+                        {/* content */}
+                        <div className="flex flex-col justify-between gap-4">
+                            {/* header */}
+                            <div className="flex flex-row flex-wrap justify-between gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="flex flex-col gap-4">
+                                <div className="border-b border-gray-300 pb-4">
+                                    <ul className='grid grid-cols-4 gap-4'>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>الرياض</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>0 كلم</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>2024</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>بنزين</span></li>
+                                    </ul>
+                                </div>
+
+                                {/* buttons */}
+                                <div className="grid grid-cols-3 gap-4">
+                                    <button className='bg-white border border-primaryColor rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <span className='text-primaryColor'>رسالة</span>
+                                    </button>
+                                    <button className='bg-primaryColor text-white rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <span>اتصل</span>
+                                    </button>
+                                    <button className='bg-[#25D367] rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <img src="./ic_round-whatsapp.png" alt="ic_round-whatsapp" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*  */}
+                    <div className="flex flex-col md:flex-row gap-2 md:gap-4 p-2 border border-gray-300 rounded-2xl hover:bg-gray-100 overflow-hidden transition-colors ease-in-out duration-500">
+                        {/* image */}
+                        <div className="relative">
+                            <div className="w-full md:w-72 lg:w-96 overflow-hidden rounded-xl">
+                                <img src="./x5_1226132099hbu.png" alt="totyta-car" className='w-full object-contain' />
+                            </div>
+                            <span className='absolute top-2 end-2 bg-white rounded-full p-1 cursor-pointer'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg>
+                            </span>
+                        </div>
+
+                        {/* content */}
+                        <div className="flex flex-col justify-between gap-4">
+                            {/* header */}
+                            <div className="flex flex-row flex-wrap justify-between gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="flex flex-col gap-4">
+                                <div className="border-b border-gray-300 pb-4">
+                                    <ul className='grid grid-cols-4 gap-4'>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>الرياض</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>0 كلم</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>2024</span></li>
+                                        <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-3 h-3 sm:w-4 sm:h-4" /><span className='text-[10px] sm:text-sm font-bold sm:font-normal'>بنزين</span></li>
+                                    </ul>
+                                </div>
+
+                                {/* buttons */}
+                                <div className="grid grid-cols-3 gap-4">
+                                    <button className='bg-white border border-primaryColor rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <span className='text-primaryColor'>رسالة</span>
+                                    </button>
+                                    <button className='bg-primaryColor text-white rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <span>اتصل</span>
+                                    </button>
+                                    <button className='bg-[#25D367] rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                        <img src="./ic_round-whatsapp.png" alt="ic_round-whatsapp" />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
