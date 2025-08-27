@@ -6,7 +6,7 @@ import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 
 export default function BuyCar() {
     return (
-        <div className='pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24'>
+        <div className='flex flex-col gap-4 pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24'>
             {/* top section for form */}
             <div className="">
                 <h1>خيارات البحث</h1>
@@ -54,6 +54,49 @@ export default function BuyCar() {
                         <button type='submit' className='w-full bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize'>بحث</button>
                     </div>
                 </form>
+            </div>
+
+            {/* content section to show search result */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-4">
+                <div className="col-span-3">
+                    <div className="p-2 border border-gray-300 rounded-2xl overflow-hidden">
+                        {/* image */}
+                        <div className="w-full md:w-72 overflow-hidden rounded-xl">
+                            <img src="./totyta-car.png" alt="totyta-car" className='w-full object-contain' />
+                        </div>
+
+                        {/* content */}
+                        <div className="flex flex-col gap-4">
+                            {/* header */}
+                            <div className="flex flex-row flex-wrap justify-between gap-4">
+                                <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                <span className='text-primaryColor'>2,300,00 ر.س</span>
+                            </div>
+                            <div className="border-b border-gray-300 pb-4">
+                                <ul className='grid grid-cols-4 gap-4'>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
+                                    <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                </ul>
+                            </div>
+
+                            {/* buttons */}
+                            <div className="grid grid-cols-3 gap-4">
+                                <button className='bg-white border border-primaryColor rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                    <span className='text-primaryColor'>رسالة</span>
+                                </button>
+                                <button className='bg-primaryColor text-white rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                    <span>اتصل</span>
+                                </button>
+                                <button className='bg-[#25D367] rounded-lg flex items-center justify-center py-1 cursor-pointer'>
+                                    <img src="./ic_round-whatsapp.png" alt="ic_round-whatsapp" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-span-1 border">2</div>
             </div>
         </div>
     )
