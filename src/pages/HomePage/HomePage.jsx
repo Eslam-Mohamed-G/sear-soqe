@@ -5,8 +5,10 @@ import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 import CarBrands from '../../Component/CarBrands/CarBrands';
 import CarShape from '../../Component/CarShape/CarShape';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function HomePage() {
+    const { t } = useTranslation("homePage"); // hook للترجمة
     const [activeTab, setActiveTab] = useState("shape");
     return (
         <div className='flex flex-col gap-10 pt-20 '>
@@ -36,12 +38,12 @@ export default function HomePage() {
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "shape" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                         onClick={() => setActiveTab("shape")}
                                     >
-                                        شكل السيارة
+                                        {t(`carShape.name`)}
                                     </li>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "brand" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                         onClick={() => setActiveTab("brand")}
                                     >
-                                        الماركة
+                                        {t(`brands.name`)}
                                     </li>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "fuel" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                         onClick={() => setActiveTab("fuel")}>الوقود المستخدم</li>
