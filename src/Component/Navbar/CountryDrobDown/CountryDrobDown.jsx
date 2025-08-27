@@ -31,7 +31,7 @@ export default function CountryDropDown() {
                 {countryKey === "default" ? "Country" : t(`countries.${countryKey}`)}
             </Link>
 
-            <div className="absolute left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 overflow-hidden group-hover:h-[265px] bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500">
+            <div className="absolute left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-32 overflow-hidden group-hover:h-[265px] bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500">
                 {countries
                     .filter((c) => c.key !== countryKey)
                     .map((c) => (
