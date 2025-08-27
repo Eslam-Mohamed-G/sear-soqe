@@ -57,7 +57,7 @@ export default function BuyCar() {
             </div>
 
             {/* content section to show search result */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-4">
+            <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-y-4 md:gap-x-4">
                 <div className="col-span-3 grid gap-4">
                     <div className="flex flex-col md:flex-row gap-2 md:gap-4 p-2 border border-gray-300 rounded-2xl hover:bg-gray-100 overflow-hidden transition-colors ease-in-out duration-500">
                         {/* image */}
@@ -193,7 +193,18 @@ export default function BuyCar() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1 border">2</div>
+
+                {/* الاعلان */}
+                <div className="col-span-1 relative">
+                    <div className="sticky top-20 flex flex-col justify-center items-center gap-4 py-4 border border-gray-300 rounded-2xl">
+                        <div className="w-40">
+                            <img src='/avatar.png' alt="group logo sear el soqe" className='w-full object-center' />
+                        </div>
+                        <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
+                            أضف اعلانك هنا
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
