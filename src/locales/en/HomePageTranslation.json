@@ -1,0 +1,18 @@
+{
+    "header": "Search for used cars by carefully selected categories",
+    "brands": {
+        "name": "Brand",
+        "hyundai": "Hyundai",
+        "toyota": "Toyota",
+        "chevrolet": "Chevrolet",
+        "kia": "Kia",
+        "nissan": "Nissan",
+        "fiat": "Fiat",
+        "daewoo": "Daewoo",
+        "skoda": "Skoda",
+        "peugeot": "Peugeot",
+        "mg": "MG",
+        "suzuki": "Suzuki",
+        "bmw": "BMW"
+    }
+}
