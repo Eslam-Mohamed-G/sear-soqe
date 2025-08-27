@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from "react-i18next";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import CountryDrobDown from '../Navbar/CountryDrobDown/CountryDrobDown'
 
@@ -16,10 +16,12 @@ export default function SideBar() {
             <ul className='flex flex-col gap-10 border-b'>
                 {/* link with shinytag */}
                 <li className='relative h-full text-center content-center group flex flex-row items-center gap-2'>
-                    <div className="w-7 h-7">
-                        <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
-                    </div>
-                    <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.buyCar")}</Link>
+                    <NavLink to="/buyCar" className={({ isActive }) => `flex flex-row gap-2 ${isActive ? "sidebarActiveClass" : ""}`}>
+                        <div className="w-6 h-6">
+                            <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
+                        </div>
+                        {t("links.buyCar")}
+                    </NavLink>
                     {/* add the style in app.css file for animation */}
                     <div className='absolute bottom-full end-2 backgroundLinearAnimation rounded flex items-center justify-center h-[15px]'>
                         <span className='block text-white font-bold text-[10px] px-1'>{t("links.shinytag")}</span>
@@ -56,7 +58,7 @@ export default function SideBar() {
 
                 {/* link with drobdown */}
                 <li className='relative h-full text-center content-center flex gap-4 cursor-pointer' onClick={handleStateOfDropDown}>
-                    <span className={open ? "rotate-90 transition-all ease-in-out duration-300": " transition-all ease-in-out duration-300"}>
+                    <span className={open ? "rotate-90 transition-all ease-in-out duration-300" : " transition-all ease-in-out duration-300"}>
                         <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                     </span>
                     <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.services.name")}</Link>

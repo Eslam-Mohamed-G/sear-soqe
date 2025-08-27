@@ -70,6 +70,21 @@ body {
         var(--color-violetMid);
 }
 
+.sidebarActiveClass{position: relative;}
+.sidebarActiveClass::after{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    right: 0px;
+    height: 4px;
+    border-radius: 0.75rem;
+    background: linear-gradient(to bottom right,
+        var(--color-violetDark),
+        var(--color-violetLight)),
+        var(--color-violetMid);
+}
+
 @keyframes gradientMove {
     from {
         background-position: 100% 100%;

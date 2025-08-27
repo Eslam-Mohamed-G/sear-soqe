@@ -39,11 +39,11 @@ export default function Navbar() {
                             <li className='relative h-full text-center content-center px-5 group flex flex-row items-center'>
                                 <NavLink
                                     to="/buycar"
-                                    className={({ isActive }) =>`flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}
+                                    className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}
                                 >
-                                <div className="w-8 h-8">
-                                    <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
-                                </div>
+                                    <div className="w-8 h-8">
+                                        <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
+                                    </div>
                                     {t("links.buyCar")}
                                 </NavLink>
                                 {/* add the style in app.css file for animation */}
@@ -55,10 +55,10 @@ export default function Navbar() {
                             </li>
 
                             <li className='relative h-full text-center content-center px-5 group flex flex-row items-center gap-2'>
-                                <NavLink to="/seal" className={({ isActive }) =>`flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
-                                <div className="w-8 h-8">
-                                    <img src="./navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
-                                </div>
+                                <NavLink to="/seal" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
+                                    <div className="w-8 h-8">
+                                        <img src="./navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
+                                    </div>
                                     {t("links.seal")}
                                 </NavLink>
                                 <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w- overflow-hidden group-hover:h-[480px] group-hover:z-20 bg-white font-normal customShadow rounded-xl transition-all ease-in-out duration-500">
@@ -69,20 +69,20 @@ export default function Navbar() {
                             </li>
 
                             <li className='relative group h-full text-center content-center px-5 flex flex-row items-center gap-2'>
-                                <NavLink to="/carGuide" className={({ isActive }) =>`flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
-                                <div className="w-7 h-6">
-                                    <img src="./navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
-                                </div>
+                                <NavLink to="/carGuide" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
+                                    <div className="w-7 h-6">
+                                        <img src="./navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
+                                    </div>
                                     {t("links.carGuide")}
                                 </NavLink>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
                             <li className='relative group h-full text-center content-center px-5 flex flex-row items-center gap-2'>
-                                <NavLink to="/carNews" className={({ isActive }) =>`flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
-                                <div className="w-8 h-8">
-                                    <img src="./navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
-                                </div>
+                                <NavLink to="/carNews" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
+                                    <div className="w-8 h-8">
+                                        <img src="./navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
+                                    </div>
                                     {t("links.carNews")}
                                 </NavLink>
                                 {/* blue line */}
@@ -91,7 +91,7 @@ export default function Navbar() {
 
                             {/* link with drobdown */}
                             <li className='relative group h-full text-center content-center px-5'>
-                                <NavLink to="/service" className={({ isActive }) =>`flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
+                                <NavLink to="services" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
                                     {t("links.services.name")}
                                 </NavLink>
                                 <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-44 overflow-hidden group-hover:h-56 group-hover:z-20 bg-white font-normal customShadow rounded-2xl transition-all ease-in-out duration-500">
