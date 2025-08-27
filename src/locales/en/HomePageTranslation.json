@@ -24,5 +24,17 @@
         "suv": "SUV",
         "coupe": "Coupe",
         "pickup": "Pickup"
+    },
+
+    "cities": {
+        "cairo": "Cairo",
+        "mansoura": "Mansoura",
+        "giza": "Giza",
+        "alexandria": "Alexandria",
+        "tanta": "Tanta",
+        "zagazig": "Zagazig",
+        "sharqia": "Sharqia",
+        "damietta": "Damietta",
+        "menoufia": "Menoufia"
     }
 }
