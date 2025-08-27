@@ -7,6 +7,7 @@ import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 export default function BuyCar() {
     return (
         <div className='pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24'>
+            {/* top section for form */}
             <div className="">
                 <h1>خيارات البحث</h1>
                 <form action="" className='grid grid-cols-2 grid-rows-4 md:grid-rows-3 lg:grid-rows-1 md:grid-cols-3 lg:grid-cols-8 border border-gray-300 shadow rounded-2xl px-4 py-2'>
