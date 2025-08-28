@@ -45,7 +45,7 @@ export default function BuyCar() {
                     {/* الوقود */}
                     <div className="relative px-2 flex flex-col items-center justify-center after:absolute after:top-0 after:end-0 after:h-full after:w-0.5 lg:after:bg-gray-300 border-b-2 border-gray-300 lg:border-b-0 py-2">
                         <span className='block text-sm font-bold text-gray-900 dark:text-white'>{t("fuelTypes.name")}</span>
-                        <DropdownInput placeholder={t("fuelTypes.placeholder")} options={fuelTypes} dropdownHeight={"h-32"} dataName={"fuelTypes"} fileTranslate={"buyCarPage"} />
+                        <DropdownInput placeholder={t("fuelTypes.placeholder")} options={fuelTypes} dropdownHeight={"h-40"} dataName={"fuelTypes"} fileTranslate={"buyCarPage"} />
                     </div>
 
                     {/* فلترة */}
