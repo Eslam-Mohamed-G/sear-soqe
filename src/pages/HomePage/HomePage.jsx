@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import bgImg from '../../assets/image.png';
 import avatar from '../../assets/avatar.png'
 import DropdownInput from '../../Component/InputDropDown/InputDropDown';
-import CarBrands from '../../Component/CarBrands/CarBrands';
-import CarShape from '../../Component/CarShape/CarShape';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import ContentOfTabsOfHomePage from '../../Component/ContentOfTabsOfHomePage/ContentOfTabsOfHomePage';
+import { brands, carShapes, cities, fuels, years } from '../../data/HomePage';
 
 export default function HomePage() {
     const { t } = useTranslation("homePage"); // hook للترجمة
     const [activeTab, setActiveTab] = useState("shape");
     return (
-        <div className='flex flex-col gap-10 pt-20 '>
+        <div className='flex flex-col gap-10 pt-20'>
             {/* top section */}
             <div className="px-4 sm:px-8 3xl:px-10 2xl:px-24">
                 <div className="bg-cover bg-center rounded-xl overflow-hidden px-2 md:px-4 py-4" style={{ backgroundImage: `url(${bgImg})` }}>
@@ -34,11 +34,11 @@ export default function HomePage() {
                         <div className="w-full md:w-3/4 h-full rounded-xl border border-gray-200 bg-white px-4 py-3">
                             {/* header */}
                             <div className="text-[10px] sm:text-sm font-bold">
-                                <ul className='flex flex-row flex-wrap justify-between border-b border-gray-200'>
+                                <ul className='flex flex-row flex-wrap justify-between border-b border-gray-200 capitalize'>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "shape" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                         onClick={() => setActiveTab("shape")}
                                     >
-                                        {t(`carShape.name`)}
+                                        {t(`carShapes.name`)}
                                     </li>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "brand" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
                                         onClick={() => setActiveTab("brand")}
@@ -46,153 +46,30 @@ export default function HomePage() {
                                         {t(`brands.name`)}
                                     </li>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "fuel" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
-                                        onClick={() => setActiveTab("fuel")}>الوقود المستخدم</li>
+                                        onClick={() => setActiveTab("fuel")}>{t(`fuels.name`)}</li>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "year" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
-                                        onClick={() => setActiveTab("year")}>السنة</li>
+                                        onClick={() => setActiveTab("year")}>{t(`years.name`)}</li>
                                     <li className={`cursor-pointer px-0.5 md:px-3 py-2 ${activeTab === "city" ? "border-b-2 border-primaryColor font-bold text-primaryColor" : ""}`}
-                                        onClick={() => setActiveTab("city")}>المدينة</li>
+                                        onClick={() => setActiveTab("city")}>{t(`cities.name`)}</li>
                                 </ul>
                             </div>
 
                             {/* content */}
                             <div className="">
                                 {/* محتوي تاب بتاعت شكل السيارة */}
-                                {activeTab === "shape" && <CarShape />}
+                                {activeTab === "shape" && <ContentOfTabsOfHomePage colNumber={2} dataName={"carShapes"} data={carShapes} responsiveImg={false}/>}
 
                                 {/* محتوي التاب بتاعت الماركة */}
-                                {activeTab === "brand" && <CarBrands />}
+                                {activeTab === "brand" && <ContentOfTabsOfHomePage colNumber={4} dataName={"brands"} data={brands} responsiveImg={true}/>}
 
                                 {/* محتوي التاب بتاعت نوع الوقود */}
-                                {activeTab === "fuel" &&
-                                    <div className="grid grid-cols-2 gap-2 mt-4">
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>بنزين</span>
-                                                <img src="./fuel/gasoline.png" alt="gasoline car" />
-                                            </div>
-                                        </div>
-                                        {/* div2 */}
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>هجينة</span>
-                                                <img src="./fuel/hybrid.png" alt="Hybrid car" />
-                                            </div>
-                                        </div>
-                                        {/* div3 */}
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>ديزل</span>
-                                                <img src="./fuel/diesel.png" alt="diesel car" />
-                                            </div>
-                                        </div>
-                                        {/* div4 */}
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>كهربائية</span>
-                                                <img src="./fuel/electic.png" alt="electic car" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                                {/* محتوي التاب بتاعت الماركة */}
-                                {activeTab === "year" &&
-                                    <div className="grid grid-cols-3 gap-4 mt-4">
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>2025</span>
-                                                <img src="./fuel/calendar.png" alt="calendar year" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>2024</span>
-                                                <img src="./fuel/calendar.png" alt="calendar year" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>2023</span>
-                                                <img src="./fuel/calendar.png" alt="calendar year" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>2022</span>
-                                                <img src="./fuel/calendar.png" alt="calendar year" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>2021</span>
-                                                <img src="./fuel/calendar.png" alt="calendar year" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>2020</span>
-                                                <img src="./fuel/calendar.png" alt="calendar year" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                                {activeTab === "city" &&
-                                    <div className="grid grid-cols-3 gap-4 mt-4">
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>القاهرة</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>المنصورة</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>الجيزة</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>الاسكندرية</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>طنطا</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>الزقازيق</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>الشرقية</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>دمياط</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                        <div className="overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500">
-                                            <div className="w-full flex flex-col items-end justify-between text-start px-2 py-2 md:px-4">
-                                                <span className='text-[11px] md:text-sm font-bold w-full'>المنوفية</span>
-                                                <img src="./fuel/skyscraper.png" alt="skyscraper city" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
+                                {activeTab === "fuel" && <ContentOfTabsOfHomePage colNumber={2} dataName={"fuels"} data={fuels} responsiveImg={false}/>}
+                                
+                                {/* محتوي التاب بتاعت السنة */}
+                                {activeTab === "year" && <ContentOfTabsOfHomePage colNumber={3} dataName={"years"} data={years} responsiveImg={false}/>}
+                                
+                                {/* محتوي التاب بتاعت المدينة */}
+                                {activeTab === "city" && <ContentOfTabsOfHomePage colNumber={3} dataName={"cities"} data={cities} responsiveImg={true}/>}
                             </div>
                         </div>
                     </div>

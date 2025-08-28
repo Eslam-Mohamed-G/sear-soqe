@@ -14,19 +14,19 @@ export const brands = [
 ];
 
 export const carShapes = [
-    { key: "sedan", img: "./car shape/sedan.png", alt: "sedan car" },
-    { key: "hatchback", img: "./car shape/hatchback.png", alt: "hatchback car" },
-    { key: "convertible", img: "./car shape/convertible.png", alt: "convertible car" },
-    { key: "suv", img: "./car shape/suv.png", alt: "suv car" },
-    { key: "coupe", img: "./car shape/coupe.png", alt: "coupe car" },
-    { key: "pickup", img: "./car shape/pickup.png", alt: "pickup car" },
+    { key: "sedan", image: "./car shape/sedan.png", alt: "sedan car" },
+    { key: "hatchback", image: "./car shape/hatchback.png", alt: "hatchback car" },
+    { key: "convertible", image: "./car shape/convertible.png", alt: "convertible car" },
+    { key: "suv", image: "./car shape/suv.png", alt: "suv car" },
+    { key: "coupe", image: "./car shape/coupe.png", alt: "coupe car" },
+    { key: "pickup", image: "./car shape/pickup.png", alt: "pickup car" },
 ];
 
 export const fuels = [
-    { key: "gasoline", img: "./fuel/gasoline.png" },
-    { key: "hybrid", img: "./fuel/hybrid.png" },
-    { key: "diesel", img: "./fuel/diesel.png" },
-    { key: "electric", img: "./fuel/electic.png" },
+    { key: "gasoline", image: "./fuel/gasoline.png" },
+    { key: "hybrid", image: "./fuel/hybrid.png" },
+    { key: "diesel", image: "./fuel/diesel.png" },
+    { key: "electric", image: "./fuel/electic.png" },
 ];
 
 export const cities = [
@@ -39,4 +39,13 @@ export const cities = [
     { key: "sharqia", image: "./fuel/skyscraper.png" },
     { key: "damietta", image: "./fuel/skyscraper.png" },
     { key: "menoufia", image: "./fuel/skyscraper.png" },
+];
+
+export const years = [
+    { key: "2025", image: "./fuel/calendar.png" },
+    { key: "2024", image: "./fuel/calendar.png" },
+    { key: "2023", image: "./fuel/calendar.png" },
+    { key: "2022", image: "./fuel/calendar.png" },
+    { key: "2021", image: "./fuel/calendar.png" },
+    { key: "2020", image: "./fuel/calendar.png" }
 ];
