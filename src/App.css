@@ -98,21 +98,17 @@ body {
 /* دعم فايرفوكس */
 * {
     scrollbar-width: thin;
-    /* رفيع */
     scrollbar-color: var(--color-violetLight) #e5e7eb;
-    /* thumb (أزرق) , track (رمادي فاتح) */
 }
 
 /* دعم كروم / إيدج / سفاري */
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-    /* لو عندك scroll أفقي */
 }
 
 ::-webkit-scrollbar-track {
     background: #e5e7eb;
-    /* لون الخلفية */
     border-radius: 9999px;
 }
 

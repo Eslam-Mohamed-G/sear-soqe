@@ -15,7 +15,6 @@
         "suzuki": "Suzuki",
         "bmw": "BMW"
     },
-
     "carShapes": {
         "name": "car shape",
         "sedan": "Sedan",
@@ -46,7 +45,7 @@
         "diesel": "Diesel",
         "electric": "Electric"
     },
-    
+
     "years": {
         "name": "year",
         "2025": "2025",
@@ -55,5 +54,65 @@
         "2022": "2022",
         "2021": "2021",
         "2020": "2020"
+    },
+    
+    "sealsCar": {
+        "name": "car for seals",
+        "brands": {
+            "name": "type",
+            "toyota": "Toyota",
+            "hyundai": "Hyundai",
+            "kia": "Kia",
+            "mercedes": "Mercedes",
+            "bmw": "BMW",
+            "audi": "Audi",
+            "volkswagen": "Volkswagen",
+            "ford": "Ford",
+            "chevrolet": "Chevrolet",
+            "nissan": "Nissan",
+            "renault": "Renault",
+            "peugeot": "Peugeot",
+            "fiat": "Fiat",
+            "honda": "Honda",
+            "mazda": "Mazda",
+            "mitsubishi": "Mitsubishi",
+            "suzuki": "Suzuki",
+            "lexus": "Lexus",
+            "geely": "Geely",
+            "chery": "Chery"
+        },
+        "shapesName": {
+            "name": "shape",
+            "sedan": "Sedan",
+            "hatchback": "Hatchback",
+            "suv": "SUV",
+            "coupe": "Coupe",
+            "convertible": "Convertible",
+            "pickup": "Pick-up",
+            "van": "Van"
+        },
+        "years": {
+            "name": "year",
+            "2025": "2025",
+            "2024": "2024",
+            "2023": "2023",
+            "2022": "2022",
+            "2021": "2021",
+            "2020": "2020"
+        }
+    },
+    "advertisementlocation": {
+        "seal": {
+            "name": "Sell",
+            "sentence": "Add your ad here"
+        },
+        "words": {
+            "name": "Best Prices",
+            "sentence": "Post your ad and start making money"
+        },
+        "buy": {
+            "name": "Buy",
+            "sentence": "Buy now"
+        }
     }
 }

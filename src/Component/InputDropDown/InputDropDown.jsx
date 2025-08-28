@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-export default function DropdownInput({ choose, options, dropdownHeight }) {
+export default function DropdownInput({ placeholder, options, dataName, dropdownHeight }) {
+    const { t } = useTranslation("homePage"); // hook للترجمة
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
     const dropdownRef = useRef(null); // ref للعنصر
-
-    // const options = ["هيونداى", "كيا", "نيسان", "تويتا"];
 
     const handleSelect = (option) => {
         setSelected(option);
@@ -32,7 +32,7 @@ export default function DropdownInput({ choose, options, dropdownHeight }) {
             <input
                 type="text"
                 value={selected}
-                placeholder={choose}
+                placeholder={placeholder}
                 onClick={() => setIsOpen(!isOpen)}
                 onChange={(e) => setSelected(e.target.value)} // كتابة يدويًا
                 className="w-full border border-gray-400 rounded-lg px-2 py-1 cursor-pointer focus:outline-none placeholder:text-sm"
@@ -43,14 +43,14 @@ export default function DropdownInput({ choose, options, dropdownHeight }) {
 
             {/* Dropdown */}
             {isOpen && (
-                <ul className={`absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-y-auto h-${dropdownHeight} custom-scroll`}>
+                <ul className={`absolute w-full bg-white border-gray-200 shadow rounded-lg z-10 overflow-y-auto ${dropdownHeight} custom-scroll`}>
                     {options.map((option, idx) => (
                         <li
                             key={idx}
                             onClick={() => handleSelect(option)}
                             className="hover:bg-gray-100 p-2 cursor-pointer"
                         >
-                            {option}
+                            {t(`sealsCar.${dataName}.${option.key}`)}
                         </li>
                     ))}
                 </ul>

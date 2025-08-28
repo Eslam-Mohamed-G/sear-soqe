@@ -13,6 +13,30 @@ export const brands = [
     { key: "bmw", image: "./car brands/bmw.png" },
 ];
 
+// ماركات السيارت للترجمة
+export const brandName = [
+    { key: "toyota" },
+    { key: "hyundai" },
+    { key: "kia" },
+    { key: "mercedes" },
+    { key: "bmw" },
+    { key: "audi" },
+    { key: "volkswagen" },
+    { key: "ford" },
+    { key: "chevrolet" },
+    { key: "nissan" },
+    { key: "renault" },
+    { key: "peugeot" },
+    { key: "fiat" },
+    { key: "honda" },
+    { key: "mazda" },
+    { key: "mitsubishi" },
+    { key: "suzuki" },
+    { key: "lexus" },
+    { key: "geely" },
+    { key: "chery" },
+];
+
 export const carShapes = [
     { key: "sedan", image: "./car shape/sedan.png", alt: "sedan car" },
     { key: "hatchback", image: "./car shape/hatchback.png", alt: "hatchback car" },
@@ -21,6 +45,16 @@ export const carShapes = [
     { key: "coupe", image: "./car shape/coupe.png", alt: "coupe car" },
     { key: "pickup", image: "./car shape/pickup.png", alt: "pickup car" },
 ];
+
+export const shapesName = [
+    { key: "sedan" },
+    { key: "hatchback" },
+    { key: "suv" },
+    { key: "coupe" },
+    { key: "convertible" },
+    { key: "pickup" },
+    { key: "van" }
+];  
 
 export const fuels = [
     { key: "gasoline", image: "./fuel/gasoline.png" },

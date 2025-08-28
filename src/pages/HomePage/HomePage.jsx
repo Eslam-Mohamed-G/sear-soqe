@@ -5,7 +5,7 @@ import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ContentOfTabsOfHomePage from '../../Component/ContentOfTabsOfHomePage/ContentOfTabsOfHomePage';
-import { brands, carShapes, cities, fuels, years } from '../../data/HomePage';
+import { brandName, brands, carShapes, cities, fuels, shapesName, years } from '../../data/HomePage';
 
 export default function HomePage() {
     const { t } = useTranslation("homePage"); // hook للترجمة
@@ -15,18 +15,17 @@ export default function HomePage() {
             {/* top section */}
             <div className="px-4 sm:px-8 3xl:px-10 2xl:px-24">
                 <div className="bg-cover bg-center rounded-xl overflow-hidden px-2 md:px-4 py-4" style={{ backgroundImage: `url(${bgImg})` }}>
-                    <p className='text-white mb-2 md:mb-4 text-sm md:text-lg'>ابحث عن السيارات المستعملة عبر فئات منتقاه بعناية</p>
+                    <p className='text-white mb-2 md:mb-4 text-sm md:text-lg'>{t('header')}</p>
 
                     <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center md:h-[400px]">
-                        <div className="md:w-1/4 rounded-xl border h-full border-gray-200 bg-white px-2 md:px-4 py-3">
-                            <p className='mb-2 md:mb-4 font-bold'>سيارات للبيع</p>
+                        <div className="md:w-1/4 rounded-xl border h-full border-gray-200 bg-white px-2 md:px-4 py-3 capitalize">
+                            <p className='mb-2 md:mb-4 font-bold'>{t("sealsCar.name")}</p>
                             <form action="" className='flex flex-col gap-2 md:gap-4'>
                                 {/* car model */}
                                 <div className="flex flex-row md:flex-col gap-2 md:gap-4">
-                                    <DropdownInput choose={"النوع"} dropdownHeight={48} options={["تويوتا", "هيونداي", "كيا", "مرسيدس", "بي إم دبليو","أودي", "فولكس فاجن", "فورد", "شيفروليه", "نيسان","رينو", "بيجو", "فيات", "هوندا", "مازدا","ميتسوبيشي", "سوزوكي", "لكزس", "جيلي", "شيري"]}/>
-                                    <DropdownInput choose={"الشكل"} dropdownHeight={48} options={["سيدان", "هاتشباك", "دفع رباعي", "كوبيه", "مكشوفة", "بيك أب", "فان"]}/>
-                                    <DropdownInput choose={"الفئة"} dropdownHeight={48} options={["سيدان", "هاتشباك", "دفع رباعي", "كوبيه", "مكشوفة", "بيك أب", "فان"]}/>
-                                    <DropdownInput choose={"السنة"} dropdownHeight={48} options={[2026, 2025, 2024, 2023, 2022, 2021, 2019, 2018, 2017, 2016, 2015]}/>
+                                    <DropdownInput placeholder={t("sealsCar.brands.name")} dropdownHeight={"h-48"} options={brandName} dataName={"brands"} />
+                                    <DropdownInput placeholder={t("sealsCar.shapesName.name")} dropdownHeight={"h-48"} options={shapesName} dataName={"shapesName"} />
+                                    <DropdownInput placeholder={t("sealsCar.years.name")} dropdownHeight={"h-40"} options={years} dataName={"years"} />
                                 </div>
                                 <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-720">بحث</button>
                             </form>
@@ -57,19 +56,19 @@ export default function HomePage() {
                             {/* content */}
                             <div className="">
                                 {/* محتوي تاب بتاعت شكل السيارة */}
-                                {activeTab === "shape" && <ContentOfTabsOfHomePage colNumber={2} dataName={"carShapes"} data={carShapes} responsiveImg={false}/>}
+                                {activeTab === "shape" && <ContentOfTabsOfHomePage colNumber={2} dataName={"carShapes"} data={carShapes} responsiveImg={false} />}
 
                                 {/* محتوي التاب بتاعت الماركة */}
-                                {activeTab === "brand" && <ContentOfTabsOfHomePage colNumber={4} dataName={"brands"} data={brands} responsiveImg={true}/>}
+                                {activeTab === "brand" && <ContentOfTabsOfHomePage colNumber={4} dataName={"brands"} data={brands} responsiveImg={true} />}
 
                                 {/* محتوي التاب بتاعت نوع الوقود */}
-                                {activeTab === "fuel" && <ContentOfTabsOfHomePage colNumber={2} dataName={"fuels"} data={fuels} responsiveImg={false}/>}
-                                
+                                {activeTab === "fuel" && <ContentOfTabsOfHomePage colNumber={2} dataName={"fuels"} data={fuels} responsiveImg={false} />}
+
                                 {/* محتوي التاب بتاعت السنة */}
-                                {activeTab === "year" && <ContentOfTabsOfHomePage colNumber={3} dataName={"years"} data={years} responsiveImg={false}/>}
-                                
+                                {activeTab === "year" && <ContentOfTabsOfHomePage colNumber={3} dataName={"years"} data={years} responsiveImg={false} />}
+
                                 {/* محتوي التاب بتاعت المدينة */}
-                                {activeTab === "city" && <ContentOfTabsOfHomePage colNumber={3} dataName={"cities"} data={cities} responsiveImg={true}/>}
+                                {activeTab === "city" && <ContentOfTabsOfHomePage colNumber={3} dataName={"cities"} data={cities} responsiveImg={true} />}
                             </div>
                         </div>
                     </div>
@@ -80,29 +79,29 @@ export default function HomePage() {
             <div className="bg-[#F4F4F4] w-full py-8 relative grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-items-center">
                 {/* بيع */}
                 <div className="flex flex-col justify-center items-center gap-4 order-2 md:order-1">
-                    <h1 className="font-extrabold text-2xl">بيع</h1>
+                    <h1 className="font-extrabold text-2xl">{t("advertisementlocation.seal.name")}</h1>
                     <div className="w-44">
                         <img src={avatar} alt="group logo sear el soqe" className='w-full object-center' />
                     </div>
                     <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
-                        أضف اعلانك هنا
+                        {t("advertisementlocation.seal.sentence")}
                     </div>
                 </div>
 
                 {/* النص في النص */}
                 <div className="text-center bg-white rounded-2xl px-12 py-8 order-1 md:order-2">
-                    <h1 className="font-extrabold text-3xl mb-4">أفضل الأسعار</h1>
-                    <p>أضف إعلانك وابدأ في كسب المال</p>
+                    <h1 className="font-extrabold text-3xl mb-4">{t("advertisementlocation.words.name")}</h1>
+                    <p>{t("advertisementlocation.words.sentence")}</p>
                 </div>
 
                 {/* اشتري */}
                 <div className="flex flex-col justify-center items-center gap-4 order-3 md:order-3">
-                    <h1 className="font-extrabold text-2xl">اشتري</h1>
+                    <h1 className="font-extrabold text-2xl">{t("advertisementlocation.buy.name")}</h1>
                     <div className="w-44">
                         <img src={avatar} alt="group logo sear el soqe" className='w-full object-center' />
                     </div>
                     <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
-                        اشتري الأن
+                        {t("advertisementlocation.buy.sentence")}
                     </div>
                 </div>
             </div>
