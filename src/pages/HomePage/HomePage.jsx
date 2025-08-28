@@ -27,7 +27,7 @@ export default function HomePage() {
                                     <DropdownInput placeholder={t("sealsCar.shapesName.name")} dropdownHeight={"h-48"} options={shapesName} dataName={"shapesName"} />
                                     <DropdownInput placeholder={t("sealsCar.years.name")} dropdownHeight={"h-40"} options={years} dataName={"years"} />
                                 </div>
-                                <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-720">بحث</button>
+                                <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-720">{t("sealsCar.button")}</button>
                             </form>
                         </div>
                         <div className="w-full md:w-3/4 h-full rounded-xl border border-gray-200 bg-white px-4 py-3">
