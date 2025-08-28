@@ -4,7 +4,7 @@ import PriceDropdown from '../../Component/PriceDropdown/PriceDropdown';
 import OtherSearchOption from '../../Component/otherSearchOption/otherSearchOption';
 import DropdownInput from '../../Component/InputDropDown/InputDropDown';
 import { useTranslation } from 'react-i18next';
-import { brandName, carConditions, carTypes, fuelTypes } from '../../data/HomePage';
+import { brandName, carConditions, carTypes, fuelTypes } from '../../data/BuyCarData';
 
 export default function BuyCar() {
     const { t } = useTranslation("buyCarPage"); // hook للترجمة

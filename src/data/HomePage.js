@@ -83,27 +83,3 @@ export const years = [
     { key: "2021", image: "./fuel/calendar.png" },
     { key: "2020", image: "./fuel/calendar.png" }
 ];
-
-
-export const carConditions = [
-    { key: "new" },
-    { key: "used" },
-    { key: "certified"},
-];
-
-export const carTypes = [
-    { key: "sedan" },
-    { key: "hatchback" },
-    { key: "suv" },
-    { key: "coupe" },
-    { key: "convertible" },
-    { key: "pickup" },
-    { key: "van" }
-];
-
-export const fuelTypes = [
-    { key: "petrol" },
-    { key: "diesel" },
-    { key: "hybrid" },
-    { key: "electric" }
-];
