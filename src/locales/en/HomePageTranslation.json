@@ -13,7 +13,18 @@
         "peugeot": "Peugeot",
         "mg": "MG",
         "suzuki": "Suzuki",
-        "bmw": "BMW"
+        "bmw": "BMW",
+        "mercedes": "Mercedes",
+        "audi": "Audi",
+        "volkswagen": "Volkswagen",
+        "ford": "Ford",
+        "renault": "Renault",
+        "honda": "Honda",
+        "mazda": "Mazda",
+        "mitsubishi": "Mitsubishi",
+        "lexus": "Lexus",
+        "geely": "Geely",
+        "chery": "Chery"
     },
     "carShapes": {
         "name": "car shape",

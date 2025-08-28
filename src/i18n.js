@@ -4,6 +4,8 @@ import enHomePage from "./locales/en/HomePageTranslation.json";
 import enNavbar from "./locales/en/navbarTranslation.json";
 import arNavbar from "./locales/ar/navbarTranslation.json";
 import arHomePage from "./locales/ar/HomePageTranslation.json";
+import arBuyCar from "./locales/ar/BuyCarPageTranslation.json";
+import enBuyCar from "./locales/en/BuyCarPageTranslation.json";
 
 const saved = typeof window !== "undefined" ? localStorage.getItem("lang") : null;
 const browser = typeof navigator !== "undefined" ? navigator.language : "en";
@@ -13,12 +15,12 @@ i18n
     .use(initReactI18next)
     .init({
         resources: {
-            en: { navbar: enNavbar, homePage: enHomePage },
-            ar: { navbar: arNavbar, homePage: arHomePage },
+            en: { navbar: enNavbar, homePage: enHomePage, buyCarPage: enBuyCar },
+            ar: { navbar: arNavbar, homePage: arHomePage, buyCarPage: arBuyCar },
         },
         lng: fallback, // أول قيمة يعتمد عليها
         fallbackLng: "en",
-        ns: ["navbar", "homePage"],
+        ns: ["navbar", "homePage", "buyCarPage"],
         defaultNS: "navbar",
         interpolation: { escapeValue: false },
     });

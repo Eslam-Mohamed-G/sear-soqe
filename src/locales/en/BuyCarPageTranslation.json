@@ -1,0 +1,55 @@
+{
+    "carConditions": {
+        "name": "car Condition",
+        "placeholder": "condition",
+        "new": "new",
+        "used": "used",
+        "certified": "certified"
+    },
+    "popularBrands": {
+        "name": "popular Brands",
+        "placeholder": "brand",
+        "hyundai": "Hyundai",
+        "toyota": "Toyota",
+        "chevrolet": "Chevrolet",
+        "kia": "Kia",
+        "nissan": "Nissan",
+        "fiat": "Fiat",
+        "daewoo": "Daewoo",
+        "skoda": "Skoda",
+        "peugeot": "Peugeot",
+        "mg": "MG",
+        "suzuki": "Suzuki",
+        "bmw": "BMW",
+        "mercedes": "Mercedes",
+        "audi": "Audi",
+        "volkswagen": "Volkswagen",
+        "ford": "Ford",
+        "renault": "Renault",
+        "honda": "Honda",
+        "mazda": "Mazda",
+        "mitsubishi": "Mitsubishi",
+        "lexus": "Lexus",
+        "geely": "Geely",
+        "chery": "Chery"
+    },
+    "carTypes": {
+        "name": "Car Type",
+        "placeholder": "type",
+        "sedan": "Sedan",
+        "hatchback": "Hatchback",
+        "suv": "SUV",
+        "coupe": "Coupe",
+        "convertible": "Convertible",
+        "pickup": "Pickup",
+        "van": "Van"
+    },
+    "fuelTypes": {
+        "name": "Fuel Type",
+        "placeholder": "fuel",
+        "petrol": "Petrol",
+        "diesel": "Diesel",
+        "hybrid": "Hybrid",
+        "electric": "Electric"
+    }
+}

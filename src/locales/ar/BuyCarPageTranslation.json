@@ -1,0 +1,55 @@
+{
+    "carConditions": {
+        "name": "حالة السيارة",
+        "placeholder": "اختار حالة",
+        "new":"جديدة",
+        "used":"مستعملة",
+        "certified":"معتمدة"
+    },
+    "popularBrands": {
+        "name": "انواع مشهورة",
+        "placeholder": "اختار نوع",
+        "hyundai": "هيونداي",
+        "toyota": "تويوتا",
+        "chevrolet": "شفروليه",
+        "kia": "كيا",
+        "nissan": "نيسان",
+        "fiat": "فيات",
+        "daewoo": "دايو",
+        "skoda": "سكودا",
+        "peugeot": "بيجو",
+        "mg": "إم جي",
+        "suzuki": "سوزوكي",
+        "bmw": "بي إم دبليو",
+        "mercedes": "مرسيدس",
+        "audi": "أودي",
+        "volkswagen": "فولكس فاجن",
+        "ford": "فورد",
+        "renault": "رينو",
+        "honda": "هوندا",
+        "mazda": "مازدا",
+        "mitsubishi": "ميتسوبيشي",
+        "lexus": "لكزس",
+        "geely": "جيلي",
+        "chery": "شيري"
+    },
+    "carTypes": {
+        "name": "نوع السيارة",
+        "placeholder": "اختار شكل",
+        "sedan": "سيدان",
+        "hatchback": "هاتشباك",
+        "suv": "دفع رباعي",
+        "coupe": "كوبيه",
+        "convertible": "مكشوفة",
+        "pickup": "بيك أب",
+        "van": "فان"
+    },
+    "fuelTypes": {
+        "name": "نوع الوقود",
+        "placeholder": "اختار الوقود",
+        "petrol": "بنزين",
+        "diesel": "ديزل",
+        "hybrid": "هجينة",
+        "electric": "كهربائية"
+    }
+}

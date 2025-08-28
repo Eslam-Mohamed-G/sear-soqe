@@ -23,9 +23,9 @@ export default function HomePage() {
                             <form action="" className='flex flex-col gap-2 md:gap-4'>
                                 {/* car model */}
                                 <div className="flex flex-row md:flex-col gap-2 md:gap-4">
-                                    <DropdownInput placeholder={t("sealsCar.brands.name")} dropdownHeight={"h-48"} options={brandName} dataName={"brands"} />
-                                    <DropdownInput placeholder={t("sealsCar.shapesName.name")} dropdownHeight={"h-48"} options={shapesName} dataName={"shapesName"} />
-                                    <DropdownInput placeholder={t("sealsCar.years.name")} dropdownHeight={"h-40"} options={years} dataName={"years"} />
+                                    <DropdownInput placeholder={t("sealsCar.brands.name")} dropdownHeight={"h-48"} options={brandName} dataName={"brands"} fileTranslate={"homePage"} />
+                                    <DropdownInput placeholder={t("sealsCar.shapesName.name")} dropdownHeight={"h-48"} options={shapesName} dataName={"sealsCar.shapesName"} fileTranslate={"homePage"} />
+                                    <DropdownInput placeholder={t("sealsCar.years.name")} dropdownHeight={"h-40"} options={years} dataName={"years"} fileTranslate={"homePage"} />
                                 </div>
                                 <button type="submit" className="text-white bg-backgroundLinear cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-720">{t("sealsCar.button")}</button>
                             </form>

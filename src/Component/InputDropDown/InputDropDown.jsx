@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function DropdownInput({ placeholder, options, dataName, dropdownHeight }) {
-    const { t } = useTranslation("homePage"); // hook للترجمة
+export default function DropdownInput({ placeholder, options, dataName, dropdownHeight, fileTranslate }) {
+    const { t } = useTranslation(`${fileTranslate}`); // hook للترجمة
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("");
     const dropdownRef = useRef(null); // ref للعنصر
@@ -47,10 +47,10 @@ export default function DropdownInput({ placeholder, options, dataName, dropdown
                     {options.map((option, idx) => (
                         <li
                             key={idx}
-                            onClick={() => handleSelect(option)}
+                            onClick={() => handleSelect(t(`${dataName}.${option.key}`))}
                             className="hover:bg-gray-100 p-2 cursor-pointer"
                         >
-                            {t(`sealsCar.${dataName}.${option.key}`)}
+                            {t(`${dataName}.${option.key}`)}
                         </li>
                     ))}
                 </ul>
