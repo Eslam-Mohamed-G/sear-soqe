@@ -61,9 +61,6 @@ export default function Navbar() {
                                     </div>
                                     {t("links.seal")}
                                 </NavLink>
-                                <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w- overflow-hidden group-hover:h-[480px] group-hover:z-20 bg-white font-normal customShadow rounded-xl transition-all ease-in-out duration-500">
-                                    <NewLinkDrobDown />
-                                </div>
                                 {/* blue line */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                             </li>
