@@ -34,7 +34,7 @@ export default function SideBar() {
                     <div className="w-7 h-7">
                         <img src="./navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
                     </div>
-                    <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.seal")}</Link>
+                    <NavLink to="/sealcar" className='flex h-full w-full text-center items-center'>{t("links.seal")}</NavLink>
                     {/* blue line */}
                     <div className="h-1 absolute -bottom-1 start-1 end-1 bg-backgroundLinear rounded-2xl hidden group-hover:block transition-all ease-in-out duration-500" />
                 </li>
