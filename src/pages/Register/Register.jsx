@@ -30,9 +30,23 @@ export default function Register() {
             terms: false,
         },
         validationSchema: validator,
-        onSubmit: (values, { resetForm }) => {
-            console.log(values);
-            resetForm();
+        // onSubmit: (values, { resetForm }) => {
+        //     console.log(values);
+        //     resetForm();
+        // }
+        onSubmit: async (values, { resetForm }) => {
+            try {
+                const res = await fetch("https://www.sand.alrmoz.com/api/user/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(values),
+                });
+                const data = await res.json();
+                console.log("✅ Registered:", data);
+                resetForm();
+            } catch (err) {
+                console.error("❌ Error:", err);
+            }
         }
     })
 
