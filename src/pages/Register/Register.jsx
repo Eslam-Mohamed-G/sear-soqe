@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 export default function Register() {
     const { t } = useTranslation("authentication");
+    // حالة (state) للتحكم في إظهار أو إخفاء كلمة المرور
     const [showPassword, setShowPassword] = useState(false);
+    // دالة لتغيير حالة إظهار كلمة المرور عند الضغط على الأيقونة
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
