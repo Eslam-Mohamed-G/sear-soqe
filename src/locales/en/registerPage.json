@@ -1,0 +1,11 @@
+{
+    "form": {
+        "name": "Name",
+        "email": "Email address",
+        "password": "Password",
+        "phone": "Phone number (010xxxxxxxx)",
+        "termsText": "I agree with the",
+        "termsLink": "terms and conditions",
+        "submit": "Register"
+    }
+}
