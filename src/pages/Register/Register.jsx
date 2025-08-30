@@ -53,11 +53,11 @@ export default function Register() {
     const inputGray = "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
     const inputError = "block py-2.5 px-0 w-full text-sm text-red-500 bg-transparent border-0 border-b-2 border-red-500 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer";
     return (
-        <div className="pt-28 px-4 sm:px-8 3xl:px-10 2xl:px-24">
-            <form className="max-w-md mx-auto rounded-lg p-4 customShadow" onSubmit={formik.handleSubmit}>
+        <div className="pt-24 px-4 sm:px-8 3xl:px-10 2xl:px-24">
+            <form className="max-w-md mx-auto rounded-lg p-4 flex flex-col gap-10 customShadow" onSubmit={formik.handleSubmit}>
                 <h1 className='text-center font-bold text-lg'>{t("registerForm.formName")}</h1>
                 {/* name */}
-                <div className="relative z-0 w-full mb-5">
+                <div className="relative z-0 w-full">
                     <input
                         type="text"
                         name="name"
@@ -73,7 +73,7 @@ export default function Register() {
                 </div>
 
                 {/* email */}
-                <div className="relative z-0 w-full mb-5 group">
+                <div className="relative z-0 w-full group">
                     <input
                         type="email"
                         name="email"
@@ -89,7 +89,7 @@ export default function Register() {
                 </div>
 
                 {/* password */}
-                <div className="relative z-0 w-full mb-5 group">
+                <div className="relative z-0 w-full group">
                     <input
                         type={showPassword ? 'text' : "password"}
                         name="password"
@@ -114,7 +114,7 @@ export default function Register() {
                     {formik.errors.password && formik.touched.password && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.password}</p>}
                 </div>
                 {/* number */}
-                <div className="relative z-0 w-full mb-5 group">
+                <div className="relative z-0 w-full group">
                     <input
                         type="tel"
                         pattern="[0-9]{11}"
@@ -129,7 +129,7 @@ export default function Register() {
                     {formik.errors.phone && formik.touched.phone && (<p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.phone}</p>)}
                 </div>
                 {/* terms */}
-                <div className="flex items-start mb-5 relative">
+                <div className="flex items-start relative">
                     <div className="flex items-center h-5">
                         <input
                             id="terms"
