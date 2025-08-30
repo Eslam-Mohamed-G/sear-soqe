@@ -1,5 +1,6 @@
 {
-    "form": {
+    "registerForm": {
+        "formName": "Create an account",
         "name": "Name",
         "email": "Email address",
         "password": "Password",

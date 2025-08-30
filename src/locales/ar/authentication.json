@@ -1,5 +1,6 @@
 {
-    "form": {
+    "registerForm": {
+        "formName": "انشئ حساب",
         "name": "الاسم",
         "email": "البريد الإلكتروني",
         "password": "كلمة المرور",
