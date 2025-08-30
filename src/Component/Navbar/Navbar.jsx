@@ -4,7 +4,7 @@ import CountryDrobDown from './CountryDrobDown/CountryDrobDown'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from 'react-router-dom';
-import NewLinkDrobDown from '../NewLinkDrobDown/NewLinkDrobDown'
+// import NewLinkDrobDown from '../NewLinkDrobDown/NewLinkDrobDown'
 import SideBar from '../SideBar/SideBar';
 
 export default function Navbar() {
@@ -106,6 +106,9 @@ export default function Navbar() {
                         </ul>
                         {/* car sale button */}
                         <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='/sealcar' className='text-white'>{t('buttonSales')}</Link></div>
+                        <Link to="/register">
+                            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx={12} cy={10} r={4} /><circle cx={12} cy={12} r={10} /></svg>
+                        </Link>
                     </div>
                     {/* button for handle nav */}
                     <div className="cursor-pointer block lg:hidden" onClick={handleStateOfSideBar}>

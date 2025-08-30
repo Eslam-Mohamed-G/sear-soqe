@@ -5,12 +5,14 @@ import Layout from './Layout/Layout';
 import HomePage from './pages/HomePage/HomePage'
 import BuyCar from './pages/BuyCar/BuyCar';
 import SealCar from './pages/SealCar/SealCar';
+import Register from './pages/Register/Register';
 
 const routes = createBrowserRouter([
   {path:"", element: <Layout/>, children:[
     { index: true, element: <HomePage/> },
     { path: 'buycar', element: <BuyCar/>},
-    { path: 'sealcar', element: <SealCar/>}
+    { path: 'sealcar', element: <SealCar/>},
+    { path: 'register', element: <Register/>},
   ]}
 ])
 
