@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/HomePage'
 import BuyCar from './pages/BuyCar/BuyCar';
 import SealCar from './pages/SealCar/SealCar';
 import Register from './pages/Register/Register';
+import Login from './pages/Login/Login';
 
 const routes = createBrowserRouter([
   {path:"", element: <Layout/>, children:[
@@ -13,6 +14,7 @@ const routes = createBrowserRouter([
     { path: 'buycar', element: <BuyCar/>},
     { path: 'sealcar', element: <SealCar/>},
     { path: 'register', element: <Register/>},
+    { path: 'login', element: <Login/>},
   ]}
 ])
 
