@@ -14,11 +14,11 @@ export default function Register() {
 
     // هنا بنستخدم Yup Validation Schema لتعريف قواعد التحقق من بيانات الفورم 
     const validator = Yup.object().shape({
-        name: Yup.string().required("الاسم مطلوب").min(3, "الاسم لازم يكون 3 حروف على الأقل"),
-        email: Yup.string().email("البريد غير صالح").required("البريد مطلوب"),
-        password: Yup.string().required("كلمة المرور مطلوبة").min(6, "كلمة المرور لازم تكون 6 أحرف على الأقل"),
-        phone: Yup.string().matches(/^01[0-9]{9}$/, "رقم الهاتف غير صحيح").required("رقم الهاتف مطلوب"),
-        terms: Yup.bool().oneOf([true], "يجب الموافقة على الشروط")
+        name: Yup.string().required(t("validator.requiredName")).min(3, t("validator.minName")),
+        email: Yup.string().email(t("validator.invalidEmail")).required(t("validator.requiredEmail")),
+        password: Yup.string().required(t("validator.requiredPassword")).min(6, t("validator.minPassword")),
+        phone: Yup.string().matches(/^01[0-9]{9}$/, t("validator.invalidPhone")).required(t("validator.requiredPhone")),
+        terms: Yup.bool().oneOf([true], t("validator.acceptTerms"))
     });
     // إعداد formik لإدارة حالة النموذج (القيم والإرسال)
     const formik = useFormik({

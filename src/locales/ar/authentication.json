@@ -8,5 +8,16 @@
         "termsText": "أوافق على",
         "termsLink": "الشروط والأحكام",
         "submit": "تسجيل"
+    },
+    "validator": {
+        "requiredName": "الاسم مطلوب",
+        "minName": "الاسم لازم يكون 3 حروف على الأقل",
+        "requiredEmail": "البريد مطلوب",
+        "invalidEmail": "البريد غير صالح",
+        "requiredPassword": "كلمة المرور مطلوبة",
+        "minPassword": "كلمة المرور لازم تكون 6 أحرف على الأقل",
+        "requiredPhone": "رقم الهاتف مطلوب",
+        "invalidPhone": "رقم الهاتف غير صحيح",
+        "acceptTerms": "يجب الموافقة على الشروط"
     }
 }
