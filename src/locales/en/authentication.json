@@ -19,5 +19,12 @@
         "requiredPhone": "Phone number is required",
         "invalidPhone": "Invalid phone number",
         "acceptTerms": "You must accept the terms"
+    },
+    "loginForm": {
+        "formName": "Login",
+        "name": "Name",
+        "email": "Email address",
+        "password": "Password",
+        "submit": "Login"
     }
 }

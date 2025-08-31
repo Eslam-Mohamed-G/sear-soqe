@@ -51,7 +51,7 @@ export default function Login() {
     return (
         <div className="pt-24 px-4 sm:px-8 3xl:px-10 2xl:px-24">
             <form className="max-w-md mx-auto rounded-lg p-4 flex flex-col gap-10 customShadow" onSubmit={formik.handleSubmit}>
-                <h1 className='text-center font-bold text-lg'>{t("registerForm.formName")}</h1>
+                <h1 className='text-center font-bold text-lg'>{t("loginForm.formName")}</h1>
                 {/* name */}
                 <div className="relative z-0 w-full">
                     <input
@@ -64,7 +64,7 @@ export default function Login() {
                         className={formik.errors.name && formik.touched.name ? inputError : inputGray}
                         placeholder=""
                     />
-                    <label htmlFor="name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("registerForm.name")}</label>
+                    <label htmlFor="name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("loginForm.name")}</label>
                     {formik.errors.name && formik.touched.name && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.name}</p>}
                 </div>
 
@@ -80,7 +80,7 @@ export default function Login() {
                         className={formik.errors.email && formik.touched.email ? inputError : inputGray}
                         placeholder=" "
                     />
-                    <label htmlFor="email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("registerForm.email")}</label>
+                    <label htmlFor="email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("loginForm.email")}</label>
                     {formik.errors.email && formik.touched.email && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.email}</p>}
                 </div>
 
@@ -96,7 +96,7 @@ export default function Login() {
                         className={formik.errors.password && formik.touched.password ? inputError : inputGray}
                         placeholder=" "
                     />
-                    <label htmlFor="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("registerForm.password")}</label>
+                    <label htmlFor="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("loginForm.password")}</label>
                     <div className='absolute top-2 end-0 cursor-pointer' onClick={togglePasswordVisibility}>
                         {showPassword ?
                             <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="size-5 text-gray-500">
@@ -110,7 +110,7 @@ export default function Login() {
                     {formik.errors.password && formik.touched.password && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.password}</p>}
                 </div>
 
-                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{t("registerForm.submit")}</button>
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{t("loginForm.submit")}</button>
             </form>
         </div>
     )

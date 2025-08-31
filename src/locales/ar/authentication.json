@@ -19,5 +19,12 @@
         "requiredPhone": "رقم الهاتف مطلوب",
         "invalidPhone": "رقم الهاتف غير صحيح",
         "acceptTerms": "يجب الموافقة على الشروط"
+    },
+    "loginForm": {
+        "formName": "تسجيل دخول",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "submit": "دخول"
     }
 }
