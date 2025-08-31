@@ -42,5 +42,9 @@
         },
         "shinytag": "جديد"
     },
-    "buttonSales": "بيع سيارتك"
+    "buttonSales": "بيع سيارتك",
+    "authentication": {
+        "register": "تسجيل",
+        "login": "دخول"
+    }
 }
