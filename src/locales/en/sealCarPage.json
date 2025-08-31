@@ -1,0 +1,143 @@
+{
+    "chooseBrand" : "choose Brand",
+    "brands": [
+    {
+        "brand": "Nissan",
+        "models": [
+            { "name": "Sunny", "versions": ["Baseline Manual", "SV", "SL", "Plus AT", "Premium"] },
+            { "name": "Altima", "versions": ["S", "SV", "SL", "VC-Turbo", "Platinum"] },
+            { "name": "X-Trail", "versions": ["S", "SV", "SL", "Platinum", "Hybrid"] },
+            { "name": "Patrol", "versions": ["XE", "SE", "LE", "Nismo", "Platinum City"] },
+            { "name": "Qashqai (e-Power)", "versions": ["Base", "SV", "SL", "Hybrid", "Platinum"] }
+        ]
+    },
+    {
+        "brand": "Hyundai",
+        "models": [
+            { "name": "Accent", "versions": ["Base", "GLS", "Sport", "Premium", "RB"] },
+            { "name": "Elantra", "versions": ["Smart", "GLS", "Premium", "HD", "CN7"] },
+            { "name": "Tucson", "versions": ["Standard", "Premium", "Hybrid", "N Line", "AWD"] },
+            { "name": "Sonata", "versions": ["Standard", "GLS", "Hybrid", "N Line", "Luxury"] },
+            { "name": "Ioniq 5", "versions": ["Standard Range", "Long Range", "N-Line", "Signature", "Limited"] }
+        ]
+    },
+    {
+        "brand": "Toyota",
+        "models": [
+            { "name": "Corolla", "versions": ["L", "LE", "SE", "Cross", "Hybrid"] },
+            { "name": "Yaris", "versions": ["Base", "Sport", "Premium", "Sedan", "GR"] },
+            { "name": "Fortuner", "versions": ["Smart 4×2", "Elegance 4×4", "Sport", "Legender", "SR5"] },
+            { "name": "Camry Hybrid", "versions": ["LE", "SE", "XLE", "XSE", "Hybrid"] },
+            { "name": "Hilux", "versions": ["GX", "GXR", "VXR", "Adventure", "Legender"] }
+        ]
+    },
+    {
+        "brand": "Chery",
+        "models": [
+            { "name": "Tiggo 4 Pro", "versions": ["Base", "Comfort", "Luxury", "Turbo", "Sport"] },
+            { "name": "Arrizo 5", "versions": ["Baseline", "Highline", "Luxury", "Pro", "Turbo"] },
+            { "name": "Tiggo 7", "versions": ["Standard", "Pro", "Pro Max", "Super Hybrid", "Luxury"] },
+            { "name": "Tiggo 8", "versions": ["Standard", "Pro", "Luxury", "PHEV", "Platinum"] },
+            { "name": "Tiggo 3", "versions": ["Standard", "Comfort", "Luxury", "Sport", "Pro"] }
+        ]
+    },
+    {
+        "brand": "Chevrolet",
+        "models": [
+            { "name": "T-Series (Pickups)", "versions": ["Base", "LS", "LT", "RST", "High Country"] },
+            { "name": "Optra", "versions": ["L", "LS", "LT", "LT Premium", "Sport"] },
+            { "name": "Captiva", "versions": ["LS", "LT", "LTZ", "Sport", "Premier"] },
+            { "name": "Malibu", "versions": ["LS", "LT", "Premier", "Hybrid", "Redline"] },
+            { "name": "Spark", "versions": ["LS", "LT", "Premier", "Activ", "Redline"] }
+        ]
+    },
+    {
+        "brand": "MG",
+        "models": [
+            { "name": "ZS", "versions": ["Base", "Comfort", "Luxury", "EV", "Sport"] },
+            { "name": "RX5", "versions": ["Base", "Comfort", "Luxury", "Plug-in Hybrid", "Sport"] },
+            { "name": "5 Sedan", "versions": ["Standard", "Luxury", "EV", "Sport", "Platinum"] },
+            { "name": "Cyberster", "versions": ["Base", "Sport", "EV", "Luxury", "Limited"] },
+            { "name": "HS", "versions": ["Base", "Comfort", "Luxury", "Plug-in Hybrid", "Performance"] }
+        ]
+    },
+    {
+        "brand": "Kia",
+        "models": [
+            { "name": "Sportage", "versions": ["LX", "EX", "GT Line", "Hybrid", "Platinum"] },
+            { "name": "Cerato", "versions": ["LX", "EX", "Sport", "Premium", "Turbo"] },
+            { "name": "Pegas", "versions": ["Standard", "Comfort", "Premium", "Sport", "Turbo"] },
+            { "name": "Seltos", "versions": ["LX", "EX", "GT Line", "GT", "Platinum"] },
+            { "name": "K5", "versions": ["Standard", "GT", "Hybrid", "Luxury", "Sport"] }
+        ]
+    },
+    {
+        "brand": "MG (Electric/EV Focus)", "models": [
+            { "name": "ZS EV", "versions": ["Standard", "Long Range", "Comfort", "Luxury", "Sport"] },
+            { "name": "MG 5 EV", "versions": ["Standard", "Long Range", "Comfort", "Luxury", "Sport"] },
+            { "name": "Xpeng G6", "versions": ["Standard", "Long Range", "Performance", "Luxury", "Limited"] },
+            { "name": "Tesla Model 3", "versions": ["Standard Range", "Long Range", "Performance", "RWD", "AWD"] },
+            { "name": "Kia EV9", "versions": ["Standard", "Long Range", "EX", "GT", "Platinum"] }
+        ]
+    },
+    {
+        "brand": "BYD",
+        "models": [
+            { "name": "F3", "versions": ["Standard", "Comfort", "Luxury", "Turbo", "Sport"] },
+            { "name": "Dolphin EV", "versions": ["Standard", "Long Range", "Comfort", "Luxury", "Sport"] },
+            { "name": "Atto 3", "versions": ["Standard", "Long Range", "Performance", "Luxury", "Sport"] },
+            { "name": "e6 EV", "versions": ["Standard", "Long Range", "Comfort", "Luxury", "Fleet"] },
+            { "name": "Seal EV", "versions": ["Standard", "Long Range", "Performance", "Luxury", "GT"] }
+        ]
+    },
+    {
+        "brand": "Geely",
+        "models": [
+            { "name": "Emgrand", "versions": ["Standard", "Comfort", "Luxury", "Turbo", "Sport"] },
+            { "name": "Coolray", "versions": ["Standard", "Comfort", "Luxury", "Turbo", "Performance"] },
+            { "name": "Imperial", "versions": ["Standard", "Comfort", "Luxury", "Executive", "Platinum"] },
+            { "name": "GX3 Pro", "versions": ["Standard", "Comfort", "Luxury", "Turbo", "Sport"] },
+            { "name": "Azkarra", "versions": ["Standard", "Comfort", "Luxury", "Hybrid", "Electric"] }
+        ]
+    },
+    {
+        "brand": "Renault",
+        "models": [
+            { "name": "Logan", "versions": ["Standard", "Comfort", "Luxury", "Turbo", "Sport"] },
+            { "name": "Symbol", "versions": ["Standard", "Comfort", "Luxury", "Turbo", "Sport"] },
+            { "name": "Megane", "versions": ["Base", "GT Line", "Luxury", "Turbo", "Sport"] },
+            { "name": "Austral", "versions": ["Standard", "E-Tech Hybrid", "GT Line", "Luxury", "Iconic"] },
+            { "name": "Koleos", "versions": ["Standard", "Comfort", "Luxury", "2.5L", "Hybrid"] }
+        ]
+    },
+    {
+        "brand": "Honda",
+        "models": [
+            { "name": "Civic", "versions": ["1.6L LX", "1.6L Sport", "1.8L EX", "2.0L Turbo", "Type R"] },
+            { "name": "Accord", "versions": ["1.5L Turbo", "2.0L Turbo", "2.0L Hybrid", "EX-L", "Touring"] },
+            { "name": "CR-V", "versions": ["2.0L Base", "2.0L AWD", "2.4L Sport", "2.5L Hybrid", "Black Edition"] },
+            { "name": "HR-V", "versions": ["1.5L LX", "1.5L Sport", "1.8L EX", "1.8L Touring", "Hybrid"] },
+            { "name": "Pilot", "versions": ["3.5L LX", "3.5L EX", "3.5L Touring", "Black Edition", "Elite"] }
+        ]
+    },
+    {
+        "brand": "BMW",
+        "models": [
+            { "name": "3 Series", "versions": ["318i", "320i", "330i", "M340i", "M3 Competition"] },
+            { "name": "5 Series", "versions": ["520i", "530i", "540i", "M550i", "M5"] },
+            { "name": "7 Series", "versions": ["730i", "740i", "750i", "M760Li", "Hybrid 745e"] },
+            { "name": "X3", "versions": ["xDrive20i", "xDrive30i", "xDrive30d", "M40i", "X3M"] },
+            { "name": "X5", "versions": ["xDrive40i", "xDrive45e Hybrid", "M50i", "X5M", "X5 Black Vermilion"] }
+        ]
+    },
+    {
+        "brand": "Mercedes-Benz",
+        "models": [
+            { "name": "A-Class", "versions": ["A180", "A200", "A250", "A35 AMG", "A45 AMG"] },
+            { "name": "C-Class", "versions": ["C180", "C200", "C300", "C43 AMG", "C63 AMG"] },
+            { "name": "E-Class", "versions": ["E200", "E300", "E350", "E53 AMG", "E63 AMG"] },
+            { "name": "S-Class", "versions": ["S350", "S450", "S500", "S580", "Maybach S680"] },
+        { "name": "GLC", "versions": ["GLC200", "GLC300", "GLC350e Hybrid", "GLC43 AMG", "GLC63 AMG"] }
+        ]
+    }]
+}
