@@ -1,9 +1,36 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next';
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import Dropdown from "./Dropdown";
+
 
 export default function SealCar() {
     const { t } = useTranslation("sealCarPage");
+    // ✅ Validation Schema
+    const validationSchema = Yup.object({
+        brand: Yup.string().required("اختيار الماركة مطلوب"),
+        model: Yup.string().required("اختيار الموديل مطلوب"),
+        version: Yup.string().required("اختيار الفئة مطلوب"),
+        year: Yup.number().required("السنة مطلوبة").min(1990).max(2025),
+        color: Yup.string().required("اللون مطلوب"),
+    });
+
+    // ✅ Formik
+    const formik = useFormik({
+        initialValues: {
+            brand: "",
+            model: "",
+            version: "",
+            year: "",
+            color: "",
+        },
+        validationSchema,
+        onSubmit: (values) => {
+            console.log("بيانات السيارة:", values);
+            alert("تم تسجيل السيارة بنجاح ✅");
+        },
+    });
 
 
     const [formData, setFormData] = useState({
@@ -52,6 +79,46 @@ export default function SealCar() {
             <h1 className="text-2xl md:text-3xl font-bold text-center text-blue-600 mb-6">
                 نموذج تسجيل بيانات السيارة للبيع
             </h1>
+            <form onSubmit={formik.handleSubmit} className="space-y-8">
+                <Dropdown formik={formik} />
+                {/* السنة */}
+                <div>
+                    <label className="block mb-1 font-semibold">سنة الصنع</label>
+                    <input
+                        type="number"
+                        name="year"
+                        value={formik.values.year}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="w-full border rounded-lg p-2"
+                    />
+                    {formik.touched.year && formik.errors.year && (
+                        <p className="text-red-500 text-sm">{formik.errors.year}</p>
+                    )}
+                </div>
+
+                {/* اللون */}
+                <div>
+                    <label className="block mb-1 font-semibold">اللون</label>
+                    <input
+                        type="text"
+                        name="color"
+                        value={formik.values.color}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className="w-full border rounded-lg p-2"
+                    />
+                    {formik.touched.color && formik.errors.color && (
+                        <p className="text-red-500 text-sm">{formik.errors.color}</p>
+                    )}
+                </div>
+                <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg hover:bg-blue-700 transition"
+                >
+                    تسجيل بيانات السيارة
+                </button>
+            </form>
 
             <form onSubmit={handleSubmit} className="space-y-8">
                 {/* المعلومات الأساسية */}
@@ -207,7 +274,7 @@ export default function SealCar() {
                         </div> */}
                     </div>
                     {/* اختيار البراند */}
-                    <Dropdown/>
+
                 </div>
 
                 {/* الحالة الفنية */}
@@ -238,7 +305,7 @@ export default function SealCar() {
                                 <option value="pickup">بيك أب</option>
                             </select>
                         </div>
-                        
+
                         <div>
                             <label className="font-semibold block mb-1">
                                 حالة الماكينة <span className="text-red-500">*</span>

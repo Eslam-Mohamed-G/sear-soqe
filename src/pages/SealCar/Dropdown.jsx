@@ -1,62 +1,64 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function Dropdown() {
+
+export default function Dropdown({ formik }) {
     const { t } = useTranslation("sealCarPage");
-    const brands = t("brands"); // Array جاي من JSON
+    const brands = t("brands");
 
-    const [brand, setBrand] = useState("");
-    const [selectedBrand, setSelectedBrand] = useState([]);
-
-    const [model, setModel] = useState("");
-    const [selectedModel, setSelectedModel] = useState([]);
-
-    const [version, setVersion] = useState("");
+    const handleChange = (field, val) => {
+        formik.setFieldValue(field, val); // سواء كتابة أو اختيار
+    };
 
     return (
-        <div className="flex flex-col gap-4 w-72">
-            {/* Brand Dropdown */}
+        <div className="space-y-4">
+            {/* Brand */}
             <DropdownSelect
-                label={t("chooseBrand")}
+                label={t("brand")}
                 options={brands.map((b) => b.brand)}
-                value={brand}
-                onChange={(val, isOption) => {
-                    setBrand(val);
-                    setModel("");
-                    setVersion("");
-                    setSelectedBrand(isOption ? brands.find(b => b.brand === val) : null);
-                }}
+                value={formik.values.brand}
+                onChange={(val) => handleChange("brand", val)}
             />
+            {formik.errors.brand && formik.touched.brand && (
+                <p className="text-red-500 text-sm">{formik.errors.brand}</p>
+            )}
 
-            {/* Model Dropdown */}
+            {/* Model */}
             <DropdownSelect
-                label={t("chooseModel")}
-                options={selectedBrand?.models?.map((m) => m.name) || []}
-                value={model}
-                onChange={(val, isOption) => {
-                    setModel(val);
-                    setVersion("");
-                    setSelectedModel(
-                        isOption && selectedBrand
-                            ? selectedBrand.models.find((m) => m.name === val)
-                            : null
-                    );
-                }}
-                alwaysVisible
+                label={t("model")}
+                options={
+                    formik.values.brand
+                        ? brands.find((b) => b.brand === formik.values.brand)?.models.map((m) => m.name) || []
+                        : []
+                }
+                value={formik.values.model}
+                onChange={(val) => handleChange("model", val)}
             />
+            {formik.errors.model && formik.touched.model && (
+                <p className="text-red-500 text-sm">{formik.errors.model}</p>
+            )}
 
-            {/* Version Dropdown */}
+            {/* Version */}
             <DropdownSelect
-                label={t("chooseVersion")}
-                options={selectedModel?.versions || []}
-                value={version}
-                onChange={(val) => setVersion(val)}
-                alwaysVisible
+                label={t("version")}
+                options={
+                    formik.values.model
+                        ? brands
+                            .find((b) => b.brand === formik.values.brand)
+                            ?.models.find((m) => m.name === formik.values.model)?.versions || []
+                        : []
+                }
+                value={formik.values.version}
+                onChange={(val) => handleChange("version", val)}
             />
-
+            {formik.errors.version && formik.touched.version && (
+                <p className="text-red-500 text-sm">{formik.errors.version}</p>
+            )}
         </div>
     );
 }
+
+
 
 /* 🔽 Component مُعاد استخدامه */
 function DropdownSelect({ label, options, value, onChange, alwaysVisible }) {
@@ -89,7 +91,7 @@ function DropdownSelect({ label, options, value, onChange, alwaysVisible }) {
                 className="w-full border border-gray-400 rounded-lg px-2 py-1 focus:outline-none placeholder:text-sm"
             />
             <span
-                className={`absolute end-2 top-1/2 -translate-y-1/2 transition-all ${isOpen ? "-rotate-180 ltr:rotate-180" : ""} ${options.length === 0 ? "opacity-30 cursor-not-allowed" : ""}`}
+                className={`absolute end-2 top-1/2 -translate-y-1/2 transition-all ${isOpen ? "-rotate-180 ltr:rotate-180" : ""} ${options.length === 0 ? "opacity-0 cursor-not-allowed" : ""}`}
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-up-icon lucide-chevron-up"><path d="m18 15-6-6-6 6" /></svg>
 
