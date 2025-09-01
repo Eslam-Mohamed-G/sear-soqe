@@ -44,7 +44,7 @@ export default function SealCar() {
     };
 
     return (
-        <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg mt-20">
+        <div className="w-full mx-auto bg-white p-6 md:p-8 rounded-xl customShadow mt-20">
             <h1 className="text-2xl md:text-3xl font-bold text-center text-blue-600 mb-6">
                 نموذج تسجيل بيانات السيارة للبيع
             </h1>
@@ -129,6 +129,7 @@ export default function SealCar() {
                                 <option value="">اختر نوع القير</option>
                                 <option value="automatic">اوتوماتيك</option>
                                 <option value="manual">عادي</option>
+                                <option value="CVT">CVT</option>
                             </select>
                         </div>
 
@@ -157,6 +158,24 @@ export default function SealCar() {
                     </h2>
 
                     <div className="grid md:grid-cols-2 gap-4">
+                        {/* حالة السيارة */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                حالة السيارة <span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="engineCondition"
+                                value={formData.engineCondition}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر حالة السيارة</option>
+                                <option value="excellent">جديدة</option>
+                                <option value="good">مستعملة</option>
+                                <option value="fair">معتمدة</option>
+                            </select>
+                        </div>
                         <div>
                             <label className="font-semibold block mb-1">
                                 حالة الماكينة <span className="text-red-500">*</span>
@@ -190,18 +209,6 @@ export default function SealCar() {
                                 <option value="original">أصلي</option>
                                 <option value="painted">مصبوغ</option>
                             </select>
-                        </div>
-
-                        <div>
-                            <label className="font-semibold block mb-1">حالة الكاوتش</label>
-                            <input
-                                type="text"
-                                name="tireCondition"
-                                value={formData.tireCondition}
-                                onChange={handleChange}
-                                className="w-full border rounded-lg p-2"
-                                placeholder="جديد/عمر متبقي"
-                            />
                         </div>
 
                         <div>
