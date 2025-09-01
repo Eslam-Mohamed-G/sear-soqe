@@ -10,7 +10,7 @@ export default function BuyCar() {
     const { t } = useTranslation("buyCarPage"); // hook للترجمة
 
     return (
-        <div className='flex flex-col gap-4 pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24'>
+        <div className='flex flex-col gap-4'>
             {/* top section for form */}
             <div className="">
                 <h1>خيارات البحث</h1>

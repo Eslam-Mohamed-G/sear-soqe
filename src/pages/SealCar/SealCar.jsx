@@ -44,7 +44,7 @@ export default function SealCar() {
     };
 
     return (
-        <div className="w-full mx-auto bg-white p-6 md:p-8 rounded-xl customShadow mt-20">
+        <div className="w-full mx-auto bg-white p-6 md:p-8 rounded-xl customShadow mt-3 md:mt-5">
             <h1 className="text-2xl md:text-3xl font-bold text-center text-blue-600 mb-6">
                 نموذج تسجيل بيانات السيارة للبيع
             </h1>

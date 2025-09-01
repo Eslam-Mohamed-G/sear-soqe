@@ -6,7 +6,9 @@ export default function Layout() {
     return (
         <div className='flex flex-col gap-20'>
             <Navbar />
-            <Outlet />
+            <div className="pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24">
+                <Outlet />
+            </div>
         </div>
     )
 }
