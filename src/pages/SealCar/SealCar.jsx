@@ -13,6 +13,7 @@ export default function SealCar() {
         color: "",
         transmission: "",
         mileage: "",
+        carCondition: "",
         engineCondition: "",
         bodyCondition: "",
         tireCondition: "",
@@ -30,6 +31,9 @@ export default function SealCar() {
         negotiable: "",
         phone: "",
         contactTimes: "",
+        city: "",
+        carShape: "",
+        fuelType: "",
     });
 
     const handleChange = (e) => {
@@ -39,7 +43,7 @@ export default function SealCar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("🚗 بيانات السيارة:", formData);
+        console.log("بيانات السيارة:", formData);
         alert("تم حفظ بيانات السيارة بنجاح! سنقوم بالتواصل معك قريبًا.");
     };
 
@@ -51,7 +55,7 @@ export default function SealCar() {
 
             <form onSubmit={handleSubmit} className="space-y-8">
                 {/* المعلومات الأساسية */}
-                <div className="bg-gray-50 p-4 rounded-lg border-r-4 border-blue-600">
+                <div className="bg-gray-50 p-4 rounded-lg border-s-4 border-blue-600">
                     <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
                         المعلومات الأساسية <span className="text-red-500">*</span>
                     </h2>
@@ -85,6 +89,7 @@ export default function SealCar() {
                             />
                         </div>
 
+                        {/* السنة */}
                         <div>
                             <label className="font-semibold block mb-1">
                                 سنة الصنع <span className="text-red-500">*</span>
@@ -101,6 +106,7 @@ export default function SealCar() {
                             />
                         </div>
 
+                        {/* اللون */}
                         <div>
                             <label className="font-semibold block mb-1">
                                 اللون <span className="text-red-500">*</span>
@@ -115,24 +121,7 @@ export default function SealCar() {
                             />
                         </div>
 
-                        <div>
-                            <label className="font-semibold block mb-1">
-                                نوع ناقل الحركة <span className="text-red-500">*</span>
-                            </label>
-                            <select
-                                name="transmission"
-                                value={formData.transmission}
-                                onChange={handleChange}
-                                required
-                                className="w-full border rounded-lg p-2"
-                            >
-                                <option value="">اختر نوع القير</option>
-                                <option value="automatic">اوتوماتيك</option>
-                                <option value="manual">عادي</option>
-                                <option value="CVT">CVT</option>
-                            </select>
-                        </div>
-
+                        {/* عدد الكيلومترات */}
                         <div>
                             <label className="font-semibold block mb-1">
                                 عدد الكيلومترات <span className="text-red-500">*</span>
@@ -146,36 +135,110 @@ export default function SealCar() {
                                 className="w-full border rounded-lg p-2"
                             />
                         </div>
-                    </div>
-                    {/* اختيار البراند */}
-                    {/* <Dropdown/> */}
-                </div>
 
-                {/* الحالة الفنية */}
-                <div className="bg-gray-50 p-4 rounded-lg border-r-4 border-blue-600">
-                    <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
-                        الحالة الفنية <span className="text-red-500">*</span>
-                    </h2>
-
-                    <div className="grid md:grid-cols-2 gap-4">
                         {/* حالة السيارة */}
                         <div>
                             <label className="font-semibold block mb-1">
                                 حالة السيارة <span className="text-red-500">*</span>
                             </label>
                             <select
-                                name="engineCondition"
-                                value={formData.engineCondition}
+                                name="carCondition"
+                                value={formData.carCondition}
                                 onChange={handleChange}
                                 required
                                 className="w-full border rounded-lg p-2"
                             >
                                 <option value="">اختر حالة السيارة</option>
-                                <option value="excellent">جديدة</option>
-                                <option value="good">مستعملة</option>
-                                <option value="fair">معتمدة</option>
+                                <option value="new">جديدة</option>
+                                <option value="used">مستعملة</option>
+                                <option value="certified">معتمدة</option>
                             </select>
                         </div>
+
+                        {/* المدينة */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                المدينة<span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="city"
+                                value={formData.city}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر المدينة</option>
+                                <option value="cairo">القاهرة</option>
+                                <option value="alexcandria">الاسكندرية</option>
+                                <option value="giza">الجيزة</option>
+                            </select>
+                        </div>
+
+                        {/* السعر */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                السعر المطلوب (جنيه) <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="number"
+                                name="price"
+                                value={formData.price}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            />
+                        </div>
+
+                        {/* <div>
+                            <label className="font-semibold block mb-1">
+                                قابل للتفاوض <span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="negotiable"
+                                value={formData.negotiable}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر</option>
+                                <option value="yes">نعم</option>
+                                <option value="no">لا</option>
+                            </select>
+                        </div> */}
+                    </div>
+                    {/* اختيار البراند */}
+                    <Dropdown/>
+                </div>
+
+                {/* الحالة الفنية */}
+                <div className="bg-gray-50 p-4 rounded-lg border-s-4 border-blue-600">
+                    <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
+                        الحالة الفنية <span className="text-red-500">*</span>
+                    </h2>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                        {/* شكل السيارة */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                شكل السيارة<span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="carShape"
+                                value={formData.carShape}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر شكل</option>
+                                <option value="sedan">سيدان</option>
+                                <option value="hatchback">هاتشباك</option>
+                                <option value="coupe">كوبيه</option>
+                                <option value="convertible">مكشوفة</option>
+                                <option value="van">فان</option>
+                                <option value="pickup">بيك أب</option>
+                            </select>
+                        </div>
+                        
                         <div>
                             <label className="font-semibold block mb-1">
                                 حالة الماكينة <span className="text-red-500">*</span>
@@ -211,6 +274,83 @@ export default function SealCar() {
                             </select>
                         </div>
 
+                        {/* سعة المحرك */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                سعة المحرك <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                name="engineCapacity"
+                                value={formData.engineCapacity}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            />
+                        </div>
+                        {/* عدد السليندر */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                عدد السليندر
+                            </label>
+                            <select
+                                name="cylinders"
+                                value={formData.cylinders}
+                                onChange={handleChange}
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="16">16</option>
+                            </select>
+                        </div>
+
+                        {/* نوع ناقل الحركة */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                نوع ناقل الحركة <span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="transmission"
+                                value={formData.transmission}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر نوع القير</option>
+                                <option value="automatic">اوتوماتيك</option>
+                                <option value="manual">عادي</option>
+                                <option value="CVT">CVT</option>
+                            </select>
+                        </div>
+
+                        {/* شكل السيارة */}
+                        <div>
+                            <label className="font-semibold block mb-1">
+                                نوع الوقود<span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="fuelType"
+                                value={formData.fuelType}
+                                onChange={handleChange}
+                                required
+                                className="w-full border rounded-lg p-2"
+                            >
+                                <option value="">اختر الوقود</option>
+                                <option value="petrol">بنزين</option>
+                                <option value="diesel">ديزل</option>
+                                <option value="hybrid">هجينة</option>
+                                <option value="electric">كهربائية</option>
+                            </select>
+                        </div>
+
+                        {/* الصيانة */}
                         <div>
                             <label className="font-semibold block mb-1">آخر صيانة</label>
                             <input
@@ -222,6 +362,7 @@ export default function SealCar() {
                             />
                         </div>
                     </div>
+
 
                     <div>
                         <label className="font-semibold block mb-1">
@@ -237,59 +378,8 @@ export default function SealCar() {
                     </div>
                 </div>
 
-                {/* العيوب والسعر */}
-                <div className="bg-gray-50 p-4 rounded-lg border-r-4 border-blue-600">
-                    <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
-                        العيوب والسعر
-                    </h2>
-
-                    <div>
-                        <label className="font-semibold block mb-1">العيوب</label>
-                        <textarea
-                            name="defects"
-                            value={formData.defects}
-                            onChange={handleChange}
-                            className="w-full border rounded-lg p-2"
-                            placeholder="اذكر أي عيوب ميكانيكية أو في الجسم"
-                        />
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4 mt-4">
-                        <div>
-                            <label className="font-semibold block mb-1">
-                                السعر المطلوب (جنيه) <span className="text-red-500">*</span>
-                            </label>
-                            <input
-                                type="number"
-                                name="price"
-                                value={formData.price}
-                                onChange={handleChange}
-                                required
-                                className="w-full border rounded-lg p-2"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="font-semibold block mb-1">
-                                قابل للتفاوض <span className="text-red-500">*</span>
-                            </label>
-                            <select
-                                name="negotiable"
-                                value={formData.negotiable}
-                                onChange={handleChange}
-                                required
-                                className="w-full border rounded-lg p-2"
-                            >
-                                <option value="">اختر</option>
-                                <option value="yes">نعم</option>
-                                <option value="no">لا</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
                 {/* معلومات الاتصال */}
-                <div className="bg-gray-50 p-4 rounded-lg border-r-4 border-blue-600">
+                <div className="bg-gray-50 p-4 rounded-lg border-s-4 border-blue-600">
                     <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
                         معلومات الاتصال <span className="text-red-500">*</span>
                     </h2>
