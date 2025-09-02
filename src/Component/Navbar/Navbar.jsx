@@ -35,7 +35,6 @@ export default function Navbar() {
     const handleLogout = () => {
         Cookies.remove("loginData");
         setLoginData(null); // تحديث الحالة بدون reload
-        navigate("/login"); // رجوع لصفحة login (بدل reload)
     };
     return (
         <nav className='bg-white dark:bg-gray-900 dark:text-white fixed w-full z-20 top-0 start-0 border-b shadow h-[74px] content-center border-gray-200 dark:border-gray-600'>
