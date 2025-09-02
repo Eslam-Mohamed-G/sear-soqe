@@ -7,31 +7,12 @@ import Cookies from 'js-cookie';
 
 export default function SideBar() {
     const { t } = useTranslation("navbar");
-    const { handleStateOfSideBar, sideBarIsOpen } = useContext(contextData)
+    const { handleStateOfSideBar, loginData, handleLogout, userLogedin  } = useContext(contextData)
     const [open, setOpen] = useState(false);
     const handleStateOfDropDown = () => {
         setOpen(!open)
     }
-
-    const [loginData, setLoginData] = useState(null);
-
-    // أول ما يفتح الكومبوننت، يقرأ من الكوكي
     const cookieValue = Cookies.get("loginData");
-    // دالة تسجيل الخروج
-    const handleLogout = () => {
-        Cookies.remove("loginData");
-        setLoginData(null); // تحديث الحالة بدون reload
-    };
-    useEffect(() => {
-        if (cookieValue) {
-            try {
-                setLoginData(JSON.parse(cookieValue));
-            } catch (err) {
-                Cookies.remove("loginData");
-            }
-        }
-    }, [cookieValue]);
-
     return (
         <div className={`flex flex-col w-full text-black gap-5 h-dvh pt-4 px-4 items-center transition-all ease-in-out duration-500 overflow-hidden`}>
             <span className='cursor-pointer w-full mb-8' onClick={handleStateOfSideBar}>
@@ -108,7 +89,7 @@ export default function SideBar() {
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx={12} cy={10} r={4} /><circle cx={12} cy={12} r={10} /></svg>
                     <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-32 overflow-hidden group-hover:h-28 group-hover:z-20 bg-white font-normal customShadow rounded-lg transition-all ease-in-out duration-500">
                         <ul className='flex flex-col items-start'>
-                            {!loginData ?
+                            {!userLogedin  ?
                                 <>
                                     <li className='block w-28 text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
                                         <Link to="/register" onClick={handleStateOfSideBar}>

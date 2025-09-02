@@ -1,14 +1,16 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from 'react-router-dom';
+import { contextData } from '../../Context/Context';
 
 export default function Login() {
     const navigate = useNavigate();
     const { t } = useTranslation("authentication");
+    const { isUserLogedin } = useContext(contextData);
     // حالة (state) للتحكم في إظهار أو إخفاء كلمة المرور
     const [showPassword, setShowPassword] = useState(false);
     // دالة لتغيير حالة إظهار كلمة المرور عند الضغط على الأيقونة
@@ -48,6 +50,7 @@ export default function Login() {
                     });
                     navigate("/");
                     setIsLoading(false);
+                    isUserLogedin();
                 }
 
                 resetForm();
