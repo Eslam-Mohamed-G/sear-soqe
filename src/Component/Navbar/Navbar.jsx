@@ -1,26 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import avatar from '../../assets/avatar.png'
 import CountryDrobDown from './CountryDrobDown/CountryDrobDown'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 import { useTranslation } from "react-i18next";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 // import NewLinkDrobDown from '../NewLinkDrobDown/NewLinkDrobDown'
-import SideBar from '../SideBar/SideBar';
 import Cookies from 'js-cookie';
+import { contextData } from '../../Context/Context';
 
 export default function Navbar() {
     const { t } = useTranslation("navbar");
 
-    const [sideBarIsOpen, setSideBarIsOpen] = useState(false);
-    const handleStateOfSideBar = () => {
-        setSideBarIsOpen(!sideBarIsOpen);
-    }
+    const { handleStateOfSideBar } = useContext(contextData)
 
     const [loginData, setLoginData] = useState(null);
     const navigate = useNavigate();
 
     // أول ما يفتح الكومبوننت، يقرأ من الكوكي
     const cookieValue = Cookies.get("loginData");
+    // دالة تسجيل الخروج
+    const handleLogout = () => {
+        Cookies.remove("loginData");
+        setLoginData(null); // تحديث الحالة بدون reload
+    };
     useEffect(() => {
         if (cookieValue) {
             try {
@@ -31,11 +33,6 @@ export default function Navbar() {
         }
     }, [cookieValue]);
 
-    // دالة تسجيل الخروج
-    const handleLogout = () => {
-        Cookies.remove("loginData");
-        setLoginData(null); // تحديث الحالة بدون reload
-    };
     return (
         <nav className='bg-white dark:bg-gray-900 dark:text-white fixed w-full z-20 top-0 start-0 border-b shadow h-[74px] content-center border-gray-200 dark:border-gray-600'>
             <div className='flex flex-row flex-wrap items-center justify-between px-4 sm:px-8 3xl:px-10 2xl:px-24 font-bold relative'>
@@ -169,14 +166,6 @@ export default function Navbar() {
                     {/* button for handle nav */}
                     <div className="cursor-pointer block lg:hidden" onClick={handleStateOfSideBar}>
                         <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-align-left-icon lucide-align-left"><path d="M15 12H3" /><path d="M17 18H3" /><path d="M21 6H3" /></svg>
-                    </div>
-                </div>
-                <div onClick={handleStateOfSideBar} className={`absolute top-0 h-dvh bg-[#00000050] overflow-hidden ${sideBarIsOpen ? "start-0 end-0" : "start-full end-0"} lg:hidden transition-all ease-in-out duration-500`}>
-                    <div className="absolute end-0 top-0 px-4 md:px-8 bg-white" onClick={(e) => e.stopPropagation()}>
-                        <span className='cursor-pointer m-8' onClick={handleStateOfSideBar}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                        </span>
-                        <SideBar />
                     </div>
                 </div>
             </div>
