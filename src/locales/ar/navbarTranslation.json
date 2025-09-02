@@ -45,6 +45,7 @@
     "buttonSales": "بيع سيارتك",
     "authentication": {
         "register": "تسجيل",
-        "login": "دخول"
+        "login": "دخول",
+        "logout": "تسجيل خروج"
     }
 }

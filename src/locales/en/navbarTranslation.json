@@ -45,6 +45,7 @@
     "buttonSales": "sell my car",
     "authentication": {
         "register": "Register",
-        "login": "Login"
+        "login": "Login",
+        "logout": "Logout"
     }
 }
