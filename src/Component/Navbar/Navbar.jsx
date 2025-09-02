@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import avatar from '../../assets/avatar.png'
 import CountryDrobDown from './CountryDrobDown/CountryDrobDown'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 import { useTranslation } from "react-i18next";
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 // import NewLinkDrobDown from '../NewLinkDrobDown/NewLinkDrobDown'
 import SideBar from '../SideBar/SideBar';
+import Cookies from 'js-cookie';
 
 export default function Navbar() {
     const { t } = useTranslation("navbar");
@@ -14,8 +15,30 @@ export default function Navbar() {
     const handleStateOfSideBar = () => {
         setSideBarIsOpen(!sideBarIsOpen);
     }
+
+    const [loginData, setLoginData] = useState(null);
+    const navigate = useNavigate();
+
+    // أول ما يفتح الكومبوننت، يقرأ من الكوكي
+    const cookieValue = Cookies.get("loginData");
+    useEffect(() => {
+        if (cookieValue) {
+            try {
+                setLoginData(JSON.parse(cookieValue));
+            } catch (err) {
+                Cookies.remove("loginData");
+            }
+        }
+    }, [cookieValue]);
+
+    // دالة تسجيل الخروج
+    const handleLogout = () => {
+        Cookies.remove("loginData");
+        setLoginData(null); // تحديث الحالة بدون reload
+        navigate("/login"); // رجوع لصفحة login (بدل reload)
+    };
     return (
-        <nav className='bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b shadow h-[74px] content-center border-gray-200 dark:border-gray-600'>
+        <nav className='bg-white dark:bg-gray-900 dark:text-white fixed w-full z-20 top-0 start-0 border-b shadow h-[74px] content-center border-gray-200 dark:border-gray-600'>
             <div className='flex flex-row flex-wrap items-center justify-between px-4 sm:px-8 3xl:px-10 2xl:px-24 font-bold relative'>
                 {/* avatar && logo */}
                 <div className="flex items-center gap-10">
@@ -106,20 +129,37 @@ export default function Navbar() {
                         </ul>
                         {/* car sale button */}
                         <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='/sealcar' className='text-white'>{t('buttonSales')}</Link></div>
-                        
+
                         {/* authentication button */}
                         <div className="relative group h-full text-center content-center cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx={12} cy={10} r={4} /><circle cx={12} cy={12} r={10} /></svg>
                             <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-32 overflow-hidden group-hover:h-28 group-hover:z-20 bg-white font-normal customShadow rounded-lg transition-all ease-in-out duration-500">
                                 <ul className='flex flex-col items-start'>
-                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
-                                        <Link to="/register">
-                                            {t("authentication.register")}
-                                        </Link>
-                                    </li>
-                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
-                                        <Link to="/login">{t("authentication.login")}</Link>
-                                    </li>
+                                    {!loginData ? <>
+                                        <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                            <Link to="/register">
+                                                {t("authentication.register")}
+                                            </Link>
+                                        </li>
+                                        <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                            <Link to="/login">{t("authentication.login")}</Link>
+                                        </li>
+                                    </>
+                                        :
+                                        <>
+                                            <li>
+                                                <span>{loginData?.user?.name}</span>
+                                            </li>
+                                            <li>
+                                                <button onClick={handleLogout}
+                                                    className="flex flex-row items-center justify-between gap-4 cursor-pointer"
+                                                >
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-out-icon lucide-log-out"><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /></svg>
+                                                    <span>Logout</span>
+                                                </button>
+                                            </li>
+                                        </>
+                                    }
                                 </ul>
                             </div>
                         </div>

@@ -2,9 +2,14 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Register() {
+    const navigate = useNavigate();
     const { t } = useTranslation("authentication");
+    const [isLoading, setIsLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     // حالة (state) للتحكم في إظهار أو إخفاء كلمة المرور
     const [showPassword, setShowPassword] = useState(false);
     // دالة لتغيير حالة إظهار كلمة المرور عند الضغط على الأيقونة
@@ -17,8 +22,8 @@ export default function Register() {
         name: Yup.string().required(t("validator.requiredName")).min(3, t("validator.minName")),
         email: Yup.string().email(t("validator.invalidEmail")).required(t("validator.requiredEmail")),
         password: Yup.string().required(t("validator.requiredPassword")).min(6, t("validator.minPassword")),
-        phone: Yup.string().matches(/^01[0-9]{9}$/, t("validator.invalidPhone")).required(t("validator.requiredPhone")),
-        terms: Yup.bool().oneOf([true], t("validator.acceptTerms"))
+        // phone: Yup.string().matches(/^01[0-9]{9}$/, t("validator.invalidPhone")).required(t("validator.requiredPhone")),
+        // terms: Yup.bool().oneOf([true], t("validator.acceptTerms"))
     });
     // إعداد formik لإدارة حالة النموذج (القيم والإرسال)
     const formik = useFormik({
@@ -26,26 +31,21 @@ export default function Register() {
             name: '',
             email: '',
             password: '',
-            phone: '',
-            terms: false,
+            // phone: '',
+            // terms: false,
         },
         validationSchema: validator,
-        // onSubmit: (values, { resetForm }) => {
-        //     console.log(values);
-        //     resetForm();
-        // }
+
         onSubmit: async (values, { resetForm }) => {
+            setIsLoading(true);
             try {
-                const res = await fetch("https://www.sand.alrmoz.com/api/user/register", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(values),
-                });
-                const data = await res.json();
-                console.log("✅ Registered:", data);
+                const response = await axios.post("https://adminsand.alrmoz.com/api/user/register", values);
+                setIsLoading(false);
                 resetForm();
+                navigate("/login");
             } catch (err) {
-                console.error("❌ Error:", err);
+                setIsLoading(false);
+                setErrorMessage(err?.response?.data?.message)
             }
         }
     })
@@ -67,6 +67,8 @@ export default function Register() {
                         onBlur={formik.handleBlur}
                         className={formik.errors.name && formik.touched.name ? inputError : inputGray}
                         placeholder=""
+                        aria-label={t("registerForm.name")}
+                        aria-describedby={formik.errors.name && formik.touched.name ? "name-error" : null}
                     />
                     <label htmlFor="name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("registerForm.name")}</label>
                     {formik.errors.name && formik.touched.name && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.name}</p>}
@@ -83,6 +85,8 @@ export default function Register() {
                         onBlur={formik.handleBlur}
                         className={formik.errors.email && formik.touched.email ? inputError : inputGray}
                         placeholder=" "
+                        aria-label={t("registerForm.email")}
+                        aria-describedby={formik.errors.email && formik.touched.email ? "email-error" : null}
                     />
                     <label htmlFor="email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("registerForm.email")}</label>
                     {formik.errors.email && formik.touched.email && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.email}</p>}
@@ -99,6 +103,8 @@ export default function Register() {
                         onBlur={formik.handleBlur}
                         className={formik.errors.password && formik.touched.password ? inputError : inputGray}
                         placeholder=" "
+                        aria-label={t("registerForm.password")}
+                        aria-describedby={formik.errors.password && formik.touched.password ? "password-error" : null}
                     />
                     <label htmlFor="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{t("registerForm.password")}</label>
                     <div className='absolute top-2 end-0 cursor-pointer' onClick={togglePasswordVisibility}>
@@ -114,7 +120,7 @@ export default function Register() {
                     {formik.errors.password && formik.touched.password && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.password}</p>}
                 </div>
                 {/* number */}
-                <div className="relative z-0 w-full group">
+                {/* <div className="relative z-0 w-full group">
                     <input
                         type="tel"
                         pattern="[0-9]{11}"
@@ -127,9 +133,9 @@ export default function Register() {
                         placeholder=" " />
                     <label htmlFor="phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> {t("registerForm.phone")}</label>
                     {formik.errors.phone && formik.touched.phone && (<p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.phone}</p>)}
-                </div>
+                </div> */}
                 {/* terms */}
-                <div className="flex items-start relative">
+                {/* <div className="flex items-start relative">
                     <div className="flex items-center h-5">
                         <input
                             id="terms"
@@ -147,9 +153,19 @@ export default function Register() {
                             {formik.errors.terms}
                         </p>
                     )}
-                </div>
+                </div> */}
 
-                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{t("registerForm.submit")}</button>
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 relative cursor-pointer">
+                    {t("registerForm.submit")}
+                    {isLoading &&
+                        <div className="absolute top-1/2 -translate-y-1/2 end-5 block bg-transparent dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">
+                            <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" /><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" /></svg>
+                        </div>
+                    }
+                </button>
+                {errorMessage && (
+                    <p className="text-red-600 text-center text-sm">{errorMessage}</p>
+                )}
             </form>
         </div>
     )
