@@ -11,9 +11,9 @@ export default function HomePage() {
     const { t } = useTranslation("homePage"); // hook للترجمة
     const [activeTab, setActiveTab] = useState("shape");
     return (
-        <div className='flex flex-col gap-10 pt-20'>
+        <div className='flex flex-col gap-10'>
             {/* top section */}
-            <div className="px-4 sm:px-8 3xl:px-10 2xl:px-24">
+            <div className="">
                 <div className="bg-cover bg-center rounded-xl overflow-hidden px-2 md:px-4 py-4" style={{ backgroundImage: `url(${bgImg})` }}>
                     <p className='text-white mb-2 md:mb-4 text-sm md:text-lg'>{t('header')}</p>
 
