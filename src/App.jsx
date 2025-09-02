@@ -7,6 +7,7 @@ import BuyCar from './pages/BuyCar/BuyCar';
 import SealCar from './pages/SealCar/SealCar';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import StoreContextProvider from './Context/Context';
 
 const routes = createBrowserRouter([
   {path:"", element: <Layout/>, children:[
@@ -21,7 +22,9 @@ const routes = createBrowserRouter([
 function App() {
 
   return (
-    <RouterProvider router={routes}/>
+    <StoreContextProvider>
+      <RouterProvider router={routes}/>
+    </StoreContextProvider>
   )
 }
 
