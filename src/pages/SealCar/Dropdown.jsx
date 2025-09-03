@@ -10,6 +10,31 @@ export default function Dropdown({ formik }) {
         formik.setFieldValue(field, val); // سواء كتابة أو اختيار
     };
 
+        // // ✅ Validation Schema
+        // const validationSchema = Yup.object({
+        //     brand: Yup.string().required("اختيار الماركة مطلوب"),
+        //     model: Yup.string().required("اختيار الموديل مطلوب"),
+        //     version: Yup.string().required("اختيار الفئة مطلوب"),
+        //     year: Yup.number().required("السنة مطلوبة").min(1990).max(2025),
+        //     color: Yup.string().required("اللون مطلوب"),
+        // });
+    
+        // // ✅ Formik
+        // const formik = useFormik({
+        //     initialValues: {
+        //         brand: "",
+        //         model: "",
+        //         version: "",
+        //         year: "",
+        //         color: "",
+        //     },
+        //     validationSchema,
+        //     onSubmit: (values) => {
+        //         console.log("بيانات السيارة:", values);
+        //         alert("تم تسجيل السيارة بنجاح ✅");
+        //     },
+        // });
+
     return (
         <div className="space-y-4">
             {/* Brand */}
