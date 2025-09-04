@@ -4,7 +4,7 @@
         "name": "Name",
         "email": "Email address",
         "password": "Password",
-        "phone": "Phone number (010xxxxxxxx)",
+        "phone": "Phone number",
         "termsText": "I agree with the",
         "termsLink": "terms and conditions",
         "submit": "Register"
@@ -17,7 +17,7 @@
         "requiredPassword": "Password is required",
         "minPassword": "Password must be at least 6 characters",
         "requiredPhone": "Phone number is required",
-        "invalidPhone": "Invalid phone number",
+        "invalidPhone": "The mobile number must be 11 digits long and start with 010, 011, 012 or 015.",
         "acceptTerms": "You must accept the terms"
     },
     "loginForm": {

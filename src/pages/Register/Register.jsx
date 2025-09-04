@@ -22,7 +22,7 @@ export default function Register() {
         name: Yup.string().required(t("validator.requiredName")).min(3, t("validator.minName")),
         email: Yup.string().email(t("validator.invalidEmail")).required(t("validator.requiredEmail")),
         password: Yup.string().required(t("validator.requiredPassword")).min(6, t("validator.minPassword")),
-        // phone: Yup.string().matches(/^01[0-9]{9}$/, t("validator.invalidPhone")).required(t("validator.requiredPhone")),
+        phone: Yup.string().matches(/^01[0125][0-9]{8}$/, t("validator.invalidPhone")).required(t("validator.requiredPhone")),
         // terms: Yup.bool().oneOf([true], t("validator.acceptTerms"))
     });
     // إعداد formik لإدارة حالة النموذج (القيم والإرسال)
@@ -31,7 +31,7 @@ export default function Register() {
             name: '',
             email: '',
             password: '',
-            // phone: '',
+            phone: '',
             // terms: false,
         },
         validationSchema: validator,
@@ -119,11 +119,11 @@ export default function Register() {
                     </div>
                     {formik.errors.password && formik.touched.password && <p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.password}</p>}
                 </div>
-                {/* number */}
-                {/* <div className="relative z-0 w-full group">
+
+                {/* pgone */}
+                <div className="relative z-0 w-full group">
                     <input
                         type="tel"
-                        pattern="[0-9]{11}"
                         name="phone"
                         id="phone"
                         value={formik.values.phone}
@@ -133,7 +133,8 @@ export default function Register() {
                         placeholder=" " />
                     <label htmlFor="phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> {t("registerForm.phone")}</label>
                     {formik.errors.phone && formik.touched.phone && (<p className='absolute top-full text-red-600 text-[12px]'>{formik.errors.phone}</p>)}
-                </div> */}
+                </div>
+
                 {/* terms */}
                 {/* <div className="flex items-start relative">
                     <div className="flex items-center h-5">
