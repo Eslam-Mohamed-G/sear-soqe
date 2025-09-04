@@ -82,25 +82,6 @@ export default function Login() {
 
     })
 
-    //     const loginData = Cookies.get("loginData");
-
-    // if (loginData) {
-    //   const parsedData = JSON.parse(loginData);
-    //   const token = parsedData.token; // حسب اسم الـ key اللي السيرفر مرجعه
-
-    //   axios.get("https://adminsand.alrmoz.com/api/user/listings", {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //     },
-    //   })
-    //   .then((res) => {
-    //     console.log("User Listings:", res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.error("Error fetching listings:", err);
-    //   });
-    // }
-
     const inputGray = "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
     const inputError = "block py-2.5 px-0 w-full text-sm text-red-500 bg-transparent border-0 border-b-2 border-red-500 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer";
     return (

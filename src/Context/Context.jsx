@@ -31,6 +31,15 @@ export default function StoreContextProvider({ children }) {
         }
     }, [cookieValue]);
 
+    useEffect(() => {
+        const loginData = Cookies.get("loginData");
+        if (loginData) {
+            setUserLogedin(true);
+        } else {
+            setUserLogedin(false);
+        }
+    }, []);
+
     return (
         <contextData.Provider value={{ sideBarIsOpen, handleStateOfSideBar, handleLogout, loginData, setLoginData, userLogedin, isUserLogedin }}>
             {children}
