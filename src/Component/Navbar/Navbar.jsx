@@ -109,7 +109,7 @@ export default function Navbar() {
                         {/* authentication button */}
                         <div className="relative group h-full text-center content-center cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx={12} cy={10} r={4} /><circle cx={12} cy={12} r={10} /></svg>
-                            <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center bg-white font-normal customShadow rounded-lg">
+                            <div className="absolute z-10 left-0 top-full translate-y-0.5 flex flex-col justify-center bg-white font-normal customShadow rounded-lg">
                                 {!userLogedin ?
                                     <ul className='flex flex-col items-start justify-center h-0 overflow-hidden group-hover:h-28 group-hover:z-20 transition-all ease-in-out duration-500'>
                                         <li className='block w-28 text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
