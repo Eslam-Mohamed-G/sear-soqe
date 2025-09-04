@@ -124,11 +124,11 @@ export default function Navbar() {
                                     :
                                     <ul className='flex flex-col items-start justify-center w-52 h-0 overflow-hidden group-hover:h-72 group-hover:z-20 transition-all ease-in-out duration-500'>
                                         <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300 capitalize bg-backgroundLinear'>
-                                            <div className="flex flex-row gap-2 items-center">
+                                            <Link to="/profile" className="flex flex-row gap-2 items-center">
                                                 {/* عرض اول حرفين من كل كلمة موجودة في الاسم */}
                                                 <span className='flex items-center justify-center w-7 h-7 bg-gray-100 rounded-full text-black font-bold text-sm'>{loginData?.user?.name?.split(" ").map(word => word[0]).join("").toUpperCase()}</span>
                                                 <span className='flex'>{loginData?.user?.name}</span>
-                                            </div>
+                                            </Link>
                                         </li>
 
                                         <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>

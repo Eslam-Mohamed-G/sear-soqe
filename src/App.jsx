@@ -8,6 +8,7 @@ import SealCar from './pages/SealCar/SealCar';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import StoreContextProvider from './Context/Context';
+import UserProfile from './pages/UserProfile/UserProfile';
 
 const routes = createBrowserRouter([
   {path:"", element: <Layout/>, children:[
@@ -16,6 +17,7 @@ const routes = createBrowserRouter([
     { path: 'sealcar', element: <SealCar/>},
     { path: 'register', element: <Register/>},
     { path: 'login', element: <Login/>},
+    { path: '/profile', element: <UserProfile/>},
   ]}
 ])
 
