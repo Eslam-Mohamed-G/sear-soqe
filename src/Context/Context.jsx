@@ -24,19 +24,17 @@ export default function StoreContextProvider({ children }) {
     useEffect(() => {
         if (cookieValue) {
             try {
-                setLoginData(JSON.parse(cookieValue));
+                const parsedData = JSON.parse(cookieValue);
+                setLoginData(parsedData);
+                setUserLogedin(true);
             } catch (err) {
                 Cookies.remove("loginData");
+                setUserLogedin(false);
+                setLoginData(null);
             }
-        }
-    }, [cookieValue]);
-
-    useEffect(() => {
-        const loginData = Cookies.get("loginData");
-        if (loginData) {
-            setUserLogedin(true);
         } else {
             setUserLogedin(false);
+            setLoginData(null);
         }
     }, []);
 
