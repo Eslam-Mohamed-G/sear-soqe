@@ -109,7 +109,7 @@ export default function Navbar() {
                         {/* authentication button */}
                         <div className="relative group h-full text-center content-center cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx={12} cy={10} r={4} /><circle cx={12} cy={12} r={10} /></svg>
-                            <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-fit overflow-hidden group-hover:h-28 group-hover:z-20 bg-white font-normal customShadow rounded-lg transition-all ease-in-out duration-500">
+                            <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-44 overflow-hidden group-hover:h-96 group-hover:z-20 bg-white font-normal customShadow rounded-lg transition-all ease-in-out duration-500">
                                 <ul className='flex flex-col items-start'>
                                     {!userLogedin ?
                                         <>
@@ -121,12 +121,50 @@ export default function Navbar() {
                                             <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
                                                 <Link to="/login">{t("authentication.login")}</Link>
                                             </li>
+
+                                            <li className='block w-32 text-start text-black px-4 py-2 cursor-pointer transition-colors ease-in-out duration-300 capitalize bg-backgroundLinear'>
+                                                {/* عرض اول حرفين من كل كلمة موجودة في الاسم */}
+                                                <span className='flex items-center justify-center w-fit p-1 bg-gray-100 rounded-full text-black font-bold text-sm'>{("Eslam Mohamed").split(" ").map(word => word[0]).join("").toUpperCase()}</span>
+                                                <span>{loginData?.user?.name}</span>
+                                            </li>
+                                            <li className='block w-full text-start py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                                <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                                    <div className="flex flex-row gap-2 items-center">
+                                                        <div className="w-4 h-4 md:w-5 md:h-5">
+                                                            <img src="./profile/advertisements.png" alt="advertisements" className='w-full h-full object-center' />
+                                                        </div>
+                                                        <span className='mb-2'>إعلاناتي</span>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="ltr:rotate-180"><path d="m15 18-6-6 6-6" /></svg>
+                                                </Link>
+                                            </li>
+
+                                            <li className='block w-full text-start py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                                <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                                    <div className="flex flex-row gap-2 items-center">
+                                                        <div className="w-4 h-4 md:w-5 md:h-5">
+                                                            <img src="./profile/solar_heart-outline.png" alt="solar_heart-outline" className='w-full h-full object-center' />
+                                                        </div>
+                                                        <span className='mb-1'>الإعلانات المفضلة</span>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="ltr:rotate-180"><path d="m15 18-6-6 6-6" /></svg>
+                                                </Link>
+                                            </li>
+
+                                            <li className='block w-full text-start py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                                <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                                    <div className="flex flex-row gap-2 items-center">
+                                                        <div className="w-4 h-4 md:w-5 md:h-5">
+                                                            <img src="./profile/solar_bell-linear.png" alt="solar_bell-linear" className='w-full h-full object-center' />
+                                                        </div>
+                                                        <span className='mb-1'>إشعارات الاعلانات</span>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="ltr:rotate-180"><path d="m15 18-6-6 6-6" /></svg>
+                                                </Link>
+                                            </li>
                                         </>
                                         :
                                         <>
-                                            <li className='block w-32 text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300 capitalize'>
-                                                <span>{loginData?.user?.name}</span>
-                                            </li>
                                             <li className='block w-full py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
                                                 <button onClick={handleLogout}
                                                     className="w-full flex flex-row items-center gap-4 ps-8 cursor-pointer relative"
