@@ -7,12 +7,13 @@ import Cookies from 'js-cookie';
 export default function UserProfile() {
     const { t } = useTranslation("navbar");
     const [userData, setUserData] = useState();
-    
+    const [listings, setListings] = useState([]);
+
     useEffect(() => {
         const getAllUserCarsListings = async () => {
             try {
                 const cookieValue = Cookies.get("loginData");
-                if (!cookieValue) {return;}
+                if (!cookieValue) { return; }
                 const { token, user } = JSON.parse(cookieValue);
                 setUserData(user)
                 const response = await axios.get(
@@ -24,6 +25,7 @@ export default function UserProfile() {
                         },
                     }
                 );
+                setListings(response.data.data);
                 console.log(response.data.data);
             } catch (error) {
                 console.log(error);
@@ -109,7 +111,35 @@ export default function UserProfile() {
 
                 {/* content of tabs */}
                 <div className="w-full border">
-                    aga
+                    <div className="flex flex-row flex-wrap justify-center gap-4 mb-4">
+                        {listings.map((car) => (
+                            <div key={car.id} className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
+                                {/* img */}
+                                <div className="relative">
+                                    <div className="w-2xs md:w-72 overflow-hidden rounded-xl">
+                                        <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
+                                    </div>
+                                    <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
+                                </div>
+                                {/* img-information */}
+                                <div className="flex flex-col gap-4">
+                                    {/* header */}
+                                    <div className="flex flex-col gap-4">
+                                        <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
+                                        <span className='text-primaryColor'>2,300,00 ر.س</span>
+                                    </div>
+                                    <div className="">
+                                        <ul className='grid grid-cols-2 gap-4'>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
