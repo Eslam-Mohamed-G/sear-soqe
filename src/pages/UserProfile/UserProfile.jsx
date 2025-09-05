@@ -8,6 +8,32 @@ export default function UserProfile() {
     const { t } = useTranslation("navbar");
     const [userData, setUserData] = useState();
     
+    useEffect(() => {
+        const getAllUserCarsListings = async () => {
+            try {
+                const cookieValue = Cookies.get("loginData");
+                if (!cookieValue) {return;}
+                const { token, user } = JSON.parse(cookieValue);
+                setUserData(user)
+                const response = await axios.get(
+                    "https://adminsand.alrmoz.com/api/user/listings",
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            Accept: "application/json",
+                        },
+                    }
+                );
+                console.log(response.data.data);
+            } catch (error) {
+                console.log(error);
+            } finally {
+
+            }
+        }
+
+        getAllUserCarsListings();
+    }, []);
     return (
         <div className="bg-white p-3 md:p-4 lg:p-8 rounded-xl customShadow mt-3 md:mt-5">
             {/* header */}
