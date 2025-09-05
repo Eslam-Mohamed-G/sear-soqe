@@ -1,18 +1,20 @@
-import React, { useContext } from 'react'
-import { contextData } from '../../Context/Context';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export default function UserProfile() {
     const { t } = useTranslation("navbar");
-    const { loginData, userLogedin } = useContext(contextData);
+    const [userData, setUserData] = useState();
+    
     return (
         <div className="bg-white p-3 md:p-4 lg:p-8 rounded-xl customShadow mt-3 md:mt-5">
             {/* header */}
             <div className="flex flex-col sm:flex-row gap-2 items-center justify-between w-full border-b border-gray-300">
                 <h1 className='flex gap-2 text-2xl md:text-4xl font-bold capitalize'>
-                    <span className='flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gray-100 rounded-full text-black font-bold text-sm'>{loginData?.user?.name?.split(" ").map(word => word[0]).join("").toUpperCase()}</span>
-                    <span className='flex'>{loginData?.user?.name}</span>
+                    <span className='flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gray-100 rounded-full text-black font-bold text-sm'>{userData?.name?.split(" ").map(word => word[0]).join("").toUpperCase()}</span>
+                    <span className='flex'>{userData?.name}</span>
                 </h1>
 
                 <div className="flex flex-row gap-2 text-[10px] md:text-sm font-bold">
@@ -81,7 +83,7 @@ export default function UserProfile() {
 
                 {/* content of tabs */}
                 <div className="w-full border">
-aga
+                    aga
                 </div>
             </div>
         </div>

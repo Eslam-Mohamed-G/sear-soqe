@@ -52,26 +52,26 @@ export default function Login() {
                     setIsLoading(false);
                     isUserLogedin();
                 }
-                const token = response.data.token;
-                const userId = response.data.user.id;
+                // const token = response.data.token;
+                // const userId = response.data.user.id;
 
-                // جلب ال listings بعد تسجيل الدخول
-                axios.post(
-                    "https://adminsand.alrmoz.com/api/user/listings",
-                    { user_id: userId }, // لو السيرفر محتاج user_id
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                            Accept: "application/json",
-                        },
-                    }
-                )
-                    .then(res => {
-                        console.log("User Listings:", res.data);
-                    })
-                    .catch(err => {
-                        console.error("Error fetching listings:", err);
-                    });
+                // // جلب ال listings بعد تسجيل الدخول
+                // axios.post(
+                //     "https://adminsand.alrmoz.com/api/user/listings",
+                //     { user_id: userId }, // لو السيرفر محتاج user_id
+                //     {
+                //         headers: {
+                //             Authorization: `Bearer ${token}`,
+                //             Accept: "application/json",
+                //         },
+                //     }
+                // )
+                //     .then(res => {
+                //         console.log("User Listings:", res.data);
+                //     })
+                //     .catch(err => {
+                //         console.error("Error fetching listings:", err);
+                //     });
                 resetForm();
             } catch (err) {
                 // console.log(err.response.data);
