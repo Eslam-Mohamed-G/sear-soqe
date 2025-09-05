@@ -117,23 +117,23 @@ export default function UserProfile() {
                                 {/* img */}
                                 <div className="relative">
                                     <div className="w-2xs md:w-72 overflow-hidden rounded-xl">
-                                        <img src="./totyta-car.png" alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
+                                        <img src={`https://adminsand.alrmoz.com/storage/${car?.images[0]?.path}`} alt="totyta-car" className='w-full object-center group-hover:scale-110 transition-all ease-in-out duration-500' />
                                     </div>
-                                    <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>Mar 06,2025</span>
+                                    <span className='absolute bottom-2 start-2 bg-[#FFFFFF] rounded-lg px-1.5 py-0.5'>{car?.created_at.substring(0, car?.created_at.indexOf('T'))}</span>
                                 </div>
                                 {/* img-information */}
                                 <div className="flex flex-col gap-4">
                                     {/* header */}
                                     <div className="flex flex-col gap-4">
-                                        <span>تويوتا فيلوز 1.5 لتر GLX 2024</span>
-                                        <span className='text-primaryColor'>2,300,00 ر.س</span>
+                                        <span>{car?.name} {car?.model}</span>
+                                        <span className='text-primaryColor'>ج.م {car?.price}</span>
                                     </div>
                                     <div className="">
                                         <ul className='grid grid-cols-2 gap-4'>
-                                            <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />الرياض</li>
-                                            <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />0 كلم</li>
-                                            <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />2024</li>
-                                            <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />بنزين</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />{car?.make}</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />{car?.make}</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/date-Frame.svg" alt="date icon" className="w-4 h-4" />{car?.year}</li>
+                                            <li className='flex flex-row items-center gap-2'><img src="./icon/solar-Frame.svg" alt="solar icon" className="w-4 h-4" />{JSON.parse(car.description)?.fuelType}</li>
                                         </ul>
                                     </div>
                                 </div>
