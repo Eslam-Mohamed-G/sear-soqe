@@ -82,7 +82,7 @@ export default function SpecificCarAd() {
                                     <p className='flex flex-col gap-2'>
                                         <span>عدد الكيلومتر</span>
                                         <span>
-                                            {specificCar.year}
+                                            {desc?.mileage}
                                         </span>
                                     </p>
                                 </li>

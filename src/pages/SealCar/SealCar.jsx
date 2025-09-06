@@ -20,6 +20,7 @@ export default function SealCar() {
         name: Yup.string().required("الاسم مطلوب"),
         status: Yup.string().required("الحالة مطلوبة"),
         category: Yup.string().required("الفئة مطلوبة"),
+        color: Yup.string().required("اللون مطلوب"),
         model: Yup.string().required("الموديل مطلوب"),
         year: Yup.number()
             .typeError("السنة لازم تكون رقم")
@@ -30,9 +31,6 @@ export default function SealCar() {
         price: Yup.number()
             .typeError("السعر لازم يكون رقم")
             .required("السعر مطلوب"),
-        mileage: Yup.number()
-            .typeError("الممشى لازم يكون رقم")
-            .required("الممشى مطلوب"),
         images: Yup.array()
             .min(3, "لازم ترفع 3 صور على الأقل")
             .required("الصور مطلوبة"),
@@ -41,6 +39,9 @@ export default function SealCar() {
             cylinders: Yup.string(),
             transmission: Yup.string().required("نوع ناقل الحركة مطلوب"),
             fuelType: Yup.string().required("نوع الوقود مطلوب"),
+            mileage: Yup.number()
+                .typeError("الكيلومتر لازم يكون رقم")
+                .required("الكيلومتر مطلوب"),
             // lastMaintenance: Yup.string(),
             // maintenanceDetails: Yup.string(),
         }),
@@ -54,16 +55,17 @@ export default function SealCar() {
             status: "",
             category: "",
             model: "",
+            color:"",
             year: "",
             plate_number: "",
             price: "",
             images: [],
-            mileage: "",
             description: {
                 engineCapacity: "",
                 cylinders: "",
                 transmission: "",
                 fuelType: "",
+                mileage: "",
                 // lastMaintenance: "",
                 // maintenanceDetails: "",
             },
@@ -300,6 +302,21 @@ export default function SealCar() {
                                         <p className="text-red-500 text-sm">{formik.errors.make}</p>
                                     )}
                                 </div>
+                                {/* اللون color*/}
+                                <div>
+                                    <label className="block mb-1 font-semibold">اللون</label>
+                                    <input
+                                        type="text"
+                                        name="color"
+                                        value={formik.values.color}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        className="w-full border rounded-lg p-2"
+                                    />
+                                    {formik.touched.color && formik.errors.color && (
+                                        <p className="text-red-500 text-sm">{formik.errors.color}</p>
+                                    )}
+                                </div>
 
                                 {/* plate_number رقم اللوحة */}
                                 <div>
@@ -322,15 +339,18 @@ export default function SealCar() {
                                     <label className="block mb-1 font-semibold">عدد الكيلومترات</label>
                                     <input
                                         type="number"
-                                        name="mileage"
-                                        value={formik.values.mileage}
+                                        name="description.mileage"
+                                        value={formik.values.description.mileage}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
                                         className="w-full border rounded-lg p-2"
                                     />
-                                    {formik.touched.mileage && formik.errors.mileage && (
-                                        <p className="text-red-500 text-sm">{formik.errors.mileage}</p>
-                                    )}
+                                    {formik.touched.description?.mileage &&
+                                        formik.errors.description?.mileage && (
+                                            <div className="text-red-500 text-sm">
+                                                {formik.errors.description.mileage}
+                                            </div>
+                                        )}
                                 </div>
 
                                 {/* سعة المحرك */}
