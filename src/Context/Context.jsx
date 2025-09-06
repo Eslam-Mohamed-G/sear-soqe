@@ -36,7 +36,7 @@ export default function StoreContextProvider({ children }) {
             setUserLogedin(false);
             setLoginData(null);
         }
-    }, []);
+    }, [cookieValue]);
 
     return (
         <contextData.Provider value={{ sideBarIsOpen, handleStateOfSideBar, handleLogout, loginData, setLoginData, userLogedin, isUserLogedin }}>

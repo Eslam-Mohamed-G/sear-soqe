@@ -132,7 +132,7 @@ export default function Navbar() {
                                         </li>
 
                                         <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
-                                            <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                            <Link to="/profile" className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
                                                 <div className="flex flex-row gap-2 items-center">
                                                     <div className="w-4 h-4 md:w-5 md:h-5">
                                                         <img src="./profile/advertisements.png" alt="advertisements" className='w-full h-full object-center' />
