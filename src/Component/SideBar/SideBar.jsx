@@ -7,14 +7,14 @@ import Cookies from 'js-cookie';
 
 export default function SideBar() {
     const { t } = useTranslation("navbar");
-    const { handleStateOfSideBar, loginData, handleLogout, userLogedin  } = useContext(contextData)
+    const { handleStateOfSideBar, loginData, handleLogout, userLogedin } = useContext(contextData)
     const [open, setOpen] = useState(false);
     const handleStateOfDropDown = () => {
         setOpen(!open)
     }
     const cookieValue = Cookies.get("loginData");
     return (
-        <div className={`flex flex-col w-full text-black gap-5 h-dvh pt-4 px-4 items-center transition-all ease-in-out duration-500 overflow-hidden`}>
+        <div className={`flex flex-col w-full text-black gap-5 h-dvh pt-4 px-4 items-center transition-all ease-in-out duration-500`}>
             <span className='cursor-pointer w-full mb-8' onClick={handleStateOfSideBar}>
                 <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
             </span>
@@ -87,37 +87,76 @@ export default function SideBar() {
                 {/* authentication button */}
                 <div className="relative group h-full text-center content-center cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0" /><circle cx={12} cy={10} r={4} /><circle cx={12} cy={12} r={10} /></svg>
-                    <div className="absolute z-10 left-1/2 -translate-x-1/2 top-full translate-y-0.5 flex flex-col justify-center h-0 w-32 overflow-hidden group-hover:h-28 group-hover:z-20 bg-white font-normal customShadow rounded-lg transition-all ease-in-out duration-500">
-                        <ul className='flex flex-col items-start'>
-                            {!userLogedin  ?
-                                <>
-                                    <li className='block w-28 text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
-                                        <Link to="/register" onClick={handleStateOfSideBar}>
-                                            {t("authentication.register")}
-                                        </Link>
-                                    </li>
-                                    <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
-                                        <Link to="/login" onClick={handleStateOfSideBar}>{t("authentication.login")}</Link>
-                                    </li>
-                                </>
-                                :
-                                <>
-                                    <li className='block w-32 text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300 capitalize'>
-                                        <span>{loginData?.user?.name}</span>
-                                    </li>
-                                    <li className='block w-full py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
-                                        <button onClick={() => { handleLogout(); handleStateOfSideBar() }}
-                                            className="w-full flex flex-row items-center gap-4 ps-8 cursor-pointer relative"
-                                        >
-                                            <span>{t("authentication.logout")}</span>
-                                            <span className='absolute start-2 top-1/2 -translate-y-1/2 ltr:rotate-180'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-log-out-icon lucide-log-out"><path d="m16 17 5-5-5-5" /><path d="M21 12H9" /><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /></svg>
-                                            </span>
-                                        </button>
-                                    </li>
-                                </>
-                            }
-                        </ul>
+                    <div className="absolute z-10 left-0 top-full translate-y-0.5 flex flex-col justify-center bg-white font-normal customShadow rounded-lg">
+                        {!userLogedin ?
+                            <ul className='flex flex-col items-start justify-center h-0 overflow-hidden group-hover:h-28 group-hover:z-20 transition-all ease-in-out duration-500'>
+                                <li className='block w-28 text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                    <Link to="/register">
+                                        {t("authentication.register")}
+                                    </Link>
+                                </li>
+                                <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                    <Link to="/login">{t("authentication.login")}</Link>
+                                </li>
+                            </ul>
+                            :
+                            <ul className='flex flex-col items-start justify-center w-52 h-0 overflow-hidden group-hover:h-72 group-hover:z-20 transition-all ease-in-out duration-500'>
+                                <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300 capitalize bg-backgroundLinear'>
+                                    <Link to="/profile" className="flex flex-row gap-2 items-center">
+                                        {/* عرض اول حرفين من كل كلمة موجودة في الاسم */}
+                                        <span className='flex items-center justify-center w-7 h-7 bg-gray-100 rounded-full text-black font-bold text-sm'>{loginData?.user?.name?.split(" ").map(word => word[0]).join("").toUpperCase()}</span>
+                                        <span className='flex'>{loginData?.user?.name}</span>
+                                    </Link>
+                                </li>
+
+                                <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                    <Link to="/profile" className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                        <div className="flex flex-row gap-2 items-center">
+                                            <div className="w-4 h-4 md:w-5 md:h-5">
+                                                <img src="/profile/advertisements.png" alt="advertisements" className='w-full h-full object-center' />
+                                            </div>
+                                            <span className='mb-2'>إعلاناتي</span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="ltr:rotate-180"><path d="m15 18-6-6 6-6" /></svg>
+                                    </Link>
+                                </li>
+
+                                <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                    <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                        <div className="flex flex-row gap-2 items-center">
+                                            <div className="w-4 h-4 md:w-5 md:h-5">
+                                                <img src="/profile/solar_heart-outline.png" alt="solar_heart-outline" className='w-full h-full object-center' />
+                                            </div>
+                                            <span className='mb-1'>الإعلانات المفضلة</span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="ltr:rotate-180"><path d="m15 18-6-6 6-6" /></svg>
+                                    </Link>
+                                </li>
+
+                                <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                    <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
+                                        <div className="flex flex-row gap-2 items-center">
+                                            <div className="w-4 h-4 md:w-5 md:h-5">
+                                                <img src="/profile/solar_bell-linear.png" alt="solar_bell-linear" className='w-full h-full object-center' />
+                                            </div>
+                                            <span className='mb-1'>إشعارات الاعلانات</span>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="ltr:rotate-180"><path d="m15 18-6-6 6-6" /></svg>
+                                    </Link>
+                                </li>
+
+                                <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>
+                                    <button onClick={handleLogout}
+                                        className="w-full flex flex-row items-center gap-2 cursor-pointer"
+                                    >
+                                        <div className="w-4 h-4 md:w-5 md:h-5 ltr:rotate-180">
+                                            <img src="/profile/hugeicons_logout-03.png" alt="hugeicons_logout-03" className='w-full h-full object-center' />
+                                        </div>
+                                        <span className='mb-1'>{t("authentication.logout")}</span>
+                                    </button>
+                                </li>
+
+                            </ul>}
                     </div>
                 </div>
                 <LanguageSwitcher />
