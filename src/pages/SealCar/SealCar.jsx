@@ -16,11 +16,12 @@ export default function SealCar() {
 
     // ✅ Schema بتاع التحقق باستخدام Yup
     const validationSchema = Yup.object({
-        make: Yup.string().required("الماركة مطلوبة"),
+        make: Yup.string().required("المكان مطلوبة"),
         name: Yup.string().required("الاسم مطلوب"),
         status: Yup.string().required("الحالة مطلوبة"),
         category: Yup.string().required("الفئة مطلوبة"),
         color: Yup.string().required("اللون مطلوب"),
+        kilometers: Yup.number().typeError("الكيلومتر لازم تكون رقم").required("الكيلومتر مطلوبة"),
         model: Yup.string().required("الموديل مطلوب"),
         year: Yup.number()
             .typeError("السنة لازم تكون رقم")
@@ -56,6 +57,7 @@ export default function SealCar() {
             category: "",
             model: "",
             color: "",
+            kilometers: "",
             year: "",
             plate_number: "",
             price: "",
@@ -289,7 +291,7 @@ export default function SealCar() {
                             <div className="grid md:grid-cols-2 gap-4">
                                 {/* بلد الصنع make*/}
                                 <div>
-                                    <label className="block mb-1 font-semibold">بلد الصنع</label>
+                                    <label className="block mb-1 font-semibold">المدينة</label>
                                     <input
                                         type="text"
                                         name="make"
@@ -334,23 +336,20 @@ export default function SealCar() {
                                     )}
                                 </div>
 
-                                {/* mileage عدد الكيلومترات */}
+                                {/* kilometers عدد الكيلومترات */}
                                 <div>
                                     <label className="block mb-1 font-semibold">عدد الكيلومترات</label>
                                     <input
                                         type="number"
-                                        name="description.mileage"
-                                        value={formik.values.description.mileage}
+                                        name="kilometers"
+                                        value={formik.values.kilometers}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
                                         className="w-full border rounded-lg p-2"
                                     />
-                                    {formik.touched.description?.mileage &&
-                                        formik.errors.description?.mileage && (
-                                            <div className="text-red-500 text-sm">
-                                                {formik.errors.description.mileage}
-                                            </div>
-                                        )}
+                                    {formik.touched.kilometers && formik.errors.kilometers && (
+                                        <p className="text-red-500 text-sm">{formik.errors.kilometers}</p>
+                                    )}
                                 </div>
 
                                 {/* سعة المحرك */}
