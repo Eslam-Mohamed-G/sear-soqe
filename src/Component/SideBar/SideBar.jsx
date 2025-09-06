@@ -23,7 +23,7 @@ export default function SideBar() {
                 <li onClick={handleStateOfSideBar} className='relative h-full text-center content-center group flex flex-row items-center gap-2'>
                     <NavLink to="/buyCar" className={({ isActive }) => `flex flex-row gap-2 w-full ${isActive ? "sidebarActiveClass" : ""}`}>
                         <div className="w-6 h-6">
-                            <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
+                            <img src="/navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
                         </div>
                         {t("links.buyCar")}
                     </NavLink>
@@ -38,7 +38,7 @@ export default function SideBar() {
                 <li onClick={handleStateOfSideBar} className='relative h-full text-center content-center group flex flex-row items-center gap-2'>
                     <NavLink to="/sealcar" className={({ isActive }) => `flex flex-row gap-2 w-full ${isActive ? "sidebarActiveClass" : ""}`}>
                         <div className="w-6 h-6">
-                            <img src="./navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
+                            <img src="/navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
                         </div>
                         {t("links.seal")}
                     </NavLink>
@@ -48,7 +48,7 @@ export default function SideBar() {
 
                 <li className='relative group h-full text-center content-center flex flex-row items-center gap-2'>
                     <div className="w-6 h-5">
-                        <img src="./navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
+                        <img src="/navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
                     </div>
                     <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.carGuide")}</Link>
                     {/* blue line */}
@@ -56,7 +56,7 @@ export default function SideBar() {
                 </li>
                 <li className='relative group h-full text-center content-center flex flex-row items-center gap-2'>
                     <div className="w-7 h-7">
-                        <img src="./navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
+                        <img src="/navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
                     </div>
                     <Link to="#" className='flex h-full w-full text-center items-center'>{t("links.carNews")}</Link>
                     {/* blue line */}

@@ -41,7 +41,7 @@ export default function Navbar() {
                                     className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}
                                 >
                                     <div className="w-8 h-8">
-                                        <img src="./navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
+                                        <img src="/navbar-image/001-car.png" alt="car" className='w-full h-full object-center' />
                                     </div>
                                     {t("links.buyCar")}
                                 </NavLink>
@@ -56,7 +56,7 @@ export default function Navbar() {
                             <li className='relative h-full text-center content-center px-5 group flex flex-row items-center gap-2'>
                                 <NavLink to="/sealcar" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
                                     <div className="w-8 h-8">
-                                        <img src="./navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
+                                        <img src="/navbar-image/002-car-key.png" alt="car-key" className='w-full h-full object-center' />
                                     </div>
                                     {t("links.seal")}
                                 </NavLink>
@@ -67,7 +67,7 @@ export default function Navbar() {
                             <li className='relative group h-full text-center content-center px-5 flex flex-row items-center gap-2'>
                                 <NavLink to="/carGuide" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
                                     <div className="w-7 h-6">
-                                        <img src="./navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
+                                        <img src="/navbar-image/003-compass.png" alt="compass" className='w-full h-full object-center' />
                                     </div>
                                     {t("links.carGuide")}
                                 </NavLink>
@@ -77,7 +77,7 @@ export default function Navbar() {
                             <li className='relative group h-full text-center content-center px-5 flex flex-row items-center gap-2'>
                                 <NavLink to="/carNews" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
                                     <div className="w-8 h-8">
-                                        <img src="./navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
+                                        <img src="/navbar-image/004-newspaper.png" alt="car" className='w-full h-full object-center' />
                                     </div>
                                     {t("links.carNews")}
                                 </NavLink>
@@ -135,7 +135,7 @@ export default function Navbar() {
                                             <Link to="/profile" className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
                                                 <div className="flex flex-row gap-2 items-center">
                                                     <div className="w-4 h-4 md:w-5 md:h-5">
-                                                        <img src="./profile/advertisements.png" alt="advertisements" className='w-full h-full object-center' />
+                                                        <img src="/profile/advertisements.png" alt="advertisements" className='w-full h-full object-center' />
                                                     </div>
                                                     <span className='mb-2'>إعلاناتي</span>
                                                 </div>
@@ -147,7 +147,7 @@ export default function Navbar() {
                                             <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
                                                 <div className="flex flex-row gap-2 items-center">
                                                     <div className="w-4 h-4 md:w-5 md:h-5">
-                                                        <img src="./profile/solar_heart-outline.png" alt="solar_heart-outline" className='w-full h-full object-center' />
+                                                        <img src="/profile/solar_heart-outline.png" alt="solar_heart-outline" className='w-full h-full object-center' />
                                                     </div>
                                                     <span className='mb-1'>الإعلانات المفضلة</span>
                                                 </div>
@@ -159,7 +159,7 @@ export default function Navbar() {
                                             <Link className='flex flex-row items-center justify-between text-sm md:text-base font-medium'>
                                                 <div className="flex flex-row gap-2 items-center">
                                                     <div className="w-4 h-4 md:w-5 md:h-5">
-                                                        <img src="./profile/solar_bell-linear.png" alt="solar_bell-linear" className='w-full h-full object-center' />
+                                                        <img src="/profile/solar_bell-linear.png" alt="solar_bell-linear" className='w-full h-full object-center' />
                                                     </div>
                                                     <span className='mb-1'>إشعارات الاعلانات</span>
                                                 </div>
@@ -172,7 +172,7 @@ export default function Navbar() {
                                                 className="w-full flex flex-row items-center gap-2 cursor-pointer"
                                             >
                                                 <div className="w-4 h-4 md:w-5 md:h-5 ltr:rotate-180">
-                                                    <img src="./profile/hugeicons_logout-03.png" alt="hugeicons_logout-03" className='w-full h-full object-center' />
+                                                    <img src="/profile/hugeicons_logout-03.png" alt="hugeicons_logout-03" className='w-full h-full object-center' />
                                                 </div>
                                                 <span className='mb-1'>{t("authentication.logout")}</span>
                                             </button>
