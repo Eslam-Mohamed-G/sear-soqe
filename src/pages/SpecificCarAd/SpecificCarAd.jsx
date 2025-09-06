@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function SpecificCarAd({ id }) {
+export default function SpecificCarAd() {
     useEffect(() => {
         const specificOffer = async () => {
             try {
