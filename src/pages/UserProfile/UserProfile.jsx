@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -8,6 +8,8 @@ export default function UserProfile() {
     const { t } = useTranslation("navbar");
     const [userData, setUserData] = useState();
     const [listings, setListings] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getAllUserCarsListings = async () => {
@@ -113,7 +115,7 @@ export default function UserProfile() {
                 <div className="w-full border">
                     <div className="flex flex-row flex-wrap justify-center gap-4 mb-4">
                         {listings.map((car) => (
-                            <div key={car.id} className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
+                            <div onClick={()=>{navigate(`/specificOffer/${car.id}`)}} key={car.id} className="flex flex-col gap-4 w-fit rounded-xl p-4 customShadow cursor-pointer group">
                                 {/* img */}
                                 <div className="relative">
                                     <div className="w-2xs md:w-72 overflow-hidden rounded-xl">

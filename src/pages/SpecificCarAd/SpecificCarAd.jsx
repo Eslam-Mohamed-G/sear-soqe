@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useParams } from 'react-router-dom';
 
 export default function SpecificCarAd() {
+    const {id} = useParams();
+    const [specificCar, setSpecificCar] = useState([]);
     useEffect(() => {
         const specificOffer = async () => {
             try {
@@ -17,7 +20,7 @@ export default function SpecificCarAd() {
                         }
                     }
                 );
-                console.log(response);
+                setSpecificCar(response.data);
             } catch (error) {
                 console.log(error);
             } finally {
@@ -28,6 +31,7 @@ export default function SpecificCarAd() {
         specificOffer();
     }, []);
     return (
-        <div>SpecificCarAd</div>
+        <div className="">
+        </div>
     )
 };
