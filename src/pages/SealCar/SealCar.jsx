@@ -55,7 +55,7 @@ export default function SealCar() {
             status: "",
             category: "",
             model: "",
-            color:"",
+            color: "",
             year: "",
             plate_number: "",
             price: "",
@@ -248,7 +248,7 @@ export default function SealCar() {
 
                                 {/* category شكل السيارة */}
                                 <div>
-                                    <label className="block mb-1 font-semibold">شكل السسيارة</label>
+                                    <label className="block mb-1 font-semibold">شكل السيارة</label>
                                     <input
                                         type="text"
                                         name="category"
@@ -464,7 +464,8 @@ export default function SealCar() {
                                     multiple
                                     onChange={(event) => {
                                         const files = Array.from(event.currentTarget.files);
-                                        formik.setFieldValue("images", files);
+                                        // ✅ دمج الصور القديمة مع الجديدة
+                                        formik.setFieldValue("images", [...formik.values.images, ...files]);
                                     }}
                                     className="w-full border rounded-lg p-2"
                                 />
@@ -477,12 +478,26 @@ export default function SealCar() {
                                 {formik.values.images.length > 0 && (
                                     <div className="flex gap-2 flex-wrap mt-3">
                                         {formik.values.images.map((file, index) => (
-                                            <img
-                                                key={index}
-                                                src={URL.createObjectURL(file)}
-                                                alt={`preview-${index}`}
-                                                className="w-24 h-24 object-cover rounded border"
-                                            />
+                                            <div key={index} className="relative w-24 h-24">
+                                                <img src={URL.createObjectURL(file)} alt={`preview - ${index}`}
+                                                className="w-full h-full object-cover rounded border"/>
+                                                {/* زرار الحذف */}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const updatedImages = formik.values.images.filter(
+                                                            (_, i) => i !== index
+                                                        );
+                                                        formik.setFieldValue("images", updatedImages);
+
+                                                        // ✅ تنظيف الـ URL عشان مايحصلش memory leak
+                                                        URL.revokeObjectURL(file);
+                                                    }}
+                                                    className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
+                                                >
+                                                    ✕
+                                                </button>
+                                            </div>
                                         ))}
                                     </div>
                                 )}
