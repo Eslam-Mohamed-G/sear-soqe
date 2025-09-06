@@ -63,43 +63,45 @@ export default function SpecificCarAd() {
 
             {!loading && !errorMSG && (
                 <div className="">
+                    {/* img */}
+                    <div className=""></div>
                     <h1>{specificCar.name} {specificCar.model}</h1>
                     <h1 className='text-primaryColor text-lg font-bold'>ج.م {specificCar.price}</h1>
                     <div className="grid grid-cols-1 grid-rows-1">
                         <div className="">
-                            <ul className='grid grid-cols-4 gap-4'>
-                                <li className='flex flex-col items-center gap-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
-                                    <img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />
-                                    <p className='flex flex-col gap-2'>
-                                        <span>سنة الصنع</span>
-                                        <span>
+                            <ul className='grid grid-cols-4 gap-2 md:gap-4'>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/Year-Frame.svg" alt="Year icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>سنة الصنع</span>
+                                        <span className='text-black text-sm font-bold'>
                                             {specificCar.year}
                                         </span>
                                     </p>
                                 </li>
-                                <li className='flex flex-col items-center gap-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
-                                    <img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />
-                                    <p className='flex flex-col gap-2'>
-                                        <span>عدد الكيلومتر</span>
-                                        <span>
-                                            {desc?.mileage}
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/speed-Frame.svg" alt="speed icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>عدد الكيلومتر</span>
+                                        <span className='text-black text-sm font-bold'>
+                                            {desc?.mileage} كلم
                                         </span>
                                     </p>
                                 </li>
-                                <li className='flex flex-col items-center gap-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
-                                    <img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />
-                                    <p className='flex flex-col gap-2'>
-                                        <span>نوع الوقود</span>
-                                        <span>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/solar-Frame.svg" alt="fueltype icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>نوع الوقود</span>
+                                        <span className='text-black text-sm font-bold'>
                                             {desc?.fuelType}
                                         </span>
                                     </p>
                                 </li>
-                                <li className='flex flex-col items-center gap-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
-                                    <img src="./icon/Frame.svg" alt="location icon" className="w-4 h-4" />
-                                    <p className='flex flex-col gap-2'>
-                                        <span>ناقل الحركة</span>
-                                        <span>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/Vector.svg" alt="location icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>ناقل الحركة</span>
+                                        <span className='text-black text-sm font-bold'>
                                             {desc?.transmission}
                                         </span>
                                     </p>
