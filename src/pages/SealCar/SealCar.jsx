@@ -450,56 +450,106 @@ export default function SealCar() {
                                 الصور<span className="text-red-500">*</span>
                             </h2>
 
-                            {/* images الصور */}
-                            <div>
-                                <label className="font-semibold block mb-1">
-                                    صور السيارة <span className="text-red-500">*</span>
-                                </label>
+                            <label className="font-semibold block mb-1">
+                                صور السيارة <span className="text-red-500">*</span>
+                            </label>
 
-                                <input
-                                    type="file"
-                                    name="images"
-                                    accept="image/*"
-                                    multiple
-                                    onChange={(event) => {
-                                        const files = Array.from(event.currentTarget.files);
-                                        // ✅ دمج الصور القديمة مع الجديدة
-                                        formik.setFieldValue("images", [...formik.values.images, ...files]);
-                                    }}
-                                    className="w-full border rounded-lg p-2"
-                                />
+                            {formik.errors.images && formik.touched.images && (
+                                <div className="text-red-500 text-sm">{formik.errors.images}</div>
+                            )}
 
-                                {formik.errors.images && formik.touched.images && (
-                                    <div className="text-red-500 text-sm">{formik.errors.images}</div>
-                                )}
-
-                                {/* ✅ عرض صور المعاينة قبل الرفع */}
-                                {formik.values.images.length > 0 && (
-                                    <div className="flex gap-2 flex-wrap mt-3">
-                                        {formik.values.images.map((file, index) => (
-                                            <div key={index} className="relative w-24 h-24">
-                                                <img src={URL.createObjectURL(file)} alt={`preview - ${index}`}
-                                                className="w-full h-full object-cover rounded border"/>
-                                                {/* زرار الحذف */}
-                                                <button
-                                                    type="button"
-                                                    onClick={() => {
-                                                        const updatedImages = formik.values.images.filter(
-                                                            (_, i) => i !== index
-                                                        );
-                                                        formik.setFieldValue("images", updatedImages);
-
-                                                        // ✅ تنظيف الـ URL عشان مايحصلش memory leak
-                                                        URL.revokeObjectURL(file);
-                                                    }}
-                                                    className="absolute top-0 right-0 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
-                                                >
-                                                    ✕
-                                                </button>
+                            {/* Grid placeholders */}
+                            <div className="border w-full md:w-1/2">
+                                {/* الصورة الرئيسية */}
+                                <div className="border-2 border-dashed rounded-lg w-full h-40 flex flex-col items-center justify-center relative cursor-pointer">
+                                    {formik.values.images[0] ? (
+                                        <div>
+                                            <div className="">
+                                                <img
+                                                    src={URL.createObjectURL(formik.values.images[0])}
+                                                    alt="main"
+                                                    className="w-full h-full rounded-lg"
+                                                />
                                             </div>
-                                        ))}
-                                    </div>
-                                )}
+                                            {/* زرار حذف */}
+                                            <button
+                                                type="button"
+                                                onClick={() => {
+                                                    const updatedImages = formik.values.images.slice(1); // امسح الصورة الأولى وخلي الباقي
+                                                    formik.setFieldValue("images", updatedImages);
+                                                }}
+                                                className="absolute top-2 left-2 bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                                            >
+                                                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M19.5 5.5L18.88 15.525C18.722 18.086 18.643 19.367 18 20.288C17.6826 20.7432 17.2739 21.1273 16.8 21.416C15.843 22 14.56 22 11.994 22C9.424 22 8.139 22 7.18 21.415C6.70589 21.1257 6.29721 20.7409 5.98 20.285C5.338 19.363 5.26 18.08 5.106 15.515L4.5 5.5M3 5.5H21M16.056 5.5L15.373 4.092C14.92 3.156 14.693 2.689 14.302 2.397C14.2151 2.33232 14.1232 2.27479 14.027 2.225C13.594 2 13.074 2 12.035 2C10.969 2 10.436 2 9.995 2.234C9.89752 2.28621 9.80453 2.34642 9.717 2.414C9.322 2.717 9.101 3.202 8.659 4.171L8.053 5.5M9.5 16.5V10.5M14.5 16.5V10.5" stroke="#DB161B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <label className="flex flex-col items-center justify-center cursor-pointer">
+                                            <span className="text-2xl">+</span>
+                                            <span className="text-sm">الصورة الرئيسية</span>
+                                            <input
+                                                type="file"
+                                                accept="image/*"
+                                                className="hidden"
+                                                onChange={(e) => {
+                                                    const file = e.target.files[0];
+                                                    if (file) {
+                                                        formik.setFieldValue("images", [file, ...formik.values.images]);
+                                                    }
+                                                }}
+                                            />
+                                        </label>
+                                    )}
+                                </div>
+
+                                {/* باقي الصور */}
+                                <div className="grid grid-cols-2 gap-4 mt-4">
+                                    {formik.values.images.slice(1).map((file, index) => (
+                                        <div
+                                            key={index}
+                                            className="border rounded-lg relative w-full h-32 flex items-center justify-center overflow-hidden"
+                                        >
+                                            <img
+                                                src={URL.createObjectURL(file)}
+                                                alt={`img-${index}`}
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <button
+                                                type="button"
+                                                onClick={() => {
+                                                    const updatedImages = formik.values.images.filter(
+                                                        (_, i) => i !== index + 1
+                                                    );
+                                                    formik.setFieldValue("images", updatedImages);
+                                                }}
+                                                className="absolute top-2 left-2 bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer"
+                                            >
+                                                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M19.5 5.5L18.88 15.525C18.722 18.086 18.643 19.367 18 20.288C17.6826 20.7432 17.2739 21.1273 16.8 21.416C15.843 22 14.56 22 11.994 22C9.424 22 8.139 22 7.18 21.415C6.70589 21.1257 6.29721 20.7409 5.98 20.285C5.338 19.363 5.26 18.08 5.106 15.515L4.5 5.5M3 5.5H21M16.056 5.5L15.373 4.092C14.92 3.156 14.693 2.689 14.302 2.397C14.2151 2.33232 14.1232 2.27479 14.027 2.225C13.594 2 13.074 2 12.035 2C10.969 2 10.436 2 9.995 2.234C9.89752 2.28621 9.80453 2.34642 9.717 2.414C9.322 2.717 9.101 3.202 8.659 4.171L8.053 5.5M9.5 16.5V10.5M14.5 16.5V10.5" stroke="#DB161B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    ))}
+
+                                    {/* زرار إضافة صورة أخرى */}
+                                    <label className="border-2 border-dashed rounded-lg w-full h-32 flex flex-col items-center justify-center cursor-pointer">
+                                        <span className="text-2xl">+</span>
+                                        <span className="text-sm">صور اخرى</span>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            className="hidden"
+                                            onChange={(e) => {
+                                                const file = e.target.files[0];
+                                                if (file) {
+                                                    formik.setFieldValue("images", [...formik.values.images, file]);
+                                                }
+                                            }}
+                                        />
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
