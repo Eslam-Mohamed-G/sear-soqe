@@ -67,6 +67,7 @@ export default function SpecificCarAd() {
                 <div className="">
                     {/* img */}
                     <div className=""></div>
+                    {/* header */}
                     <h1 className='w-full flex justify-between'>{specificCar.name} {specificCar.model}
                         <button onClick={() => {deleteListing(specificCar.id)}} className='flex items-center gap-1 text-red-500'>
                             <svg width={18} height={18} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,8 +76,11 @@ export default function SpecificCarAd() {
                             حذف
                         </button>
                     </h1>
+                    {/* السعر */}
                     <h1 className='text-primaryColor text-lg font-bold'>ج.م {specificCar.price}</h1>
-                    <div className="grid grid-cols-1 grid-rows-1">
+
+                    {/* البيانات */}
+                    <div className="grid grid-cols-1 grid-rows-1 gap-5 mt-5">
                         <div className="">
                             <ul className='grid grid-cols-4 gap-2 md:gap-4'>
                                 <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
@@ -113,6 +117,68 @@ export default function SpecificCarAd() {
                                         <span className='text-black text-sm font-bold'>
                                             {desc?.transmission}
                                         </span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="">
+                            <ul className='grid grid-cols-4 gap-2 md:gap-4'>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/location.svg" alt="location icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>الموقع</span>
+                                        <span className='text-black text-sm font-bold'>
+                                            {specificCar.make}
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/color.svg" alt="color icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>اللون</span>
+                                        <span className='text-black text-sm font-bold'>
+                                            {specificCar.color}
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/solar-Frame.svg" alt="fueltype icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>الحالة</span>
+                                        <span className='text-black text-sm font-bold'>
+                                            {specificCar?.status}
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='flex flex-col items-center gap-2 py-2 overflow-hidden cursor-pointer customShadow_12 rounded-xl transition-all ease-in-out duration-500'>
+                                    <img src="/icon/Vector.svg" alt="location icon" className="w-4 h-4" />
+                                    <p className='flex flex-col gap-2 items-center justify-center'>
+                                        <span className='text-gray-400 text-sm'>سعة المحرك</span>
+                                        <span className='text-black text-sm font-bold'>
+                                            {desc?.engineCapacity}
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="border-t-2 border-gray-300 mt-5">
+                            <h1 className='text-lg font-bold mb-5'>بيانات البائع</h1>
+                            <ul className='flex flex-col gap-4 items-start'>
+                                <li className=''>
+                                    <p className='flex flex-row gap-2 items-center justify-center text-black font-bold'>
+                                        الأسم: {specificCar?.user?.name}
+                                    </p>
+                                </li>
+                                <li className=''>
+                                    <p className='flex flex-row gap-2 items-center justify-center text-black font-bold'>
+                                        رقم الهاتف: {specificCar?.user?.phone}
+                                    </p>
+                                </li>
+                                <li className=''>
+                                    <p className='flex flex-row gap-2 items-center justify-center text-black font-bold'>
+                                        تاريخ النشر: {specificCar?.created_at?.split("T")[0]}
                                     </p>
                                 </li>
                             </ul>
