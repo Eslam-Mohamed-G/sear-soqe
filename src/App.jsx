@@ -11,6 +11,7 @@ import StoreContextProvider from './Context/Context';
 import UserProfile from './pages/UserProfile/UserProfile';
 import SpecificCarAd from './pages/SpecificCarAd/SpecificCarAd';
 import CarGuide from './pages/carGuide/carGuide';
+import CarNews from './pages/CarNews/CarNews';
 
 const routes = createBrowserRouter([
   {path:"", element: <Layout/>, children:[
@@ -18,6 +19,7 @@ const routes = createBrowserRouter([
     { path: 'buycar', element: <BuyCar/>},
     { path: 'sealcar', element: <SealCar/>},
     { path: 'carGuide', element: <CarGuide/>},
+    { path: 'carNews', element: <CarNews/>},
     { path: 'register', element: <Register/>},
     { path: 'login', element: <Login/>},
     { path: '/profile', element: <UserProfile/>},
