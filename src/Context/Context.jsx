@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Cookies from 'js-cookie';
+import axios from 'axios';
 
 export const contextData = createContext();
 export default function StoreContextProvider({ children }) {
@@ -41,6 +42,7 @@ export default function StoreContextProvider({ children }) {
 
     // حذف إعلان
     const deleteListing = async (listingId) => {
+        console.log(listingId);
         try {
             if (!cookieValue) return;
 
@@ -57,7 +59,7 @@ export default function StoreContextProvider({ children }) {
         }
     };
     return (
-        <contextData.Provider value={{ sideBarIsOpen, handleStateOfSideBar, handleLogout, loginData, setLoginData, userLogedin, isUserLogedin }}>
+        <contextData.Provider value={{ sideBarIsOpen, handleStateOfSideBar, handleLogout, loginData, setLoginData, userLogedin, isUserLogedin, deleteListing }}>
             {children}
         </contextData.Provider>
     )
