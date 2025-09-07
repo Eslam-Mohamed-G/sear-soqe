@@ -39,6 +39,7 @@ export default function SealCar() {
             cylinders: Yup.string(),
             transmission: Yup.string().required("نوع ناقل الحركة مطلوب"),
             fuelType: Yup.string().required("نوع الوقود مطلوب"),
+            mileage: Yup.number().required("عدد الكيلومترات مطلوب")
             // lastMaintenance: Yup.string(),
             // maintenanceDetails: Yup.string(),
         }),
@@ -62,6 +63,7 @@ export default function SealCar() {
                 cylinders: "",
                 transmission: "",
                 fuelType: "",
+                mileage: "",
                 // lastMaintenance: "",
                 // maintenanceDetails: "",
             },
@@ -173,7 +175,7 @@ export default function SealCar() {
                             <div className="grid md:grid-cols-2 gap-4">
                                 {/* name الماركة */}
                                 <div>
-                                    <label className="block mb-1 font-semibold">الماركة</label>
+                                    <label className="block mb-1 font-semibold">الماركة <span className="text-red-500">*</span></label>
                                     <input
                                         type="text"
                                         name="name"
@@ -189,7 +191,7 @@ export default function SealCar() {
 
                                 {/* model الموديل */}
                                 <div>
-                                    <label className="block mb-1 font-semibold">الموديل</label>
+                                    <label className="block mb-1 font-semibold">الموديل <span className="text-red-500">*</span></label>
                                     <input
                                         type="text"
                                         name="model"
@@ -216,42 +218,36 @@ export default function SealCar() {
                                         className="w-full border rounded-lg p-2"
                                     >
                                         <option value="">اختر حالة السيارة</option>
-                                        <option value="new">جديدة</option>
-                                        <option value="used">مستعملة</option>
-                                        <option value="certified">معتمدة</option>
+                                        <option value="جديدة">جديدة</option>
+                                        <option value="مستعملة">مستعملة</option>
+                                        <option value="معتمدة">معتمدة</option>
                                     </select>
                                     {formik.touched.status && formik.errors.status && (
                                         <p className="text-red-500 text-sm">{formik.errors.status}</p>
                                     )}
                                 </div>
 
-                                {/* السنة year*/}
-                                <div>
-                                    <label className="block mb-1 font-semibold">سنة الصنع</label>
-                                    <input
-                                        type="number"
-                                        name="year"
-                                        value={formik.values.year}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        className="w-full border rounded-lg p-2"
-                                    />
-                                    {formik.touched.year && formik.errors.year && (
-                                        <p className="text-red-500 text-sm">{formik.errors.year}</p>
-                                    )}
-                                </div>
-
                                 {/* category شكل السيارة */}
                                 <div>
-                                    <label className="block mb-1 font-semibold">شكل السيارة</label>
-                                    <input
-                                        type="text"
+                                    <label className="font-semibold block mb-1">
+                                        شكل السيارة <span className="text-red-500">*</span>
+                                    </label>
+                                    <select
                                         name="category"
                                         value={formik.values.category}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
                                         className="w-full border rounded-lg p-2"
-                                    />
+                                    >
+                                        <option value="">اختر شكل السيارة</option>
+                                        <option value="سيدان">سيدان</option>
+                                        <option value="هاتشباك">هاتشباك</option>
+                                        <option value="مكشوفة">مكشوفة</option>
+                                        <option value="كوبيه">كوبيه</option>
+                                        <option value="واجن">واجن</option>
+                                        <option value="دفع رباعي">دفع رباعي</option>
+                                        <option value="بيك أب">بيك أب</option>
+                                    </select>
                                     {formik.touched.category && formik.errors.category && (
                                         <p className="text-red-500 text-sm">{formik.errors.category}</p>
                                     )}
@@ -272,16 +268,7 @@ export default function SealCar() {
                                         <p className="text-red-500 text-sm">{formik.errors.price}</p>
                                     )}
                                 </div>
-                            </div>
-                        </div>
 
-                        {/* الحالة الفنية */}
-                        <div className="bg-gray-50 p-4 rounded-lg border-s-4 border-blue-600">
-                            <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
-                                الحالة الفنية <span className="text-red-500">*</span>
-                            </h2>
-
-                            <div className="grid md:grid-cols-2 gap-4">
                                 {/* بلد الصنع make*/}
                                 <div>
                                     <label className="block mb-1 font-semibold">المدينة</label>
@@ -295,6 +282,31 @@ export default function SealCar() {
                                     />
                                     {formik.touched.make && formik.errors.make && (
                                         <p className="text-red-500 text-sm">{formik.errors.make}</p>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* الحالة الفنية */}
+                        <div className="bg-gray-50 p-4 rounded-lg border-s-4 border-blue-600">
+                            <h2 className="text-lg font-semibold text-blue-600 border-b pb-2 mb-4">
+                                الحالة الفنية <span className="text-red-500">*</span>
+                            </h2>
+
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {/* السنة year*/}
+                                <div>
+                                    <label className="block mb-1 font-semibold">سنة الصنع</label>
+                                    <input
+                                        type="number"
+                                        name="year"
+                                        value={formik.values.year}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        className="w-full border rounded-lg p-2"
+                                    />
+                                    {formik.touched.year && formik.errors.year && (
+                                        <p className="text-red-500 text-sm">{formik.errors.year}</p>
                                     )}
                                 </div>
                                 {/* اللون color*/}
@@ -348,6 +360,25 @@ export default function SealCar() {
                                         )}
                                 </div>
 
+                                {/* عدد الكيلومترات */}
+                                <div>
+                                    <label className="font-semibold block mb-1">عدد الكيلومترات</label>
+                                    <input
+                                        type="number"
+                                        name="description.mileage"
+                                        value={formik.values.description.mileage}
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        className="w-full border rounded-lg p-2"
+                                    />
+                                    {formik.touched.description?.mileage &&
+                                        formik.errors.description?.mileage && (
+                                            <div className="text-red-500 text-sm">
+                                                {formik.errors.description.mileage}
+                                            </div>
+                                        )}
+                                </div>
+
                                 {/* عدد السليندر */}
                                 <div>
                                     <label className="font-semibold block mb-1">عدد السليندر</label>
@@ -383,8 +414,8 @@ export default function SealCar() {
                                         className="w-full border rounded-lg p-2"
                                     >
                                         <option value="">اختر</option>
-                                        <option value="automatic">اوتوماتيك</option>
-                                        <option value="manual">عادي</option>
+                                        <option value="اوتوماتيك">اوتوماتيك</option>
+                                        <option value="مانيوال">مانيوال</option>
                                         <option value="CVT">CVT</option>
                                     </select>
                                     {formik.touched.description?.transmission &&
@@ -406,10 +437,10 @@ export default function SealCar() {
                                         className="w-full border rounded-lg p-2"
                                     >
                                         <option value="">اختر</option>
-                                        <option value="petrol">بنزين</option>
-                                        <option value="diesel">ديزل</option>
-                                        <option value="hybrid">هجينة</option>
-                                        <option value="electric">كهربائية</option>
+                                        <option value="بنزين">بنزين</option>
+                                        <option value="ديزل">ديزل</option>
+                                        <option value="هجينة">هجينة</option>
+                                        <option value="كهربائية">كهربائية</option>
                                     </select>
                                     {formik.touched.description?.fuelType &&
                                         formik.errors.description?.fuelType && (
