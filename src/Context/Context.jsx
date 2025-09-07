@@ -38,6 +38,24 @@ export default function StoreContextProvider({ children }) {
         }
     }, [cookieValue]);
 
+
+    // حذف إعلان
+    const deleteListing = async (listingId) => {
+        try {
+            if (!cookieValue) return;
+
+            const { token } = JSON.parse(cookieValue);
+
+            await axios.delete(
+                `https://adminsand.alrmoz.com/api/user/listings/${listingId}`,
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                }
+            );
+        } catch (error) {
+            console.error("Error deleting listing:", error);
+        }
+    };
     return (
         <contextData.Provider value={{ sideBarIsOpen, handleStateOfSideBar, handleLogout, loginData, setLoginData, userLogedin, isUserLogedin }}>
             {children}
