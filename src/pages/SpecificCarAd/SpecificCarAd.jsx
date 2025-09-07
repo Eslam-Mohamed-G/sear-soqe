@@ -32,7 +32,6 @@ export default function SpecificCarAd() {
                 if (response.data.description) {
                     setDesc(JSON.parse(response.data.description));
                 }
-                console.log(response.data);
                 setLoading(true);
             } catch (error) {
                 setErrorMSG(error.message);
@@ -66,7 +65,9 @@ export default function SpecificCarAd() {
             {!loading && !errorMSG && (
                 <div className="">
                     {/* img */}
-                    <div className=""></div>
+                    <div className="w-full md:w-2xs h-72 md:h-96 border">
+                        <img src={specificCar?.images?.[0]?.path ? `https://adminsand.alrmoz.com/storage/${specificCar.images[0].path}` : "/totyta-car.png"} alt={specificCar?.name || "car image"}  />
+                    </div>
                     {/* header */}
                     <h1 className='w-full flex justify-between'>{specificCar.name} {specificCar.model}
                         <button onClick={() => {deleteListing(specificCar.id)}} className='flex items-center gap-1 text-red-500'>
