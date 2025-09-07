@@ -21,7 +21,6 @@ export default function SealCar() {
         status: Yup.string().required("الحالة مطلوبة"),
         category: Yup.string().required("الفئة مطلوبة"),
         color: Yup.string().required("اللون مطلوب"),
-        kilometers: Yup.number().typeError("الكيلومتر لازم تكون رقم").required("الكيلومتر مطلوبة"),
         model: Yup.string().required("الموديل مطلوب"),
         year: Yup.number()
             .typeError("السنة لازم تكون رقم")
@@ -40,9 +39,6 @@ export default function SealCar() {
             cylinders: Yup.string(),
             transmission: Yup.string().required("نوع ناقل الحركة مطلوب"),
             fuelType: Yup.string().required("نوع الوقود مطلوب"),
-            mileage: Yup.number()
-                .typeError("الكيلومتر لازم يكون رقم")
-                .required("الكيلومتر مطلوب"),
             // lastMaintenance: Yup.string(),
             // maintenanceDetails: Yup.string(),
         }),
@@ -57,7 +53,6 @@ export default function SealCar() {
             category: "",
             model: "",
             color: "",
-            kilometers: "",
             year: "",
             plate_number: "",
             price: "",
@@ -67,7 +62,6 @@ export default function SealCar() {
                 cylinders: "",
                 transmission: "",
                 fuelType: "",
-                mileage: "",
                 // lastMaintenance: "",
                 // maintenanceDetails: "",
             },
@@ -114,13 +108,12 @@ export default function SealCar() {
                     }
                 );
 
-                console.log("تم إنشاء الإعلان:", response.data);
                 setIsLoading(false);
                 resetForm();
 
             } catch (err) {
                 setIsLoading(false);
-                setErrorMessage(err?.response?.data?.message || "حدث خطأ غير متوقع");
+                setErrorMessage(err?.response?.data?.message);
             }
         }
     });
@@ -336,22 +329,6 @@ export default function SealCar() {
                                     )}
                                 </div>
 
-                                {/* kilometers عدد الكيلومترات */}
-                                <div>
-                                    <label className="block mb-1 font-semibold">عدد الكيلومترات</label>
-                                    <input
-                                        type="number"
-                                        name="kilometers"
-                                        value={formik.values.kilometers}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        className="w-full border rounded-lg p-2"
-                                    />
-                                    {formik.touched.kilometers && formik.errors.kilometers && (
-                                        <p className="text-red-500 text-sm">{formik.errors.kilometers}</p>
-                                    )}
-                                </div>
-
                                 {/* سعة المحرك */}
                                 <div>
                                     <label className="font-semibold block mb-1">سعة المحرك</label>
@@ -459,16 +436,16 @@ export default function SealCar() {
                             )}
 
                             {/* Grid placeholders */}
-                            <div className="border w-full md:w-1/2">
+                            <div className="w-full flex flex-col md:flex-row md:gap-10">
                                 {/* الصورة الرئيسية */}
-                                <div className="border-2 border-dashed rounded-lg w-full h-40 flex flex-col items-center justify-center relative cursor-pointer">
+                                <div className="border-2 border-dashed rounded-lg w-full md:w-1/2 h-40 md:h-96 flex flex-col items-center justify-center relative cursor-pointer overflow-hidden">
                                     {formik.values.images[0] ? (
-                                        <div>
-                                            <div className="">
+                                        <div className="w-full flex items-center justify-center">
+                                            <div className="w-72 h-40 md:w-80 md:h-80 lg:w-96 lg:h-96">
                                                 <img
                                                     src={URL.createObjectURL(formik.values.images[0])}
                                                     alt="main"
-                                                    className="w-full h-full rounded-lg"
+                                                    className="w-full h-full object-contain rounded-lg"
                                                 />
                                             </div>
                                             {/* زرار حذف */}
@@ -486,7 +463,7 @@ export default function SealCar() {
                                             </button>
                                         </div>
                                     ) : (
-                                        <label className="flex flex-col items-center justify-center cursor-pointer">
+                                        <label className="flex flex-col items-center justify-center cursor-pointer w-full h-full">
                                             <span className="text-2xl">+</span>
                                             <span className="text-sm">الصورة الرئيسية</span>
                                             <input
@@ -534,7 +511,7 @@ export default function SealCar() {
                                     ))}
 
                                     {/* زرار إضافة صورة أخرى */}
-                                    <label className="border-2 border-dashed rounded-lg w-full h-32 flex flex-col items-center justify-center cursor-pointer">
+                                    <label className="border-2 border-dashed rounded-lg w-full sm:w-40 h-32 flex flex-col items-center justify-center cursor-pointer">
                                         <span className="text-2xl">+</span>
                                         <span className="text-sm">صور اخرى</span>
                                         <input
