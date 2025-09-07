@@ -86,7 +86,7 @@ export default function Navbar() {
                             </li>
 
                             {/* link with drobdown */}
-                            <li className='relative group h-full text-center content-center px-5'>
+                            {/* <li className='relative group h-full text-center content-center px-5'>
                                 <NavLink to="services" className={({ isActive }) => `flex gap-2 h-full w-full text-center items-center ${isActive ? "activeClass" : ""}`}>
                                     {t("links.services.name")}
                                 </NavLink>
@@ -99,9 +99,8 @@ export default function Navbar() {
                                         <li className='block w-full text-start px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors ease-in-out duration-300'>{t("links.services.links.car_checkup")}</li>
                                     </ul>
                                 </div>
-                                {/* blue line  */}
                                 <div className="h-1 absolute -bottom-0.5 start-5 end-5 bg-backgroundLinear rounded-t-2xl hidden group-hover:block transition-colors ease-in-out duration-500" />
-                            </li>
+                            </li> */}
                         </ul>
                         {/* car sale button */}
                         <div className="bg-backgroundLinear h-fit px-3 py-2 rounded-lg customShadow cursor-pointer capitalize"><Link to='/sealcar' className='text-white'>{t('buttonSales')}</Link></div>
