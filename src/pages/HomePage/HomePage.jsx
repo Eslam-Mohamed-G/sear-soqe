@@ -83,9 +83,9 @@ export default function HomePage() {
                     <div className="w-44">
                         <img src={avatar} alt="group logo sear el soqe" className='w-full object-center' />
                     </div>
-                    <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
+                    <Link to="/sealCar" className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
                         {t("advertisementlocation.seal.sentence")}
-                    </div>
+                    </Link>
                 </div>
 
                 {/* النص في النص */}
@@ -100,15 +100,15 @@ export default function HomePage() {
                     <div className="w-44">
                         <img src={avatar} alt="group logo sear el soqe" className='w-full object-center' />
                     </div>
-                    <div className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
+                    <Link to="/buycar" className="bg-backgroundLinear font-extrabold text-xl rounded-lg px-4 py-2 cursor-pointer">
                         {t("advertisementlocation.buy.sentence")}
-                    </div>
+                    </Link>
                 </div>
             </div>
 
 
             {/* السيارات الاكثر شهرة */}
-            <div className="px-4 sm:px-8 3xl:px-10 2xl:px-20 flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
                 {/* header */}
                 <div className="flex flex-row flex-wrap 2xl:px-4 justify-between">
                     <div className="">

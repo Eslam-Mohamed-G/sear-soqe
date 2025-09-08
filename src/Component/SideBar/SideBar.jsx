@@ -161,7 +161,7 @@ export default function SideBar() {
                 <LanguageSwitcher />
             </div>
             {/* car sale button */}
-            <div className="bg-backgroundLinear w-full h-fit px-3 py-2 text-center rounded-lg customShadow cursor-pointer capitalize"><Link to='#' className='text-white'>{t('buttonSales')}</Link></div>
+            <div className="bg-backgroundLinear w-full h-fit px-3 py-2 text-center rounded-lg customShadow cursor-pointer capitalize"><Link to='/sealcar' className='text-white'>{t('buttonSales')}</Link></div>
         </div>
     )
 }

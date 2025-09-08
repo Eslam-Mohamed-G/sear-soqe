@@ -13,7 +13,7 @@ export default function Layout() {
                 <div className={`fixed z-50 end-0 top-0 bottom-0 bg-white ${sideBarIsOpen ? "w-40 sm:w-56": "w-0 overflow-hidden"} transition-all ease-in-out duration-500 lg:hidden`} onClick={(e) => e.stopPropagation()}>
                     <SideBar />
                 </div>
-            <div className="pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24">
+            <div className="pt-20 px-4 sm:px-8 3xl:px-10 2xl:px-24 bg-gray-100 min-h-dvh">
                 <Outlet />
             </div>
         </div>
